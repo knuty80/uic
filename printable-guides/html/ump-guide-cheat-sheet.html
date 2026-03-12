@@ -60,14 +60,13 @@
             box-sizing: border-box;
             overflow: hidden;
             display: flex;
-            flex-col;
+            flex-direction: column;
         }
 
         /* Fold Lines */
         .panel-1 { border-right: 1px dashed #cbd5e1; border-bottom: 1px dashed #cbd5e1; }
         .panel-2 { border-bottom: 1px dashed #cbd5e1; }
         .panel-3 { border-right: 1px dashed #cbd5e1; }
-        .panel-4 { }
 
         /* Compact Table Styling */
         .signal-table th {
@@ -207,19 +206,23 @@
                 <ul class="space-y-1.5 text-[10px] leading-tight">
                     <li class="flex items-start gap-1.5">
                         <input type="checkbox" class="mt-0.5 w-3 h-3 rounded border-slate-300 text-blue-600" />
-                        <div><span class="font-bold text-slate-900">Equipment:</span> <span class="text-slate-600">Properly equipped (USSSA = Ejection).</span></div>
+                        <div><span class="font-bold text-slate-900">Equipment:</span> <span class="text-slate-600">Mgrs confirmed inspected. (Illegal bat = Ejection).</span></div>
                     </li>
                     <li class="flex items-start gap-1.5">
                         <input type="checkbox" class="mt-0.5 w-3 h-3 rounded border-slate-300 text-blue-600" />
-                        <div><span class="font-bold text-slate-900">Ground Rules:</span> <span class="text-slate-600">Field status & time limits (e.g., 1h 45m).</span></div>
+                        <div><span class="font-bold text-slate-900">Clock:</span> <span class="text-slate-600">Plate watch is OFFICIAL. State start time loudly.</span></div>
                     </li>
                     <li class="flex items-start gap-1.5">
                         <input type="checkbox" class="mt-0.5 w-3 h-3 rounded border-slate-300 text-blue-600" />
-                        <div><span class="font-bold text-slate-900">Roll-back:</span> <span class="text-slate-600">Confirm score rollback if time expires.</span></div>
+                        <div><span class="font-bold text-slate-900">Roll-back:</span> <span class="text-slate-600">Confirm if score rolls back on "Drop Dead" stop.</span></div>
                     </li>
                     <li class="flex items-start gap-1.5">
                         <input type="checkbox" class="mt-0.5 w-3 h-3 rounded border-slate-300 text-blue-600" />
-                        <div><span class="font-bold text-slate-900">Communicate:</span> <span class="text-slate-600">Shake hands, set tone for fair game.</span></div>
+                        <div><span class="font-bold text-slate-900">Boundaries:</span> <span class="text-slate-600">Define "Imaginary Lines" for unfenced fields.</span></div>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <input type="checkbox" class="mt-0.5 w-3 h-3 rounded border-slate-300 text-blue-600" />
+                        <div><span class="font-bold text-slate-900">Dugout:</span> <span class="text-slate-600">All equipment inside. "Clarifications only—no judgment."</span></div>
                     </li>
                 </ul>
             </section>
@@ -297,7 +300,7 @@
 
             <!-- Footer versioning -->
             <div class="absolute bottom-4 right-4 text-[9px] text-slate-400 font-mono no-print">
-                v1.1 | 4-Fold Layout
+                v1.2 | 4-Fold Layout
             </div>
         </div>
 

@@ -22,6 +22,7 @@ rate_solo: "$[Amount]"
 
 # Examples for Import Mapping
 local_park_example: "[Park Name]"
+local_park_field_example: "[Park Name] - Field 1"
 park_shortcut_example: "[Shortcut]"
 division_example: "[Division Name]"
 

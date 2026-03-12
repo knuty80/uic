@@ -55,7 +55,7 @@ The success of a schedule import is 90% preparation. If the data doesn't match t
     - **Create Teams:** Manually build or update the team list for the current season.
     - **Assign Coaches:** Include the coach's email and phone number. This is critical for RefTown's automated system, which sends coaches a summary email letting them know if an umpire has been assigned to their game or not.
 - **Phase 2: The "Exact Match" Rule**
-    - **Spelling is Absolute:** RefTown is unforgiving. "[Local Park]" is not the same as "[Park Shortcut]." "[Division] Red" is not the same as "Red Team."
+    - **Spelling is Absolute:** RefTown is unforgiving. "[Local Park] - [Field #]" is not the same as "[Park Shortcut]." "[Division] Red" is not the same as "Red Team."
     - **Synchronization:** The spelling in your import spreadsheet **must match** what you manually created in Phase 1. If it doesn't match, RefTown will either reject the row or create "Ghost Teams" that aren't linked to your coaches.
 - **Phase 3: The Import Path**
     - Navigate to **Schedules -> Game Management -> Import New Games from Excel/CSV**.
@@ -196,11 +196,19 @@ This guide is your tactical manual on the field. Be BRIEF, be LOUD, and be ASSER
 - **Timing Plays:** Plate umpire initiates signal; Base umpire **must echo** it back.
 - **Rundowns:** Stay out of the path. Split the field in half with your partner. Eye contact is essential. If you have the best angle, pat your chest and shout "Partner, I’ve got this—Out!"
 
-## The Plate Meeting Checklist
-- **Equipment:** Confirm all players are properly equipped (USSSA bats = Immediate Ejection).
-- **Ground Rules:** Review field status and "no new inning" limits (e.g., 1hr 45m).
-- **Roll-back:** Confirm if score rolls back to the previous full inning if time expires.
-- **Communication:** Shake hands, be professional, and set the tone for a fair game.
+## The Plate Meeting Checklist (The Game's Foundation)
+The first 5 minutes sets the tone for the entire game. Be authoritative, brief, and clear.
+
+- **Equipment Confirmation:** Confirm both managers have inspected their equipment. (Reminder: Non-LL/Illegal bats = Immediate discovery ejection).
+- **Timing & The "Roll-back":**
+    - **Identify the Official Clock:** The Plate Umpire’s watch is the only clock that matters. State the start time loudly for both scorekeepers.
+    - **No New Inning:** Confirm the time limit (e.g., 1hr 45m). Remind teams that a new inning starts the *instant* the 3rd out of the previous inning is recorded.
+    - **Hard Stop/Drop Dead:** If using a "Drop Dead" stop, confirm if the score **rolls back** to the last completed inning. Agreement here prevents post-game protests if a team is rallying when the clock expires.
+- **Ground Rules (The "Dead Ball" Boundary):**
+    - **Identify the Boundaries:** Walk the managers to the edge of the dugout. Identify where the permanent fence ends.
+    - **The Imaginary Line:** If fields are unfenced, establish a clear dead-ball line (e.g., "From the end of the backstop to the dugout corner, then an imaginary straight line to the outfield light pole").
+    - **Obstructions:** Note how to handle balls hitting trees, equipment buckets in the dugout path, or loose equipment on the field.
+- **Final Command:** "I'm here for the kids. If you have a rule clarification, call time. If you have a judgment disagreement, let it go. Shake hands, and let's have a clean game."
 
 ---
 
