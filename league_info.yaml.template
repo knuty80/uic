@@ -1,0 +1,31 @@
+# League Configuration Template
+# Copy this file to 'league_info.yaml' and fill in your details.
+
+# General League Info
+league_name: "[League Name]"
+league_abbreviation: "[Abbreviation]"
+league_id: "[RefTown Association ID]"
+
+# Registration
+registration_link: "[Link to registration form]"
+
+# Field & Statusfy Info
+agency_name: "[Local Parks Agency Name]"
+field_status_link: "[URL for field status]"
+field_hotline: "[Phone number for hotline]"
+status_deadline: "3:00 PM"
+
+# Pay Rates
+rate_plate: "$[Amount]"
+rate_base: "$[Amount]"
+rate_solo: "$[Amount]"
+
+# Examples for Import Mapping
+local_park_example: "[Park Name]"
+park_shortcut_example: "[Shortcut]"
+division_example: "[Division Name]"
+
+# Regional Contacts (Optional)
+district_number: "[District #]"
+district_uic_name: "[Name]"
+district_uic_email: "[Email]"

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umpire Field Guide (Cheat Sheet)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Screen preview styling */
+        body {
+            background-color: #f1f5f9;
+            padding: 2rem;
+            font-family: 'Inter', system-ui, sans-serif;
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* 11x8.5 Landscape 4-Fold Layout */
+        .page {
+            width: 11in;
+            height: 8.5in;
+            background: white;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            background-color: white;
+        }
+
+        /* Print-specific styling */
+        @page {
+            size: letter landscape;
+            margin: 0;
+        }
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+                display: block;
+            }
+            .page {
+                width: 11in;
+                height: 8.5in;
+                margin: 0;
+                box-shadow: none;
+            }
+            .no-print {
+                display: none !important;
+            }
+            /* Ensure fold lines print faintly */
+            .panel-1 { border-right: 1px dashed #cbd5e1 !important; border-bottom: 1px dashed #cbd5e1 !important; }
+            .panel-2 { border-bottom: 1px dashed #cbd5e1 !important; }
+            .panel-3 { border-right: 1px dashed #cbd5e1 !important; }
+        }
+
+        /* Panel constraints */
+        .panel {
+            padding: 0.35in;
+            box-sizing: border-box;
+            overflow: hidden;
+            display: flex;
+            flex-col;
+        }
+
+        /* Fold Lines */
+        .panel-1 { border-right: 1px dashed #cbd5e1; border-bottom: 1px dashed #cbd5e1; }
+        .panel-2 { border-bottom: 1px dashed #cbd5e1; }
+        .panel-3 { border-right: 1px dashed #cbd5e1; }
+        .panel-4 { }
+
+        /* Compact Table Styling */
+        .signal-table th {
+            background-color: #1e293b;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            text-align: left;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .signal-table td {
+            padding: 0.25rem 0.5rem;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.7rem;
+            line-height: 1.2;
+        }
+        .signal-table tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Print Button (Hidden when printing) -->
+    <div class="fixed top-4 right-4 no-print z-50">
+        <button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow-lg flex items-center gap-2 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+            Print Quad-Fold
+        </button>
+    </div>
+
+    <!-- 11 x 8.5 Page Container -->
+    <div class="page">
+        
+        <!-- PANEL 1: Top Left -->
+        <div class="panel panel-1 flex flex-col">
+            <header class="border-b-2 border-slate-900 pb-2 mb-3">
+                <h1 class="text-2xl font-black uppercase tracking-tight text-slate-900 leading-none">Umpire Field Guide</h1>
+                <div class="flex justify-between items-center mt-1">
+                    <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest">Tactical Cheat Sheet</h2>
+                    <div class="bg-red-700 text-white font-bold uppercase tracking-wider text-[10px] px-2 py-0.5 rounded">
+                        Be Brief. Loud. Assertive.
+                    </div>
+                </div>
+            </header>
+
+            <section class="flex-grow">
+                <h3 class="flex items-center gap-1.5 text-sm font-bold uppercase text-slate-900 border-b border-slate-200 pb-1 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    Plate Positioning & Mechanics
+                </h3>
+                <ul class="space-y-2 text-xs">
+                    <li class="flex flex-col">
+                        <span class="font-bold text-blue-700">The "Slot":</span>
+                        <span class="text-slate-600 leading-snug">Position yourself in the space between the catcher and the batter.</span>
+                    </li>
+                    <li class="flex flex-col">
+                        <span class="font-bold text-blue-700">Locked Position:</span>
+                        <span class="text-slate-600 leading-snug">Get set as the pitcher prepares. Hands behind the catcher to protect them.</span>
+                    </li>
+                    <li class="flex flex-col">
+                        <span class="font-bold text-blue-700">Clearing the Catcher:</span>
+                        <span class="text-slate-600 leading-snug">Once the ball is hit, "open the gate" by stepping back/out to let the catcher move. Follow the play toward 1st if needed.</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- PANEL 2: Top Right -->
+        <div class="panel panel-2 flex flex-col">
+            <section class="flex-grow">
+                <h3 class="flex items-center gap-1.5 text-sm font-bold uppercase text-slate-900 border-b border-slate-200 pb-1 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><polygon points="12 2 22 12 12 22 2 12 12 2"></polygon></svg>
+                    Base Positioning <span class="text-[10px] text-slate-500 font-normal tracking-normal ml-1">(60ft Diamond)</span>
+                </h3>
+                
+                <p class="text-[10px] mb-2 leading-tight"><strong class="text-slate-900">The Outside Theory:</strong> In Little League (where no leading off is allowed), base umpires start <strong class="uppercase text-red-600">outside</strong> the infield.</p>
+
+                <!-- Visual Field Map -->
+                <div class="bg-slate-50 rounded p-2 mb-2 border border-slate-200 relative overflow-hidden flex justify-center">
+                    <svg viewBox="0 0 100 100" class="w-[120px] h-auto">
+                        <!-- Grass -->
+                        <rect width="100" height="100" fill="#f8fafc"/>
+                        <!-- Infield Dirt -->
+                        <path d="M50 15 L85 50 L50 85 L15 50 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1"/>
+                        <!-- Foul lines -->
+                        <line x1="50" y1="85" x2="100" y2="35" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2 2"/>
+                        <line x1="50" y1="85" x2="0" y2="35" stroke="#94a3b8" stroke-width="1" stroke-dasharray="2 2"/>
+                        <!-- Bases -->
+                        <rect x="47.5" y="12.5" width="5" height="5" transform="rotate(45 50 15)" fill="white" stroke="#64748b" stroke-width="0.5"/> <!-- 2B -->
+                        <rect x="82.5" y="47.5" width="5" height="5" transform="rotate(45 85 50)" fill="white" stroke="#64748b" stroke-width="0.5"/> <!-- 1B -->
+                        <rect x="12.5" y="47.5" width="5" height="5" transform="rotate(45 15 50)" fill="white" stroke="#64748b" stroke-width="0.5"/> <!-- 3B -->
+                        <path d="M48 83 h4 v4 l-2 2 l-2 -2 z" fill="white" stroke="#64748b" stroke-width="0.5"/> <!-- Home -->
+                        
+                        <!-- Positions -->
+                        <circle cx="92" cy="62" r="3.5" fill="#b91c1c"/> 
+                        <text x="96" y="65" font-size="8" fill="#b91c1c" font-weight="bold" font-family="sans-serif">A</text>
+                        
+                        <circle cx="72" cy="28" r="3.5" fill="#1d4ed8"/> 
+                        <text x="76" y="31" font-size="8" fill="#1d4ed8" font-weight="bold" font-family="sans-serif">B</text>
+                        
+                        <circle cx="28" cy="28" r="3.5" fill="#1d4ed8"/> 
+                        <text x="18" y="31" font-size="8" fill="#1d4ed8" font-weight="bold" font-family="sans-serif">C</text>
+
+                        <!-- The Library -->
+                        <path d="M50 35 L65 50 L50 65 L35 50 Z" fill="rgba(34, 197, 94, 0.2)" stroke="#22c55e" stroke-dasharray="1 1" stroke-width="0.5"/>
+                        <text x="50" y="52" font-size="5" fill="#166534" font-weight="bold" text-anchor="middle" font-family="sans-serif">LIBRARY</text>
+                    </svg>
+                </div>
+
+                <ul class="space-y-1.5 text-[10px] leading-tight">
+                    <li class="pl-2 border-l-2 border-red-600">
+                        <span class="font-bold text-slate-900">Pos A (No Runners):</span> Foul territory, 10-15ft behind 1st.
+                    </li>
+                    <li class="pl-2 border-l-2 border-blue-600">
+                        <span class="font-bold text-slate-900">Pos B & C (Runners On):</span> Outfield grass behind infielders.
+                        <ul class="list-disc pl-3 text-slate-600">
+                            <li><strong class="text-slate-800">B:</strong> Behind 2nd baseman.</li>
+                            <li><strong class="text-slate-800">C:</strong> Behind shortstop.</li>
+                        </ul>
+                    </li>
+                    <li class="pl-2 border-l-2 border-green-600">
+                        <span class="font-bold text-slate-900">The "Library":</span> Working area <strong class="underline">inside</strong> diamond. Move here only <em class="font-bold">after</em> ball is in play.
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- PANEL 3: Bottom Left -->
+        <div class="panel panel-3 flex flex-col justify-between">
+            <section class="bg-slate-100 p-2.5 rounded border border-slate-200 mb-3">
+                <h3 class="flex items-center gap-1.5 text-sm font-bold uppercase text-slate-900 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-700"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                    Plate Meeting Checklist
+                </h3>
+                <ul class="space-y-1.5 text-[10px] leading-tight">
+                    <li class="flex items-start gap-1.5">
+                        <input type="checkbox" class="mt-0.5 w-3 h-3 rounded border-slate-300 text-blue-600" />
+                        <div><span class="font-bold text-slate-900">Equipment:</span> <span class="text-slate-600">Properly equipped (USSSA = Ejection).</span></div>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <input type="checkbox" class="mt-0.5 w-3 h-3 rounded border-slate-300 text-blue-600" />
+                        <div><span class="font-bold text-slate-900">Ground Rules:</span> <span class="text-slate-600">Field status & time limits (e.g., 1h 45m).</span></div>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <input type="checkbox" class="mt-0.5 w-3 h-3 rounded border-slate-300 text-blue-600" />
+                        <div><span class="font-bold text-slate-900">Roll-back:</span> <span class="text-slate-600">Confirm score rollback if time expires.</span></div>
+                    </li>
+                    <li class="flex items-start gap-1.5">
+                        <input type="checkbox" class="mt-0.5 w-3 h-3 rounded border-slate-300 text-blue-600" />
+                        <div><span class="font-bold text-slate-900">Communicate:</span> <span class="text-slate-600">Shake hands, set tone for fair game.</span></div>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 class="flex items-center gap-1.5 text-sm font-bold uppercase text-slate-900 border-b border-slate-200 pb-1 mb-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    Complex Scenarios
+                </h3>
+                <div class="space-y-1.5 text-[10px] leading-tight">
+                    <div class="bg-blue-50 p-1.5 rounded border border-blue-100">
+                        <span class="font-bold text-blue-900">1st to 3rd:</span>
+                        <span class="text-slate-700">Plate ump covers 3rd on base hit with R1. Coordinate with signals.</span>
+                    </div>
+                    <div class="bg-blue-50 p-1.5 rounded border border-blue-100">
+                        <span class="font-bold text-blue-900">Timing Plays:</span>
+                        <span class="text-slate-700">Plate initiates signal; Base <strong class="underline">must echo</strong>.</span>
+                    </div>
+                    <div class="bg-red-50 p-1.5 rounded border border-red-100">
+                        <span class="font-bold text-red-900">Rundowns:</span>
+                        <span class="text-slate-700">Split the field. Eye contact! Shout <strong class="italic text-red-700">"Partner, I’ve got this—Out!"</strong></span>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- PANEL 4: Bottom Right -->
+        <div class="panel panel-4 flex flex-col relative">
+            <h3 class="flex items-center gap-1.5 text-sm font-bold uppercase text-slate-900 border-b border-slate-200 pb-1 mb-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>
+                Verbal & Physical Signals
+            </h3>
+            
+            <table class="w-full signal-table border border-slate-200 rounded overflow-hidden shadow-sm mt-1">
+                <thead>
+                    <tr>
+                        <th class="w-1/4">Situation</th>
+                        <th class="w-1/4">Verbal</th>
+                        <th class="w-1/2">Physical Action</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white text-slate-700">
+                    <tr class="hover:bg-slate-50">
+                        <td class="font-bold text-slate-900">Strike</td>
+                        <td class="font-bold text-red-600">"Strike!"</td>
+                        <td>Right hand forward (pound wall).</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="font-bold text-slate-900">Ball</td>
+                        <td class="font-bold text-blue-600">"Ball!"</td>
+                        <td>None. Use LH fingers for count.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="font-bold text-slate-900">Full Count</td>
+                        <td class="font-bold text-slate-800">"Full Count!"</td>
+                        <td>3 fingers LH / 2 fingers RH (<strong class="text-red-600 underline">No fist bumps</strong>).</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="font-bold text-slate-900">Outs</td>
+                        <td class="font-bold text-red-600">"Out!"</td>
+                        <td>Fist pump or point.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="font-bold text-slate-900">Safe</td>
+                        <td class="font-bold text-green-600">"Safe!"</td>
+                        <td>Arms spread wide.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="font-bold text-slate-900">No Tag</td>
+                        <td class="font-bold text-slate-800">"No tag!"</td>
+                        <td>Safe motion.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Footer versioning -->
+            <div class="absolute bottom-4 right-4 text-[9px] text-slate-400 font-mono no-print">
+                v1.1 | 4-Fold Layout
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
