@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ league_name }} UIC Handbook</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #1e293b;
+            border-bottom: 2px solid #1e293b;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            font-size: 28pt;
+        }
+        h2 {
+            color: #0f172a;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            font-size: 20pt;
+        }
+        h3 {
+            color: #334155;
+            margin-top: 20px;
+            font-size: 16pt;
+        }
+        p {
+            margin-bottom: 15px;
+            font-size: 11pt;
+        }
+        ul, ol {
+            margin-bottom: 15px;
+            padding-left: 30px;
+        }
+        li {
+            margin-bottom: 5px;
+            font-size: 11pt;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 10pt;
+        }
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f8fafc;
+            font-weight: bold;
+        }
+        blockquote {
+            border-left: 4px solid #cbd5e1;
+            padding: 10px 20px;
+            margin: 20px 0;
+            background-color: #f8fafc;
+            font-style: italic;
+        }
+        .page-break {
+            page-break-after: always;
+        }
+        .no-print {
+            background: #1e293b;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .no-print button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        @media print {
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-print">
+        <p><strong>Google Docs Import Pro-Tip:</strong> Press Ctrl+A to select all, then Ctrl+C to copy. Paste (Ctrl+V) directly into a new Google Doc for perfect formatting.</p>
+    </div>
+
+    <center>
+        <h1>{{ league_name }}: Umpire Coordinator (UIC) Handbook</h1>
+        <p><i>A Veteran's Playbook for Program Excellence</i></p>
+    </center>
+
+    <div class="page-break"></div>
+
+    <h2>1. UIC Philosophy: The Veteran's Perspective</h2>
+    <p>As a veteran UIC your role is not just "scheduling." You are the guardian of the game's integrity and the protector of the youth who step onto the turf in blue.</p>
+
+    <h3>The "Shield" Mentality</h3>
+    <p>Your primary responsibility is to be the shield between the umpires (especially youth umpires) and external pressures from coaches or administrative bodies.</p>
+    <ul>
+        <li>Emotional responses from the field or policy friction from above should not reach the youth umpires.</li>
+        <li>You must be the one person who says: "The umpire's decision is final, and any breach of sportsmanship directed at our youth umpires is a non-starter."</li>
+    </ul>
+
+    <h3>Training is Recruitment</h3>
+    <p>You don't "hire" umpires; you build them.</p>
+    <ul>
+        <li>A youth umpire who feels supported after a tough call will come back. A youth umpire who feels abandoned by their leadership will quit.</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <h2>2. RefTown Mastery: Season Setup & Management</h2>
+
+    <h3>Registration & Onboarding</h3>
+    <ul>
+        <li><strong>The Global Link:</strong> <a href="http://www.reftown.com">www.reftown.com</a> -> Register -> Official.</li>
+        <li><strong>The Direct League Link:</strong> <a href="https://reftown.com/registration.asp?RID=1&RegType=Official&Assoc={{ league_id }}">reftown.com/registration.asp?RID=1&RegType=Official&Assoc={{ league_id }}</a></li>
+        <li><strong>Resilience Navigation:</strong> If the direct link breaks, go to the RefTown Home Page -> <strong>Register</strong> -> Select <strong>Official</strong> -> Search for <strong>{{ league_name }} ({{ league_id }})</strong>.</li>
+        <li><strong>Admin Management:</strong> Once logged in as an admin, go to <strong>Other -> Interactive forms</strong> to manage the specific fields on this form.</li>
+        <li><strong>The Onboarding Loop (The "Pain Point"):</strong> RefTown's registration form captures basic data, but it does <strong>not</strong> allow for the direct upload or validation of compliance data (Background Checks/Concussion Training) during the initial sign-up.</li>
+    </ul>
+
+    <h3>The Official Onboarding Workflow</h3>
+    <ol>
+        <li><strong>Initial Screening:</strong> When a new registration appears in the pending queue, check the age.</li>
+        <li><strong>Safety Officer Coordination (Adults Only):</strong> If the applicant is an adult (18+), you <strong>must</strong> notify the League Safety Officer. Do not approve the registration until the Safety Officer confirms the background check is cleared.</li>
+        <li><strong>Approval:</strong> Once cleared by the Safety Officer, approve the registration.</li>
+        <li><strong>The Directory Pivot:</strong> Navigate to the <strong>Directory</strong> in the main menu to finalize the profile.</li>
+        <li><strong>The Search:</strong> Find the newly approved umpire.</li>
+        <li><strong>The Edit:</strong> Click on the umpire's name to open their full profile.</li>
+        <li><strong>Additional Info:</strong> Navigate to the <strong>"Additional Info"</strong> section to record:
+            <ul>
+                <li><strong>Background Check Status:</strong> Mark as cleared once confirmed by the Safety Officer.</li>
+                <li><strong>Concussion Training Completion:</strong> Verify annually.</li>
+                <li><strong>Official Positions:</strong> Use the <strong>'P'</strong> tag for Plate-qualified officials.</li>
+            </ul>
+        </li>
+    </ol>
+    <p><strong>Support Resources:</strong> Visit the <a href="https://www.reftown.com/">RefTown Home Page</a> and navigate to the <strong>Support</strong> section for advanced form configuration and "Interactive Form" archiving.</p>
+
+    <h3>Handling Inquiries & Recruitment</h3>
+    <p>You will receive automated emails from <strong>RefTown Feedback</strong> (Subject: "Umpiring little league"). These are high-value leads, often former players from your local high schools.</p>
+    <ul>
+        <li><strong>The "High-Value" Lead:</strong> Former players are your best recruits. They know the fields, the culture, and the game.</li>
+        <li><strong>Response Template:</strong>
+            <blockquote>"Hello [Name], thanks for reaching out! It's great to hear you played at {{ league_abbreviation }}. We'd love to have you back in blue. To get started, please register here: {{ registration_link }}. Once you've signed up, I'll send you the info for the next training session and how to self-assign games. Welcome back!"</blockquote>
+        </li>
+        <li><strong>The Follow-up:</strong> Don't just send the link. Mention the competitive pay rates—for a high schooler, this is the best hourly wage they can find.</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <h2>3. Crisis Management: Rainouts & Cancellations</h2>
+    <h3>The Field Status Rule</h3>
+    <p><strong>Monitoring:</strong> Watch your local field status app or agency website like a hawk.</p>
+    <ul>
+        <li><strong>The Link:</strong> <a href="{{ field_status_link }}">{{ agency_name }} Field Status</a></li>
+        <li><strong>The Hotline:</strong> If the digital status is down, call the {{ agency_name }} Field Condition Hotline at <strong>{{ field_hotline }}</strong>.</li>
+        <li><strong>The Update:</strong> Ensure you check for updates by the designated daily deadline (e.g., {{ status_deadline }}).</li>
+        <li><strong>Action:</strong> If fields are closed, cancel in RefTown immediately. Do not wait for coach consensus.</li>
+    </ul>
+
+    <h3>Show-up Pay</h3>
+    <p><strong>The Rule:</strong> If an umpire travels to the field because the cancellation wasn't communicated in a "fair" amount of time, the league MUST pay them. Proactive monitoring saves the budget.</p>
+
+    <div class="page-break"></div>
+
+    <h2>4. Financials: Pay & Payroll</h2>
+    <h3>Pay Rates</h3>
+    <ul>
+        <li><strong>Plate Umpire:</strong> {{ rate_plate }}</li>
+        <li><strong>Base Umpire:</strong> {{ rate_base }}</li>
+        <li><strong>Solo Game:</strong> If an umpire works a game solo, they work the plate and the rate is {{ rate_solo }}.</li>
+    </ul>
+
+    <h3>Payroll Cycle & Process</h3>
+    <ul>
+        <li><strong>Cycle:</strong> Monthly. Successors should manage umpire expectations accordingly.</li>
+        <li><strong>Payment Method:</strong> Physical Checks. Successors should manage umpire expectations accordingly.</li>
+        <li><strong>UIC Role:</strong> At the end of each month, generate the payroll report in RefTown and submit it to the Treasurer. Verify every game for solo-rate adjustments before submission.</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <h2>5. Coach Relations & Boundaries</h2>
+    <h3>The Transparency Loop</h3>
+    <ul>
+        <li><strong>Protocol:</strong> Communicate with the pool only when specific game slots need to be filled.</li>
+        <li><strong>Manual BCC:</strong> BCC the teams (coaches) on manual pool requests when a game is in jeopardy of being uncovered. This gives coaches visibility and prevents inquiries.</li>
+    </ul>
+
+    <h3>Zero Tolerance & Privacy</h3>
+    <p><strong>The Boundary:</strong> Coaches are strictly forbidden from texting umpires or parents directly to solicit coverage.</p>
+    <p><strong>Privacy Protection:</strong> The umpire pool's contact information is shared in RefTown for the sole purpose of game management.</p>
+    <p><strong>The Penalty:</strong> Formal report to the Board and removal of assigned umpires for the offending team's upcoming games.</p>
+
+    <div class="page-break"></div>
+
+    <h2>6. Safety & The "Guardian Rule"</h2>
+    <h3>Supervision</h3>
+    <ul>
+        <li><strong>The Rule:</strong> Every youth umpire without a parent on-site must have a designated "Board Member of the Day" (MOD) as their guardian.</li>
+        <li><strong>Check-In:</strong> The MOD must introduce themselves to the youth umpire before the game.</li>
+        <li><strong>Night Games:</strong> No youth umpire walks to their car alone.</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <h2>7. Pitch Count Enforcement (Safety & LL Rules)</h2>
+    <p>Pitch counts are the most critical safety rule in Little League. As UIC, you are the auditor-in-chief of arm safety.</p>
+
+    <h3>The International Mandate (Rule 0.07 / Regulation VI)</h3>
+    <p>These rules exist to prevent permanent orthopedic injuries (Little League Elbow). Ignoring them is negligence.</p>
+
+    <h3>Audit & Consequences</h3>
+    <ul>
+        <li><strong>Weekly Audit:</strong> Use the "League Pitch Count Report" in GameChanger (Org Admin view).</li>
+        <li><strong>Rest Violations:</strong> Ensure pitchers follow rest requirements (1-4 days based on count).</li>
+        <li><strong>Catcher/Pitcher Conflicts:</strong> Verify compliance with cross-over rules.</li>
+    </ul>
+    <p><strong>Consequences:</strong> Immediate forfeit, Manager suspension, and double ineligibility for the player.</p>
+
+    <div class="page-break"></div>
+
+    <h2>8. Resources & Regional Support</h2>
+    <p>The UIC role is demanding, but you are part of a larger network.</p>
+
+    <h3>District Support</h3>
+    <ul>
+        <li><strong>District:</strong> Little League District {{ district_number }}</li>
+        <li><strong>District UIC:</strong> {{ district_uic_name }}</li>
+        <li><strong>Contact:</strong> <a href="mailto:{{ district_uic_email }}">{{ district_uic_email }}</a></li>
+    </ul>
+
+    <h3>Official Documentation</h3>
+    <ul>
+        <li><strong>LL University:</strong> <a href="https://www.littleleague.org/university/">www.littleleague.org/university/</a></li>
+        <li><strong>RefTown Support:</strong> <a href="https://www.reftown.com/support_home.asp">www.reftown.com/support_home.asp</a></li>
+    </ul>
+
+    <hr>
+    <p><center><small>Template Version. Dedicated to Volunteer Excellence.</small></center></p>
+
+</body>
+</html>
