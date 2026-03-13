@@ -2,14 +2,22 @@
 
 If you are a Board Member or UIC who wants to customize this handbook without using Git or Python, follow these steps:
 
-## Step 1: Copy the Content
+## Step 1: Copy the Content (Choose One)
+
+### Method A: The HTML "Gold Standard" (Best Formatting)
+1. Open the file **[GENERIC_HANDBOOK.html](GENERIC_HANDBOOK.html)** in this folder using your web browser (Double-click it).
+2. Press **Ctrl+A** to select everything on the page.
+3. Press **Ctrl+C** to Copy.
+
+### Method B: The Markdown Method
 1. Open the file **[GENERIC_HANDBOOK.md](GENERIC_HANDBOOK.md)** in this folder.
-2. Select all the text and Copy it (Ctrl+C).
+2. Select all the text and Copy it (**Ctrl+C**).
 
 ## Step 2: Paste into Google Docs
 1. Create a new Google Doc.
-2. Paste the text (Ctrl+V).
-3. **Important:** Google Docs will automatically convert most of the formatting (Headings, Lists, Tables) from the Markdown text.
+2. Paste the text (**Ctrl+V**).
+3. **If using Method A:** Your formatting (Headings, Tables, Bolds, and Spacing) will be preserved exactly as it looks in the browser.
+4. **If using Method B:** Google Docs will attempt to convert the Markdown, but some advanced formatting may require manual adjustment.
 
 ## Step 3: Global Find & Replace
 Use Google Docs' **Find & Replace** (Ctrl+H) to quickly customize the document:

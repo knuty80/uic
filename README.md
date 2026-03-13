@@ -36,12 +36,14 @@ If you have Python and `PyYAML` installed, you can automatically inject your dat
 ```bash
 python3 render_guides.py
 ```
-This will create `.rendered` versions of the handbook and HTML guides (e.g., `UIC_HANDBOOK.rendered.md`).
+This will create a **`rendered/`** folder containing:
+- `UIC_HANDBOOK.rendered.md`: Branded handbook.
+- `handbook-template.rendered.html`: Branded HTML (Best for Google Docs import).
+- `ump-guide-cheat-sheet.rendered.html`: Branded tactical cheat sheet.
 
 ### 3. Generate PDFs
-1. Open any `.rendered.html` file in your browser.
-2. Press `Ctrl + P` (Print).
-3. Select **Save as PDF** as the destination. Ensure **Background Graphics** is checked for the best look.
+1. Open any `.rendered.html` file from the `rendered/` folder in your browser.
+2. Press `Ctrl + P` (Print) -> Select **Save as PDF**.
 
 ---
 3. **Template Parity:** The handbook uses placeholders like `[League Name]` which correspond to the keys in your configuration file.

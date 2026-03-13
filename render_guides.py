@@ -41,29 +41,36 @@ def main():
     files_to_render = [
         ("README.md", "README.rendered.md"),
         ("UIC_HANDBOOK.md", "UIC_HANDBOOK.rendered.md"),
-        ("templates/html/ump-guide-cheat-sheet.html", "templates/html/ump-guide-cheat-sheet.rendered.html"),
-        ("templates/html/scorekeepers-cheat-sheet.html", "templates/html/scorekeepers-cheat-sheet.rendered.html")
+        ("templates/html/handbook-template.html", "handbook-template.rendered.html"),
+        ("templates/html/ump-guide-cheat-sheet.html", "ump-guide-cheat-sheet.rendered.html"),
+        ("templates/html/scorekeepers-cheat-sheet.html", "scorekeepers-cheat-sheet.rendered.html")
     ]
 
     print(f"--- {{ league_name if context.get('league_name') else 'League' }} Rendering Engine ---")
     
-    # 3. Process files
+    # 3. Create output directory
+    output_dir = "rendered"
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    # 4. Process files
     for src, dst in files_to_render:
         if not os.path.exists(src):
             print(f"[-] Skipping: {src} (not found)")
             continue
             
-        print(f"[+] Rendering: {src} -> {dst}")
+        dst_path = os.path.join(output_dir, dst)
+        print(f"[+] Rendering: {src} -> {dst_path}")
         with open(src, "r") as f:
             template = f.read()
         
         rendered = render_template(template, context)
         
-        with open(dst, "w") as f:
+        with open(dst_path, "w") as f:
             f.write(rendered)
 
-    print("\n[!] Success: All guides have been rendered with league data.")
-    print("[!] Instruction: Open .rendered.html files in Chrome to 'Print to PDF'.")
+    print(f"\n[!] Success: All guides have been rendered in the '{output_dir}/' folder.")
+    print(f"[!] Instruction: Open '{output_dir}/*.rendered.html' files in Chrome to 'Print to PDF'.")
 
 if __name__ == "__main__":
     main()
