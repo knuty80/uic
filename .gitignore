@@ -1,4 +1,6 @@
 MISSION_LOG.md
 league_info.yaml
+*.rendered.*
+rendered/
 node_modules/
 .DS_Store

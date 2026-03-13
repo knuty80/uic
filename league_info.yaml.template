@@ -14,6 +14,7 @@ agency_name: "[Local Parks Agency Name]"
 field_status_link: "[URL for field status]"
 field_hotline: "[Phone number for hotline]"
 status_deadline: "3:00 PM"
+time_limit: "1 hr 45 min"
 
 # Pay Rates
 rate_plate: "$[Amount]"
