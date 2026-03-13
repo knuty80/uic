@@ -203,8 +203,25 @@
             </div>
 
             <div class="form-group">
+                <label for="assignment-tool">1. Umpire Assigning Tool</label>
+                <select id="assignment-tool" class="btn btn-ghost" style="width: 100%; text-align: left;" onchange="handleToolChange()">
+                    <option value="RefTown">RefTown</option>
+                    <option value="ArbiterSports">ArbiterSports</option>
+                    <option value="Assignr">Assignr</option>
+                    <option value="Horizon Web Ref">Horizon Web Ref</option>
+                    <option value="Google Sheets">Google Sheets (Manual)</option>
+                    <option value="Generic Association">Local Association (GTO/PBUA/etc.)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
                 <label for="file-upload">2. Import League YAML (PII)</label>
                 <input type="file" id="file-upload" accept=".yaml,.yml" class="btn btn-ghost">
+            </div>
+
+            <div class="form-group" id="md-load-group" style="display:none;">
+                <label for="md-upload">3. Load Handbook Source</label>
+                <input type="file" id="md-upload" accept=".md" class="btn btn-ghost">
             </div>
         </div>
 
@@ -250,27 +267,49 @@
             try {
                 const response = await fetch('UIC_HANDBOOK.md');
                 if (!response.ok) throw new Error();
-                markdownContent = await response.text();
                 processMarkdown();
             } catch (err) {
                 document.getElementById('md-load-group').style.display = 'flex';
             }
         }
 
+        function handleToolChange() {
+            updateHandbook();
+            renderForm();
+        }
+
         function processMarkdown() {
             if (!markdownContent) return;
             
-            // Detect all {{ variable }} patterns
-            const matches = markdownContent.match(/\{\{\s*[\w_]+\s*\}\}/g) || [];
-            variables = [...new Set(matches.map(m => m.replace(/\{\{\s*|\s*\}\}/g, '')))];
-            
-            renderForm();
             updateHandbook();
+            renderForm();
         }
 
         function renderForm() {
             formEl.innerHTML = '';
+            
+            // Re-detect variables from the RENDERED handbook to keep sidebar relevant
+            // This ensures we only show inputs for the active Platform Section
+            const renderedHtml = handbookEl.innerHTML;
+            const varRegex = /\[([\w_ ]+)\]/g; // Match the placeholders like [LEAGUE NAME]
+            // Actually, better to detect from the markdown AFTER conditional processing
+            
+            const selectedTool = document.getElementById('assignment-tool').value;
+            let filteredMd = markdownContent;
+
+            // Simple conditional processing for variable detection
+            const conditionalRegex = /\[\[\s*IF\s+([\w_]+)\s*==\s*'([^']+)'\s*\]\]([\s\S]*?)\[\[\s*ENDIF\s*\]\]/g;
+            filteredMd = filteredMd.replace(conditionalRegex, (match, key, value, content) => {
+                const currentVal = (key === 'assignment_tool') ? selectedTool : ''; 
+                return (currentVal === value) ? content : '';
+            });
+
+            const varMatches = filteredMd.match(/\{\{\s*[\w_]+\s*\}\}/g) || [];
+            variables = [...new Set(varMatches.map(m => m.replace(/\{\{\s*|\s*\}\}/g, '')))];
+
             variables.forEach(v => {
+                if (v === 'assignment_tool') return; // Skip the tool selector var
+                
                 const div = document.createElement('div');
                 div.className = 'form-group';
                 
@@ -286,10 +325,26 @@
         function updateHandbook() {
             if (!markdownContent) return;
 
+            const selectedTool = document.getElementById('assignment-tool').value;
             let renderedMd = markdownContent;
+
+            // 1. Process Conditionals: [[ IF var == 'val' ]] ... [[ ENDIF ]]
+            // Support simple equality for now
+            const conditionalRegex = /\[\[\s*IF\s+([\w_]+)\s*==\s*'([^']+)'\s*\]\]([\s\S]*?)\[\[\s*ENDIF\s*\]\]/g;
+            renderedMd = renderedMd.replace(conditionalRegex, (match, key, value, content) => {
+                const currentVal = (key === 'assignment_tool') ? selectedTool : ''; 
+                // In future, could check other form values
+                return (currentVal === value) ? content : '';
+            });
+
+            // 2. Process Variables: {{ variable }}
             variables.forEach(v => {
                 const input = document.getElementById(v);
-                const val = (input && input.value) ? input.value : `[${v.replace(/_/g, ' ').toUpperCase()}]`;
+                let val = (input && input.value) ? input.value : `[${v.replace(/_/g, ' ').toUpperCase()}]`;
+                
+                // Special case for assignment_tool variable if it appears in text
+                if (v === 'assignment_tool') val = selectedTool;
+
                 const regex = new RegExp(`\\{\\{\\s*${v}\\s*\\}\\}`, 'g');
                 renderedMd = renderedMd.replace(regex, val);
             });
