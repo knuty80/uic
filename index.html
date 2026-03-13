@@ -198,12 +198,12 @@
 
         <div id="setup-controls">
             <div class="form-group" id="md-load-group" style="display:none;">
-                <label for="md-upload">1. Load Handbook Content</label>
+                <label for="md-upload">1. Load Handbook Source</label>
                 <input type="file" id="md-upload" accept=".md" class="btn btn-ghost">
             </div>
 
             <div class="form-group">
-                <label for="assignment-tool">1. Umpire Assigning Tool</label>
+                <label for="assignment-tool">2. Platform Mastery Selector</label>
                 <select id="assignment-tool" class="btn btn-ghost" style="width: 100%; text-align: left;" onchange="handleToolChange()">
                     <option value="RefTown">RefTown</option>
                     <option value="ArbiterSports">ArbiterSports</option>
@@ -215,13 +215,8 @@
             </div>
 
             <div class="form-group">
-                <label for="file-upload">2. Import League YAML (PII)</label>
+                <label for="file-upload">3. Import League YAML (PII)</label>
                 <input type="file" id="file-upload" accept=".yaml,.yml" class="btn btn-ghost">
-            </div>
-
-            <div class="form-group" id="md-load-group" style="display:none;">
-                <label for="md-upload">3. Load Handbook Source</label>
-                <input type="file" id="md-upload" accept=".md" class="btn btn-ghost">
             </div>
         </div>
 
@@ -267,6 +262,7 @@
             try {
                 const response = await fetch('UIC_HANDBOOK.md');
                 if (!response.ok) throw new Error();
+                markdownContent = await response.text();
                 processMarkdown();
             } catch (err) {
                 document.getElementById('md-load-group').style.display = 'flex';
