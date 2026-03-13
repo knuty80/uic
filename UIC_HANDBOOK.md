@@ -123,7 +123,7 @@ If the internal pool cannot produce an umpire for a game, the following protocol
 - **Cycle:** **Monthly**. While umpires often request bi-weekly pay, the current policy is monthly to manage the administrative workload for the UIC (RefTown reports) and the Treasurer (check cutting).
 - **Payment Method:** **Physical Checks**. We do not use direct deposit.
 - **The "Ugh" Factor:** Checks are sent via USPS and typically take **10 days** to arrive after being cut. Successors should manage umpire expectations accordingly.
-- **UIC Role:** At the end of each month, generate the payroll report in RefTown and submit it to the Treasurer. Verify every game for solo-rate adjustments ($60) before submission to avoid payment errors that take another month to fix.
+- **UIC Role:** At the end of each month, generate the payroll report in RefTown and submit it to the Treasurer. Verify every game for solo-rate adjustments ({{ rate_solo }}) before submission to avoid payment errors that take another month to fix.
 
 ---
 
@@ -255,10 +255,32 @@ Violation of pitching regulations is a non-negotiable infraction that results in
 3. **Double Ineligibility:** The pitcher whose violation triggered the event is ineligible to pitch in the game for which the manager is suspended.
 4. **Post-Season Impact:** Documented failures to manage pitch counts can disqualify an entire team or manager from post-season (All-Stars) selection.
 
-## The UIC's Duty
-If an umpire is notified by the scorekeeper that a pitcher has reached their limit, the umpire MUST inform the manager and remove the pitcher. This is not a choice; it is a mandatory safety action.
+## Pitching Limitations & Rest Reference
+Scorekeepers must track pitches and alert the head coach when a pitcher is within 15 pitches of their limit. **Accuracy is critical: exact pitch counts dictate required rest days and protect player arms.**
+
+### Daily Pitch Limits
+| Age Group | Daily Pitch Limit |
+| :--- | :--- |
+| **7-8 Years** | 50 pitches per day |
+| **9-10 Years** | 75 pitches per day |
+| **11-12 Years** | 85 pitches per day |
+
+### Required Rest Days
+| Pitches Thrown | Required Rest Days |
+| :--- | :--- |
+| **1 - 20** | 0 Calendar Days |
+| **21 - 35** | 1 Calendar Day |
+| **36 - 50** | 2 Calendar Days |
+| **51 - 65** | 3 Calendar Days |
+| **66+** | 4 Calendar Days |
+
+*Note: A pitcher may finish the current batter if the limit is reached during an at-bat.*
+
+### Defense Position Numbers (GameChanger)
+**1:** Pitcher | **2:** Catcher | **3:** 1st Base | **4:** 2nd Base | **5:** 3rd Base | **6:** Shortstop | **7:** Left Field | **8:** Center Field | **9:** Right Field
 
 ---
+
 
 # 11. Resources & Regional Support
 
