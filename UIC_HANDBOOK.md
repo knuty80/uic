@@ -37,7 +37,7 @@ You don't "hire" umpires; you build them.
         - **Background Check Status:** Mark as cleared once confirmed by the Safety Officer.
         - **Concussion Training Completion:** Verify annually.
         - **Official Positions:** Use the **'P'** tag for Plate-qualified officials.
-- **Support Resources:** Visit the [RefTown Home Page](https://www.reftown.com/) and navigate to the **Support** section for advanced form configuration and "Interactive Form" archiving.
+- **Support Resources:** Visit the [RefTown Home Page](https://www.reftown.com/) and navigate to the **Support** section (or visit the [Direct Support Center](https://reftown.com/kbp/index.php)) for advanced form configuration and "Interactive Form" archiving.
 
 ## Handling Inquiries & Recruitment
 You will receive automated emails from **RefTown Feedback** (Subject: "Umpiring little league"). These are high-value leads, often former players from your local high schools.
@@ -160,7 +160,7 @@ If the internal pool cannot produce an umpire for a game, the following protocol
 The following resources are provided by District 4 and Little League International for year-round development:
 - **[Little League Umpire Registry](https://www.littleleagueumpire.org/):** Sign up for free access to videos, training aids, and announcements.
 - **[Little League University - Umpire Portal](https://www.littleleague.org/university/umpires/):** The primary hub for all training. Search for **"Stance Basics"** or **"Three Steps"** to find the latest ball/strike positioning guides.
-- **The Rulebook App:** Download for free ([iOS](https://apps.apple.com/us/app/little-league-rulebook/id1076694862) / [Android](https://play.google.com/store/apps/details?id=com.littleleague.rulebook)) for official rules and 2026 updates.
+- **The Rulebook App:** Search for "Little League Rulebook" in the Apple App Store or Google Play Store to install the official rules and 2026 updates on your mobile device.
 - **District Clinics:** Watch for emails from the District UIC regarding the annual Free Mechanics Clinic and regional training events.
 
 ---
@@ -271,7 +271,7 @@ The UIC role is demanding, but you are part of a larger network. Use these resou
 
 ## Official Documentation
 - **LL University:** The gold standard for rules education. [LL University Portals](https://www.littleleague.org/university/)
-- **RefTown Support:** For technical issues with the assignment platform. [RefTown Support Center](https://www.reftown.com/support_home.asp)
+- **RefTown Support:** For technical issues with the assignment platform. [RefTown Support Center](https://reftown.com/kbp/index.php)
 
 ---
 *Template Version. Dedicated to Volunteer Excellence.*

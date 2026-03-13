@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIC Handbook | Interactive Dashboard</title>
+    <!-- External Libraries (CDN) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.1/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-slate: #f1f5f9;
+            --accent-gold: #fbbf24;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --glass: rgba(255, 255, 255, 0.9);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f8fafc;
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar Navigation */
+        #sidebar {
+            width: 380px;
+            background: #ffffff;
+            border-right: 1px solid #e2e8f0;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow-y: auto;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.03);
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        #dynamic-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        input {
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid #e2e8f0;
+            color: var(--text-main);
+        }
+
+        .btn-ghost:hover {
+            background: var(--secondary-slate);
+        }
+
+        /* Main Content Preview */
+        #preview-container {
+            flex-grow: 1;
+            padding: 40px;
+            overflow-y: auto;
+            display: flex;
+            justify-content: center;
+            background-color: #f1f5f9;
+        }
+
+        #handbook-content {
+            background: white;
+            width: 100%;
+            max-width: 850px;
+            padding: 60px 80px;
+            border-radius: 4px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            min-height: 11in;
+            line-height: 1.6;
+        }
+
+        /* Print Typography Styling */
+        #handbook-content h1 {
+            border-bottom: 3px solid var(--primary-blue);
+            padding-bottom: 12px;
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        #handbook-content h2 {
+            border-bottom: 1px solid #e2e8f0;
+            margin-top: 40px;
+            color: #0f172a;
+        }
+
+        #handbook-content blockquote {
+            background: #f8fafc;
+            border-left: 4px solid #cbd5e1;
+            padding: 15px 25px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+
+        #handbook-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        #handbook-content th, #handbook-content td {
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+
+        #handbook-content th {
+            background: #f8fafc;
+        }
+
+        @media print {
+            #sidebar { display: none; }
+            body { background: white; height: auto; overflow: visible; }
+            #preview-container { padding: 0; background: white; }
+            #handbook-content { box-shadow: none; max-width: 100%; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside id="sidebar">
+        <div class="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M12 12l8-8M12 12l8 8M12 12l-8 8M12 12l-8-8"/></svg>
+            UIC Studio
+        </div>
+
+        <div id="setup-controls">
+            <div class="form-group" id="md-load-group" style="display:none;">
+                <label for="md-upload">1. Load Handbook Content</label>
+                <input type="file" id="md-upload" accept=".md" class="btn btn-ghost">
+            </div>
+
+            <div class="form-group">
+                <label for="file-upload">2. Import League YAML (PII)</label>
+                <input type="file" id="file-upload" accept=".yaml,.yml" class="btn btn-ghost">
+            </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
+
+        <div id="dynamic-form">
+            <!-- Form fields will be generated here -->
+            <p style="font-size:0.8rem; color:var(--text-light); text-align:center;">Load a handbook to see settings...</p>
+        </div>
+
+        <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+            <button class="btn btn-primary" onclick="window.print()">
+                Export to PDF
+            </button>
+            <button class="btn btn-ghost" onclick="copyToClipboard()">
+                Copy for Google Docs
+            </button>
+        </div>
+    </aside>
+
+    <main id="preview-container">
+        <article id="handbook-content">
+            <div style="text-align:center; padding-top: 100px; color: var(--text-light);">
+                <h2>Welcome to UIC Studio</h2>
+                <p>Please load your <code>UIC_HANDBOOK.md</code> to begin.</p>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        let markdownContent = '';
+        let variables = [];
+        const handbookEl = document.getElementById('handbook-content');
+        const formEl = document.getElementById('dynamic-form');
+
+        async function fetchMarkdown() {
+            try {
+                const response = await fetch('UIC_HANDBOOK.md');
+                if (!response.ok) throw new Error();
+                markdownContent = await response.text();
+                processMarkdown();
+            } catch (err) {
+                document.getElementById('md-load-group').style.display = 'flex';
+            }
+        }
+
+        function processMarkdown() {
+            if (!markdownContent) return;
+            
+            // Detect all {{ variable }} patterns
+            const matches = markdownContent.match(/\{\{\s*[\w_]+\s*\}\}/g) || [];
+            variables = [...new Set(matches.map(m => m.replace(/\{\{\s*|\s*\}\}/g, '')))];
+            
+            renderForm();
+            updateHandbook();
+        }
+
+        function renderForm() {
+            formEl.innerHTML = '';
+            variables.forEach(v => {
+                const div = document.createElement('div');
+                div.className = 'form-group';
+                
+                const labelStr = v.replace(/_/g, ' ');
+                div.innerHTML = `
+                    <label for="${v}">${labelStr}</label>
+                    <input type="text" id="${v}" placeholder="Enter ${labelStr}..." oninput="updateHandbook()">
+                `;
+                formEl.appendChild(div);
+            });
+        }
+
+        function updateHandbook() {
+            if (!markdownContent) return;
+
+            let renderedMd = markdownContent;
+            variables.forEach(v => {
+                const input = document.getElementById(v);
+                const val = (input && input.value) ? input.value : `[${v.replace(/_/g, ' ').toUpperCase()}]`;
+                const regex = new RegExp(`\\{\\{\\s*${v}\\s*\\}\\}`, 'g');
+                renderedMd = renderedMd.replace(regex, val);
+            });
+
+            handbookEl.innerHTML = marked.parse(renderedMd);
+        }
+
+        // Event Listeners
+        document.getElementById('md-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                markdownContent = e.target.result;
+                processMarkdown();
+            };
+            reader.readAsText(file);
+        });
+
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const doc = jsyaml.load(e.target.result);
+                    for (const [key, value] of Object.entries(doc)) {
+                        const input = document.getElementById(key);
+                        if (input) input.value = value;
+                    }
+                    updateHandbook();
+                } catch (err) {
+                    alert('Error parsing YAML.');
+                }
+            };
+            reader.readAsText(file);
+        });
+
+        async function copyToClipboard() {
+            const content = handbookEl.innerHTML;
+            const blob = new Blob([content], { type: 'text/html' });
+            const data = [new ClipboardItem({ 'text/html': blob })];
+            try {
+                await navigator.clipboard.write(data);
+                alert('Copied to clipboard!');
+            } catch (err) { alert('Failed to copy.'); }
+        }
+
+        fetchMarkdown();
+    </script>
+</body>
+</html>
