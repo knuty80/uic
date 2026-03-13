@@ -4,7 +4,7 @@ This repository serves as the single source of truth for the {{ league_name }} U
 
 ## Key Documents
 - **[UIC_HANDBOOK.md](UIC_HANDBOOK.md):** The primary manual covering philosophy, RefTown mastery, pitch count mandates, and field mechanics.
-- **[printable-guides/](printable-guides/):** A folder containing HTML sources and final PDF versions of tactical cheat sheets and field guides.
+- **[templates/](templates/):** A folder containing HTML sources and final PDF versions of tactical cheat sheets and field guides.
 
 ## Core Philosophy
 The UIC serves as the **shield** for the umpire pool, protector of arm safety via **Pitch Count Mandates**, and the architect of a respectful, volunteer-driven community.
