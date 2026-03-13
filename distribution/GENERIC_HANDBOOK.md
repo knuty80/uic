@@ -1,4 +1,4 @@
-# {{ league_name }}: Umpire Coordinator (UIC) Handbook
+# [League Name]: Umpire Coordinator (UIC) Handbook
 *A Veteran's Playbook for Program Excellence*
 
 ---
@@ -22,8 +22,8 @@ You don't "hire" umpires; you build them.
 
 ## Registration & Onboarding
 - **The Global Link:** [www.reftown.com](http://www.reftown.com) -> Register -> Official.
-- **The Direct League Link:** [registration.asp?RID=1&RegType=Official&Assoc={{ league_id }}](https://reftown.com/registration.asp?RID=1&RegType=Official&Assoc={{ league_id }})
-- **Resilience Navigation:** If the direct link breaks, go to the RefTown Home Page -> **Register** -> Select **Official** -> Search for **{{ league_name }} ({{ league_id }})**.
+- **The Direct League Link:** [registration.asp?RID=1&RegType=Official&Assoc=[League-ID]](https://reftown.com/registration.asp?RID=1&RegType=Official&Assoc=[League-ID])
+- **Resilience Navigation:** If the direct link breaks, go to the RefTown Home Page -> **Register** -> Select **Official** -> Search for **[League Name] ([League-ID])**.
 - **Admin Management:** Once logged in as an admin, go to **Other -> Interactive forms** to manage the specific fields on this form.
 - **The Onboarding Loop (The "Pain Point"):** RefTown's registration form captures basic data, but it does **not** allow for the direct upload or validation of compliance data (Background Checks/Concussion Training) during the initial sign-up. 
 - **The Official Onboarding Workflow:**
@@ -44,7 +44,7 @@ You will receive automated emails from **RefTown Feedback** (Subject: "Umpiring 
 
 - **The "High-Value" Lead:** Former players are your best recruits. They know the fields, the culture, and the game.
 - **Response Template:**
-  > "Hello [Name], thanks for reaching out! It's great to hear you played at {{ league_abbreviation }}. We'd love to have you back in blue. To get started, please register here: {{ registration_link }}. Once you've signed up, I'll send you the info for the next training session and how to self-assign games. Welcome back!"
+  > "Hello [Name], thanks for reaching out! It's great to hear you played at [Abbreviation]. We'd love to have you back in blue. To get started, please register here: [Registration Link]. Once you've signed up, I'll send you the info for the next training session and how to self-assign games. Welcome back!"
 - **The Follow-up:** Don't just send the link. Mention the competitive pay rates—for a high schooler, this is the best hourly wage they can find.
 
 ## Schedule Import & Preparation
@@ -55,7 +55,7 @@ The success of a schedule import is 90% preparation. If the data doesn't match t
     - **Create Teams:** Manually build or update the team list for the current season.
     - **Assign Coaches:** Include the coach's email and phone number. This is critical for RefTown's automated system, which sends coaches a summary email letting them know if an umpire has been assigned to their game or not.
 - **Phase 2: The "Exact Match" Rule**
-    - **Spelling is Absolute:** RefTown is unforgiving. "{{ local_park_example }} - [Field #]" is not the same as "{{ park_shortcut_example }}." "{{ division_example }} Red" is not the same as "Red Team."
+    - **Spelling is Absolute:** RefTown is unforgiving. "[Local Park] - [Field #]" is not the same as "[Park Shortcut]." "[Division] Red" is not the same as "Red Team."
     - **Synchronization:** The spelling in your import spreadsheet **must match** what you manually created in Phase 1. If it doesn't match, RefTown will either reject the row or create "Ghost Teams" that aren't linked to your coaches.
 - **Phase 3: The Import Path**
     - Navigate to **Schedules -> Game Management -> Import New Games from Excel/CSV**.
@@ -81,7 +81,7 @@ This is a critical policy for maintaining schedule integrity.
 To ensure quality and identify training needs, we use a public **Google Form** to capture coach feedback without requiring a RefTown login.
 
 - **The Mechanism:** 
-  1. Create a Google Form (e.g., "{{ league_name }} Umpire Feedback").
+  1. Create a Google Form (e.g., "[League Name] Umpire Feedback").
   2. Include fields for: Game Date, Field, Umpire Name, and a 0-3 Rating.
   3. **The Link:** Include the public link to this form in ALL manual BCC emails sent to coaches.
 - **The UIC's Role:**
@@ -96,9 +96,9 @@ To ensure quality and identify training needs, we use a public **Google Form** t
 
 ## The Field Status Rule
 - **Monitoring:** Watch your local field status app or agency website like a hawk. 
-- **The Link:** [{{ agency_name }} Field Status]({{ field_status_link }})
-- **The Hotline:** If the digital status is down, call the {{ agency_name }} Field Condition Hotline at **{{ field_hotline }}**.
-- **The Update:** Ensure you check for updates by the designated daily deadline (e.g., {{ status_deadline }}). 
+- **The Link:** [[Local Agency] Field Status]([Link])
+- **The Hotline:** If the digital status is down, call the [Agency Name] Field Condition Hotline at **[Hotline Number]**.
+- **The Update:** Ensure you check for updates by the designated daily deadline (e.g., [Deadline Time]). 
 - **Action:** If fields are closed, cancel in RefTown immediately. Do not wait for coach consensus.
 
 ## Show-up Pay
@@ -109,9 +109,9 @@ To ensure quality and identify training needs, we use a public **Google Form** t
 # 4. Financials: Pay & Payroll
 
 ## Pay Rates
-- **Plate Umpire:** {{ rate_plate }}
-- **Base Umpire:** {{ rate_base }}
-- **Solo Game:** If an umpire works a game solo, they work the plate and the rate is {{ rate_solo }}.
+- **Plate Umpire:** $[Rate]
+- **Base Umpire:** $[Rate]
+- **Solo Game:** If an umpire works a game solo, they work the plate and the rate is $[Solo Rate].
 
 ## Unassigned Games (The Backup Plan)
 If the internal pool cannot produce an umpire for a game, the following protocol applies:
@@ -123,7 +123,7 @@ If the internal pool cannot produce an umpire for a game, the following protocol
 - **Cycle:** **Monthly**. While umpires often request bi-weekly pay, the current policy is monthly to manage the administrative workload for the UIC (RefTown reports) and the Treasurer (check cutting).
 - **Payment Method:** **Physical Checks**. We do not use direct deposit.
 - **The "Ugh" Factor:** Checks are sent via USPS and typically take **10 days** to arrive after being cut. Successors should manage umpire expectations accordingly.
-- **UIC Role:** At the end of each month, generate the payroll report in RefTown and submit it to the Treasurer. Verify every game for solo-rate adjustments ($60) before submission to avoid payment errors that take another month to fix.
+- **UIC Role:** At the end of each month, generate the payroll report in RefTown and submit it to the Treasurer. Verify every game for solo-rate adjustments ([Solo Rate]) before submission to avoid payment errors that take another month to fix.
 
 ---
 
@@ -156,8 +156,8 @@ If the internal pool cannot produce an umpire for a game, the following protocol
 - **Coaches as Partners:** Coaches are co-educators. They call time to teach rules (Infield Fly, uncaught 3rd Strike) on the field, ensuring a fair and instructional environment.
 - **Strike Zone First:** Get new recruits behind the plate early in lower-stakes games.
 
-## District 4 & Little League Resources
-The following resources are provided by District 4 and Little League International for year-round development:
+## District [Number] & Little League Resources
+The following resources are provided by District [Number] and Little League International for year-round development:
 - **[Little League Umpire Registry](https://www.littleleagueumpire.org/):** Sign up for free access to videos, training aids, and announcements.
 - **[Little League University - Umpire Portal](https://www.littleleague.org/university/umpires/):** The primary hub for all training. Search for **"Stance Basics"** or **"Three Steps"** to find the latest ball/strike positioning guides.
 - **The Rulebook App:** Download for free ([iOS](https://apps.apple.com/us/app/little-league-rulebook/id1076694862) / [Android](https://play.google.com/store/apps/details?id=com.littleleague.rulebook)) for official rules and 2026 updates.
@@ -177,101 +177,68 @@ This guide is your tactical manual on the field. Be BRIEF, be LOUD, and be ASSER
 - **The Outside Theory:** In Little League (where no leading off is allowed), base umpires start **outside** the infield.
 - **Position A:** Foul territory, 10-15 feet behind 1st base (No runners on).
 - **Positions B & C:** On the **outfield grass** behind the infielders (Runners on).
-  - **Position B:** Behind the second baseman, midway between 1st and 2nd.
-  - **Position C:** Behind the shortstop, midway between 2nd and 3rd.
 - **The "Library":** This is your working area *inside* the diamond. You only move into the library **after** the ball is put in play to gain the best angle for force plays or tags.
 
 ## Verbal & Physical Signals
 | Situation | Verbal | Physical |
 | :--- | :--- | :--- |
 | **Strike** | "Strike!" | Right hand forward (pounding the wall). |
-| **Ball** | "Ball!" | (No signal). Use LH fingers for count. |
 | **Full Count** | "Full Count!" | 3 fingers LH / 2 fingers RH (Do NOT bump fists). |
 | **Outs** | "Out!" | Fist pump or point. |
 | **Safe** | "Safe!" | Arms spread wide. |
-| **No Tag** | "No tag!" | Safe motion. |
 
 ## Complex Scenarios
 - **1st to 3rd Coverage:** Plate umpire covers 3rd on a base hit with R1. Use hand signals to coordinate who has the bag.
 - **Timing Plays:** Plate umpire initiates signal; Base umpire **must echo** it back.
-- **Rundowns:** Stay out of the path. Split the field in half with your partner. Eye contact is essential. If you have the best angle, pat your chest and shout "Partner, I’ve got this—Out!"
 
 ## The Plate Meeting Checklist (The Game's Foundation)
 The first 5 minutes sets the tone for the entire game. Be authoritative, brief, and clear.
 
-- **Equipment Confirmation:** Confirm both managers have inspected their equipment. (Reminder: Non-LL/Illegal bats = Immediate discovery ejection).
+- **Equipment Confirmation:** Confirm both managers have inspected their equipment.
 - **Timing & The "Roll-back":**
-    - **Identify the Official Clock:** The Plate Umpire’s watch is the only clock that matters. State the start time loudly for both scorekeepers.
-    - **No New Inning:** Confirm the time limit (e.g., {{ time_limit }}). Remind teams that a new inning starts the *instant* the 3rd out of the previous inning is recorded.
-    - **Hard Stop/Drop Dead:** If using a "Drop Dead" stop, confirm if the score **rolls back** to the last completed inning. Agreement here prevents post-game protests if a team is rallying when the clock expires.
+    - **Identify the Official Clock:** The Plate Umpire’s watch is the only clock that matters.
+    - **No New Inning:** Confirm the time limit (e.g., [Time Limit]).
+    - **Hard Stop/Drop Dead:** If using a "Drop Dead" stop, confirm if the score **rolls back**.
 - **Ground Rules (The "Dead Ball" Boundary):**
     - **Identify the Boundaries:** Walk the managers to the edge of the dugout. Identify where the permanent fence ends.
-    - **The Imaginary Line:** If fields are unfenced, establish a clear dead-ball line (e.g., "From the end of the backstop to the dugout corner, then an imaginary straight line to the outfield light pole").
-    - **Obstructions:** Note how to handle balls hitting trees, equipment buckets in the dugout path, or loose equipment on the field.
-- **Final Command:** "I'm here for the kids. If you have a rule clarification, call time. If you have a judgment disagreement, let it go. Shake hands, and let's have a clean game."
+    - **The Imaginary Line:** If fields are unfenced, establish a clear dead-ball line.
+- **Final Command:** "I'm here for the kids. If you have a rule clarification, call time. Shake hands, and let's have a clean game."
 
 ---
 
 # 9. GameChanger (GC) Integration
-While RefTown is for umpires, **GameChanger** is for the league's families. As the "Tech UIC," you ensure these two worlds talk to each other.
+While RefTown is for umpires, **GameChanger** is for the league's families.
 
 ## Organization-Level Management
-- **The League View:** Always perform game imports at the **Organization/League** level. Do **not** manage schedules on a per-team basis.
-- **The SportsConnect Warning:** **Do not** import the master schedule into SportsConnect. Because of the "one-way sync" nature of the platform, manual imports into SportsConnect can cause cascading errors or duplicates.
-- **GC League Structure:** Import games only into the designated GameChanger leagues. There is a separate league for each division where we provide umpires (Uppers only: AAA, Minors, and Majors).
-- **Schedule Parity:** Importing to the Org level in GC ensures that every team, coach, and parent sees the same "Source of Truth" that matches your RefTown master schedule.
-- **Direct Alerts:** Use GC `Cancel & Message Team` (at the Org level) for rainouts to notify all stakeholders across the league simultaneously.
-- **Scorekeeper Training:** Because GC is the official book, the UIC should host a "GC & Rules Clinic" for parents to ensure pitch counts are tracked accurately and consistently.
+- **The League View:** Always perform game imports at the **Organization/League** level.
+- **The SportsConnect Warning:** **Do not** import the master schedule into SportsConnect.
+- **GC League Structure:** Import games only into the designated GameChanger leagues.
 
 ---
 
 # 10. Pitch Count Enforcement & Auditing
-
-Pitch counts are the most critical safety rule in Little League. As UIC, you aren't just managing umpires; you are the auditor-in-chief of arm safety.
+Pitch counts are the most critical safety rule in Little League.
 
 ## The UIC's Audit Role
-While managers are responsible for their pitchers, the UIC must verify compliance to prevent protests and season-ending injuries.
-- **Weekly GC Audit:** Use the **"League Pitch Count Report"** in GameChanger (Organization Admin view). 
-- **What to look for:**
-  - **Rest Threshold Violations:** Did a pitcher throw 66+ pitches and return before 4 days of rest?
-  - **Catcher/Pitcher Conflicts:** A player who catches 4+ innings cannot pitch that day. A pitcher who throws 41+ pitches cannot catch.
-- **The "Safety First" Correction:** If an audit reveals a violation, notify the Board President and the affected managers immediately. Safety overrides any game result.
+- **Weekly GC Audit:** Use the **"League Pitch Count Report"** in GameChanger.
+- **What to look for:** Rest Threshold Violations, Catcher/Pitcher Conflicts.
 
 ## Training Parent Scorekeepers
-Scorekeepers are often hard to find and nervous about the rules. The UIC should simplify their job:
 - **The "Official" Source:** Remind parents that the **Home Team's GameChanger** is the official record.
-- **Umpire Support:** Train your umpires to ask the scorekeeper for the count between every half-inning. This "Public Verification" prevents discrepancies from exploding in the 6th inning.
-- **Cheat Sheets:** Provide a physical "Rest Requirements" card (laminated) to every scorekeeper booth.
-
-## The International Mandate (Rule 0.07 / Regulation VI)
-Be absolutely clear: Pitch count limits are **not local league suggestions**. They are **Little League International mandates**.
-- **The "Safety First" Foundation:** These rules exist to prevent permanent orthopedic injuries (Little League Elbow). Ignoring them is not "competitiveness"—it is negligence.
-- **Liability:** Failure to enforce these rules can expose the League Board to significant liability and potential loss of insurance coverage if a player is injured while pitching in violation of rest requirements.
-
-## Consequences of Non-Compliance
-Violation of pitching regulations is a non-negotiable infraction that results in the following:
-1. **Immediate Forfeit:** If a protest is upheld by the Protest Committee, the game is declared a **forfeit** in favor of the opposing team, regardless of the score.
-2. **Manager Suspension:** The manager of the offending team faces a **mandatory suspension** (minimum one game).
-3. **Double Ineligibility:** The pitcher whose violation triggered the event is ineligible to pitch in the game for which the manager is suspended.
-4. **Post-Season Impact:** Documented failures to manage pitch counts can disqualify an entire team or manager from post-season (All-Stars) selection.
-
-## The UIC's Duty
-If an umpire is notified by the scorekeeper that a pitcher has reached their limit, the umpire MUST inform the manager and remove the pitcher. This is not a choice; it is a mandatory safety action.
+- **Umpire Support:** Train your umpires to ask the scorekeeper for the count.
 
 ---
 
 # 11. Resources & Regional Support
 
-The UIC role is demanding, but you are part of a larger network. Use these resources when you need a "Second Opinion" on a rule or board policy.
-
 ## District Support
-- **District:** Little League District {{ district_number }}
-- **District UIC:** {{ district_uic_name }}
-- **Contact:** [{{ district_uic_email }}](mailto:{{ district_uic_email }})
+- **District:** Little League District [Number]
+- **District UIC:** [Name]
+- **Contact:** [[Email]](mailto:[Email])
 
 ## Official Documentation
-- **LL University:** The gold standard for rules education. [LL University Portals](https://www.littleleague.org/university/)
-- **RefTown Support:** For technical issues with the assignment platform. [RefTown Support Center](https://www.reftown.com/support_home.asp)
+- **LL University:** [LL University Portals](https://www.littleleague.org/university/)
+- **RefTown Support:** [RefTown Support Center](https://www.reftown.com/support_home.asp)
 
 ---
 *Template Version. Dedicated to Volunteer Excellence.*

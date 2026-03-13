@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coach & Scorekeeper Guide (Cheat Sheet)</title>
+    <title>Coach & Scorekeeper Guide (Generic Cheat Sheet)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Screen preview styling */
@@ -60,14 +60,13 @@
             box-sizing: border-box;
             overflow: hidden;
             display: flex;
-            flex-col;
+            flex-direction: column;
         }
 
         /* Fold Lines */
         .panel-1 { border-right: 1px dashed #cbd5e1; border-bottom: 1px dashed #cbd5e1; }
         .panel-2 { border-bottom: 1px dashed #cbd5e1; }
         .panel-3 { border-right: 1px dashed #cbd5e1; }
-        .panel-4 { }
 
         /* Compact Table Styling */
         .signal-table th {
@@ -106,7 +105,7 @@
         <!-- PANEL 1: Top Left -->
         <div class="panel panel-1 flex flex-col">
             <header class="border-b-2 border-emerald-900 pb-2 mb-3">
-                <h1 class="text-2xl font-black uppercase tracking-tight text-slate-900 leading-none">Coach & Scorekeeper</h1>
+                <h1 class="text-2xl font-black uppercase tracking-tight text-slate-900 leading-none">[League Name]</h1>
                 <div class="flex justify-between items-center mt-1">
                     <h2 class="text-xs font-bold text-slate-500 uppercase tracking-widest">League Quick Reference</h2>
                     <div class="bg-emerald-700 text-white font-bold uppercase tracking-wider text-[10px] px-2 py-0.5 rounded">
@@ -131,7 +130,7 @@
                     </li>
                     <li class="flex flex-col">
                         <span class="font-bold text-emerald-700">Time Limits:</span>
-                        <span class="text-slate-600 leading-snug">No new inning will start after 1 hr 45 min. If time expires during an incomplete inning, the score automatically rolls back to the end of the last fully completed inning.</span>
+                        <span class="text-slate-600 leading-snug">No new inning will start after [Time Limit]. If time expires during an incomplete inning, the score automatically rolls back.</span>
                     </li>
                 </ul>
             </section>
@@ -144,7 +143,7 @@
                 Pitching Limitations & Rest
             </h3>
             
-            <p class="text-[10px] mb-1.5 leading-tight text-slate-600">Scorekeepers must track pitches and alert the head coach when a pitcher is within 15 pitches of their limit. <strong class="text-red-700">Accuracy is critical: exact pitch counts dictate required rest days and protect player arms. Violations result in Head Coach suspension and game forfeiture!</strong> <strong class="text-slate-900">A pitcher may finish the current batter if the limit is reached during an at-bat.</strong></p>
+            <p class="text-[10px] mb-1.5 leading-tight text-slate-600">Scorekeepers must track pitches and alert the head coach when a pitcher is within 15 pitches of their limit. <strong class="text-red-700">Accuracy is critical.</strong> <strong class="text-slate-900">A pitcher may finish the current batter if the limit is reached during an at-bat.</strong></p>
 
             <table class="w-full signal-table border border-slate-200 rounded overflow-hidden shadow-sm mt-1 mb-3">
                 <thead>
@@ -220,11 +219,7 @@
                     </li>
                     <li class="flex flex-col">
                         <span class="font-bold text-slate-900">Substitutions:</span>
-                        <span class="text-slate-600 leading-tight text-[10px]">Log defensive and offensive substitutions immediately as they are reported to the umpire to maintain accurate mandatory play records.</span>
-                    </li>
-                    <li class="flex flex-col">
-                        <span class="font-bold text-slate-900">The "Undo" Button:</span>
-                        <span class="text-slate-600 leading-tight text-[10px]">If a play is entered incorrectly, use the Undo button immediately rather than trying to fix it later. Accuracy takes priority over speed.</span>
+                        <span class="text-slate-600 leading-tight text-[10px]">Log defensive and offensive substitutions immediately as they are reported to the umpire.</span>
                     </li>
                 </ul>
             </section>
@@ -248,24 +243,11 @@
                 <div class="space-y-2 text-[10px] leading-tight">
                     <div class="bg-emerald-50 p-2 rounded border border-emerald-100">
                         <span class="font-bold text-emerald-900 block mb-0.5">The Golden Rule</span>
-                        <span class="text-slate-700">Only the <strong class="underline">Head Coach</strong> may approach the umpire to discuss a call. Assistant coaches and scorekeepers must direct questions through the Head Coach.</span>
+                        <span class="text-slate-700">Only the <strong class="underline">Head Coach</strong> may approach the umpire to discuss a call.</span>
                     </div>
-                    
-                    <ul class="space-y-2 pl-1">
-                        <li class="flex items-start gap-1.5 border-l-2 border-slate-300 pl-2">
-                            <div><span class="font-bold text-slate-900 block">Judgment Calls</span> <span class="text-slate-600">Balls/Strikes, Safe/Out, and Fair/Foul are judgment calls. They are <strong class="text-red-600">NOT</strong> arguable. Arguing judgment calls will result in an immediate warning.</span></div>
-                        </li>
-                        <li class="flex items-start gap-1.5 border-l-2 border-slate-300 pl-2">
-                            <div><span class="font-bold text-slate-900 block">Rule Interpretations</span> <span class="text-slate-600">If you believe a rule was applied incorrectly, request "Time". Once granted, approach the umpire respectfully to discuss the rule application.</span></div>
-                        </li>
-                        <li class="flex items-start gap-1.5 border-l-2 border-slate-300 pl-2">
-                            <div><span class="font-bold text-slate-900 block">Dugout Control</span> <span class="text-slate-600">The Head Coach is entirely responsible for the behavior of their players, assistant coaches, and parents in the stands.</span></div>
-                        </li>
-                    </ul>
                 </div>
             </section>
 
-            <!-- Local League Personalization Placeholder -->
             <div class="mt-3 text-center bg-slate-800 text-white rounded p-1.5">
                 <span class="text-[9px] font-bold uppercase tracking-wider block">Set the Standard</span>
                 <span class="text-[8px] text-slate-300">Youth baseball thrives on sportsmanship. Lead by example.</span>
