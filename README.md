@@ -20,6 +20,15 @@ The handbook now runs entirely in your web browser. No Python or command line re
     - **PDF**: Use the "Export to PDF" button for high-fidelity printing.
     - **Google Docs**: Use "Copy for Google Docs" to paste perfectly formatted content into a cloud document for distribution.
 
+## 🌐 Hosting on GitHub Pages
+This repository is designed for zero-config hosting on GitHub Pages:
+
+1.  **Enable Pages**: Go to **Settings** -> **Pages** in this GitHub Repo.
+2.  **Select Branch**: Choose `main` (or your active branch) and the `/(root)` folder. Click **Save**.
+3.  **Access Everywhere**: Your customized Studio will be live at `https://your-username.github.io/uic/`.
+
+**Why this is better**: You can share the link with your successor or fellow board members. They can use the dashboard to generate documents instantly without downloading a single file.
+
 ## 🔒 Privacy & PII Protection
 - **Client-Side Only**: Your league data (`league_info.yaml`) never touches a server. All rendering happens locally in your browser.
 - **Git Protection**: The `league_info.yaml` file is automatically ignored by Git to prevent accidental leaks of payment rates or contact information to the public web.
