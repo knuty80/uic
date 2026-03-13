@@ -1,52 +1,34 @@
 # {{ league_name }}: Umpire Coordinator (UIC) Handbook
+*Modern. Interactive. Fact-Focused.*
 
-This repository serves as the single source of truth for the {{ league_name }} Umpire Coordinator role. It is designed to ensure continuity and excellence in the umpire program for any Little League or youth baseball organization.
+This repository is the **Single Source of Truth** for the {{ league_name }} Umpire Coordinator. It has been modernized with a "Zero-Terminal" interactive dashboard to ensure data integrity and ease of use for both tech-savvy and non-technical board members.
 
-## Key Documents
-- **[UIC_HANDBOOK.md](UIC_HANDBOOK.md):** The primary manual covering philosophy, RefTown mastery, pitch count mandates, and field mechanics.
-- **[templates/](templates/):** A folder containing HTML sources and final PDF versions of tactical cheat sheets and field guides.
+## 📁 Project Structure
+- **[UIC_HANDBOOK.md](UIC_HANDBOOK.md)**: The master source file. All policy updates, links, and tactical guides are maintained here.
+- **[index.html](index.html)**: The **UIC Studio Dashboard**. A client-side application that renders the handbook, handles variable replacement, and exports PDFs/Google Docs content.
+- **[league_info.yaml](.gitignore)**: Your local, PII-sensitive configuration (ignored by Git to protect your privacy).
 
-## Core Philosophy
-The UIC serves as the **shield** for the umpire pool, protector of arm safety via **Pitch Count Mandates**, and the architect of a respectful, volunteer-driven community.
+## 🚀 Quick Start (Browser-Based)
+The handbook now runs entirely in your web browser. No Python or command line required.
 
-## Developer Notes
-- **Operating System:** This project was developed and is optimized for a **Linux environment**.
-- Documentation is maintained in Markdown for version control parity.
-- Complex tactical guides are built in HTML/CSS for premium aesthetics and converted to PDF via localized browser-print services (see `templates/README.md`).
-- **Local Logs:** Procedural changes are logged in `MISSION_LOG.md` (maintained locally, excluded from Git).
+1.  **Open the Studio**: Open `index.html` in Chrome or Edge.
+2.  **Load Content**: 
+    - Click **"Load Handbook Content"** and select `UIC_HANDBOOK.md`.
+    - Click **"Import League YAML"** and select your `league_info.yaml` (or manually fill the sidebar).
+3.  **Customize**: All variables (like `{{ league_name }}` or `{{ rate_solo }}`) are automatically detected and mapped to sidebar inputs.
+4.  **Export**:
+    - **PDF**: Use the "Export to PDF" button for high-fidelity printing.
+    - **Google Docs**: Use "Copy for Google Docs" to paste perfectly formatted content into a cloud document for distribution.
 
-## 🚀 Quick Start (Board Members / Non-Technical)
+## 🔒 Privacy & PII Protection
+- **Client-Side Only**: Your league data (`league_info.yaml`) never touches a server. All rendering happens locally in your browser.
+- **Git Protection**: The `league_info.yaml` file is automatically ignored by Git to prevent accidental leaks of payment rates or contact information to the public web.
 
-If you just want to get the documents without using any code:
-1. **Browse the [distribution/](distribution/) folder.**
-2. **Handbook:** Copy the text from `GENERIC_HANDBOOK.md` into a new **Google Doc**.
-3. **Customization:** Use "Find & Replace" in your document to replace placeholders like `[League Name]`.
-4. **Print:** Export your Google Doc as a PDF.
-
-No terminal, Git, or Python required!
-
-## ⚙️ Advanced Customization & Rendering (For Tech UICs)
-
-### 1. Configure Your League
-1. Copy `league_info.yaml.template` to `league_info.yaml`.
-2. Open `league_info.yaml` and fill in your league-specific details (ID, rates, contact info).
-
-### 2. Render Documents
-If you have Python and `PyYAML` installed, you can automatically inject your data into the documents:
-```bash
-python3 render_guides.py
-```
-This will create a **`rendered/`** folder containing:
-- `UIC_HANDBOOK.rendered.md`: Branded handbook.
-- `handbook-template.rendered.html`: Branded HTML (Best for Google Docs import).
-- `ump-guide-cheat-sheet.rendered.html`: Branded tactical cheat sheet.
-
-### 3. Generate PDFs
-1. Open any `.rendered.html` file from the `rendered/` folder in your browser.
-2. Press `Ctrl + P` (Print) -> Select **Save as PDF**.
+## 🛠️ Maintenance & Updates
+To update the handbook content or tactical guides:
+1. Edit the master **[UIC_HANDBOOK.md](UIC_HANDBOOK.md)**.
+2. The changes will automatically reflect in the Studio the next time you load the file.
+3. No redundant folders or "templates" are required—the Markdown source *is* the template.
 
 ---
-3. **Template Parity:** The handbook uses placeholders like `[League Name]` which correspond to the keys in your configuration file.
-
----
-*Template Version. Dedicated to Volunteer Excellence.*
+*Dedicated to Volunteer Excellence. Branded for {{ league_name }}.*
