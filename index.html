@@ -120,7 +120,7 @@
         }
 
         /* Main Content Preview */
-        #preview-container {
+        main {
             flex-grow: 1;
             padding: 40px;
             overflow-y: auto;
@@ -129,7 +129,7 @@
             background-color: #f1f5f9;
         }
 
-        #handbook-content {
+        .handbook-container {
             background: white;
             width: 100%;
             max-width: 850px;
@@ -141,7 +141,7 @@
         }
 
         /* Print Typography Styling */
-        #handbook-content h1 {
+        .handbook-container h1 {
             border-bottom: 3px solid var(--primary-blue);
             padding-bottom: 12px;
             color: var(--primary-blue);
@@ -150,13 +150,13 @@
             text-align: center;
         }
 
-        #handbook-content h2 {
+        .handbook-container h2 {
             border-bottom: 1px solid #e2e8f0;
             margin-top: 40px;
             color: #0f172a;
         }
 
-        #handbook-content blockquote {
+        .handbook-container blockquote {
             background: #f8fafc;
             border-left: 4px solid #cbd5e1;
             padding: 15px 25px;
@@ -164,19 +164,19 @@
             font-style: italic;
         }
 
-        #handbook-content table {
+        .handbook-container table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
         }
 
-        #handbook-content th, #handbook-content td {
+        .handbook-container th, .handbook-container td {
             border: 1px solid #e2e8f0;
             padding: 12px;
             text-align: left;
         }
 
-        #handbook-content th {
+        .handbook-container th {
             background: #f8fafc;
         }
 
@@ -191,260 +191,353 @@
 <body>
 
     <aside id="sidebar">
-        <div class="logo">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20M12 12l8-8M12 12l8 8M12 12l-8 8M12 12l-8-8"/></svg>
-            UIC Studio
+        <div class="sidebar-header">
+            <h1>UIC Studio</h1>
+            <p style="font-size: 0.7rem; color: #64748b; margin: 4px 0 0 0;">Web Edition v2.0</p>
         </div>
 
-        <div id="setup-controls">
-            <div class="form-group" id="md-load-group" style="display:none;">
-                <label for="md-upload">1. Load Handbook Source</label>
-                <input type="file" id="md-upload" accept=".md" class="btn btn-ghost">
-            </div>
+        <div class="form-group">
+            <label for="assignment-tool">Step 1: Umpire Management Type</label>
+            <select id="assignment-tool" onchange="handleToolChange()">
+                <option value="RefTown" selected>RefTown Integration</option>
+                <option value="ArbiterSports">ArbiterSports Integration</option>
+                <option value="Assignr">Assignr Integration</option>
+                <option value="Horizon Web Ref">Horizon Web Ref</option>
+                <option value="Google Sheets">Manual (Google Sheets)</option>
+                <option value="Generic Association">League Association Portal</option>
+            </select>
+        </div>
 
-            <div class="form-group">
-                <label for="assignment-tool">2. Platform Mastery Selector</label>
-                <select id="assignment-tool" class="btn btn-ghost" style="width: 100%; text-align: left;" onchange="handleToolChange()">
-                    <option value="RefTown">RefTown</option>
-                    <option value="ArbiterSports">ArbiterSports</option>
-                    <option value="Assignr">Assignr</option>
-                    <option value="Horizon Web Ref">Horizon Web Ref</option>
-                    <option value="Google Sheets">Google Sheets (Manual)</option>
-                    <option value="Generic Association">Local Association (GTO/PBUA/etc.)</option>
-                </select>
-            </div>
+        <div class="toggle-group">
+            <span style="font-size: 0.75rem; font-weight: 600; color: #475569;">Volunteer League Mode</span>
+            <label class="switch">
+                <input type="checkbox" id="volunteer-mode" onchange="toggleVolunteerMode()">
+                <span class="slider"></span>
+            </label>
+        </div>
 
-            <div class="form-group">
-                <label for="file-upload">3. Import League YAML (PII)</label>
-                <input type="file" id="file-upload" accept=".yaml,.yml" class="btn btn-ghost">
+        <div class="form-group">
+            <label>Step 2: League Data (Local)</label>
+            <div style="display: flex; gap: 5px;">
+                <button class="btn" style="flex:1;" onclick="document.getElementById('file-upload').click()">Import YAML</button>
+                <button class="btn btn-ghost" onclick="downloadTemplate()" title="Get Template">...</button>
+            </div>
+            <input type="file" id="file-upload" accept=".yaml,.yml" style="display:none">
+        </div>
+
+        <div id="dynamic-form" style="margin-top: 10px;">
+            <!-- Fields generated here -->
+        </div>
+
+        <div id="training-hub" style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 15px;">
+            <label>Umpire Training Hub</label>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 8px;">
+                <a href="guides/html/umpire-cheat-sheet.html" target="_blank" class="btn" style="color: var(--primary-blue); font-weight: 600;">
+                    Umpire Field Guide (PDF)
+                </a>
+                <a href="guides/html/scorekeeper-cheat-sheet.html" target="_blank" class="btn">
+                    Scorekeeper Cheat Sheet
+                </a>
             </div>
         </div>
 
-        <hr style="border: 0; border-top: 1px solid #eee; margin: 10px 0;">
-
-        <div id="dynamic-form">
-            <!-- Form fields will be generated here -->
-            <p style="font-size:0.8rem; color:var(--text-light); text-align:center;">Load a handbook to see settings...</p>
-        </div>
-
-        <div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px;">
-            <button class="btn btn-primary" onclick="window.print()">
-                Export to PDF
-            </button>
-            <button class="btn btn-ghost" onclick="copyToClipboard()">
-                Copy for Google Docs
-            </button>
-            <button class="btn btn-ghost" onclick="downloadTemplate()" style="border-style: dashed; color: var(--primary-blue); font-size: 0.8rem;">
-                Download .yaml Template
-            </button>
+        <div style="margin-top: auto; padding-top: 20px; display: flex; flex-direction: column; gap: 10px;">
+            <button class="btn btn-primary" onclick="window.print()">Export Handbook</button>
+            <button class="btn btn-ghost" onclick="copyToClipboard()">Copy for Docs</button>
         </div>
     </aside>
 
-    <main id="preview-container">
-        <article id="handbook-content">
-            <div style="text-align:center; padding-top: 100px; color: var(--text-light);">
-                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 20px; opacity: 0.5;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
-                <h2 style="color: var(--primary-blue); font-weight: 800;">UIC Studio Dashboard</h2>
-                <p>Ready to customize your handbook.</p>
-                <ol style="display: inline-block; text-align: left; margin-top: 20px; font-size: 0.9rem;">
-                    <li>Load <code>UIC_HANDBOOK.md</code> using the sidebar.</li>
-                    <li>Import your <code>league_info.yaml</code> to apply branding.</li>
-                    <li>Export your personalized PDF or Google Doc.</li>
-                </ol>
+    <main>
+        <div class="handbook-container">
+            <div id="handbook-preview">
+                Loading UIC Handbook...
             </div>
-        </article>
+        </div>
     </main>
 
+    <!-- EMBEDDED HANDBOOK CONTENT -->
+    <script type="text/markdown" id="handbook-src">
+# {{ league_name }}: Umpire Coordinator (UIC) Handbook
+*A Veteran's Playbook for Program Excellence*
+
+---
+
+# 1. UIC Philosophy: The Veteran's Perspective
+
+As a veteran UIC your role is not just "scheduling." You are the guardian of the game's integrity and the protector of the youth who step onto the turf in blue.
+
+## The "Shield" Mentality
+Your primary responsibility is to be the shield between the umpires (especially youth umpires) and external pressures from coaches or administrative bodies.
+- Emotional responses from the field or policy friction from above should not reach the youth umpires.
+- You must be the one person who says: "The umpire's decision is final, and any breach of sportsmanship directed at our youth umpires is a non-starter."
+
+---
+
+# 2. Platform Mastery: Platform-Specific Guides
+
+[[ IF assignment_tool == 'RefTown' ]]
+## RefTown Mastery: Season Setup & Management
+### Registration & Onboarding
+- **The Direct League Link:** [registration.asp?RID=1&RegType=Official&Assoc={{ league_id }}](https://reftown.com/registration.asp?RID=1&RegType=Official&Assoc={{ league_id }})
+- **Resilience Navigation:** If the direct link breaks, go to the RefTown Home Page -> **Register** -> Select **Official** -> Search for **{{ league_name }} ({{ league_id }})**.
+- **Admin Management:** Once logged in as an admin, go to **Other -> Interactive forms** to manage the specific fields on this form.
+- **Support Resources:** Visit the [RefTown Home Page](https://www.reftown.com/) and navigate to the **Support** section (or visit the [Direct Support Center](https://reftown.com/kbp/index.php)) for advanced form configuration.
+[[ ENDIF ]]
+
+[[ IF assignment_tool == 'ArbiterSports' ]]
+## ArbiterSports: Professional Scheduling
+ArbiterSports is used for high-reliability assigning with powerful automated conflict detection.
+### Critical Workflows
+1. **Auto-Assign Rules:** Configure your "Schedule Settings" in the Arbiter Dashboard to prioritize {{ league_name }} veterans.
+2. **Support Center:** [Arbiter Help Guide](https://arbitersports.zendesk.com/)
+[[ ENDIF ]]
+
+[[ IF assignment_tool == 'Assignr' ]]
+## Assignr: Modern & Mobile
+Assignr is optimized for youth leagues who prioritize mobile ease-of-use and integrated electronic payments.
+### Critical Workflows
+1. **In-App Payments:** Once a game is marked "Completed" in the app, the standard pay is queued automatically. 
+2. **Communication Centre:** Use the "Broadcast" feature to send mass text alerts for rainouts.
+[[ ENDIF ]]
+
+---
+
+# 3. Data Integration: Schedule Imports
+The success of a schedule import is 90% preparation.
+- **Phase 1: Pre-Import Cleanup**: clear old slots before importing the new season.
+- **Phase 2: Use Template Only**: Platforms are unforgiving. Spelling must match.
+
+---
+
+# 4. Crisis Management: Rainouts & Cancellations
+- **Monitoring:** [{{ agency_name }} Field Status]({{ field_status_link }}) (Hotline: {{ field_hotline }})
+- **Deadline:** Check by {{ status_deadline }}. Proactive monitoring saves the budget.
+
+---
+
+[[ IF volunteer_mode == 'OFF' ]]
+# 5. Financials: Pay & Payroll
+- **Plate Umpire:** {{ rate_plate }}
+- **Base Umpire:** {{ rate_base }}
+- **Solo Game:** {{ rate_solo }}
+[[ ENDIF ]]
+
+# 6. Coach Relations & Boundaries
+- **Protocol:** Communicate with the pool only when specific game slots need to be filled.
+- **The Boundary:** Coaches are strictly forbidden from texting umpires directly.
+
+---
+
+# 7. Field Logistics & Safety
+- **Gear:** Ensure the league has properly sized equipment at {{ local_park_example }}.
+- **The Guardian Rule:** Every youth umpire must have a designated "Board Member of the Day" (MOD) as their guardian.
+
+---
+
+# 8. Master Rules & Pitching Limits
+| Age Range | Max Pitches/Day | Rest: 66+ | 51-65 | 36-50 |
+| :--- | :--- | :--- | :--- | :--- |
+| 11-12 | 85 | 4 Days | 3 Days | 2 Days |
+| 9-10  | 75 | 4 Days | 3 Days | 2 Days |
+
+---
+
+# 9. GameChanger (GC) Integration
+- **League View:** Perform game imports at the **Organization/League** level.
+- **Defense Positions:** **1:** P | **2:** C | **3:** 1B | **4:** 2B | **5:** 3B | **6:** SS | **7:** LF | **8:** CF | **9:** RF.
+
+---
+
+# 10. Appendix & Resources
+- **District Support:** LL District {{ district_number }} (UIC: {{ district_uic_name }})
+- **Contact:** [{{ district_uic_email }}](mailto:{{ district_uic_email }})
+
+*Web Dashboard Edition. Dedicated to Volunteer Excellence.*
+    </script>
+
     <script>
-        let markdownContent = '';
+        let markdownContent = "";
         let variables = [];
-        const handbookEl = document.getElementById('handbook-content');
+        const handbookEl = document.getElementById('handbook-preview');
         const formEl = document.getElementById('dynamic-form');
-
-        async function fetchMarkdown() {
-            try {
-                const response = await fetch('UIC_HANDBOOK.md');
-                if (!response.ok) throw new Error();
-                markdownContent = await response.text();
-                processMarkdown();
-            } catch (err) {
-                document.getElementById('md-load-group').style.display = 'flex';
-            }
-        }
-
-        function handleToolChange() {
-            updateHandbook();
-            renderForm();
-        }
-
-        function processMarkdown() {
-            if (!markdownContent) return;
-            
-            updateHandbook();
-            renderForm();
-        }
 
         const fieldLabels = {
             'league_name': 'Official League Name',
-            'league_abbreviation': 'League Abbreviation (e.g. CMLL)',
-            'league_id': 'RefTown Association ID (Internal)',
-            'registration_link': 'Umpire Registration URL',
-            'agency_name': 'Park Agency (e.g. THPRD)',
-            'field_status_link': 'Field Status Website',
+            'league_abbreviation': 'League Abbreviation',
+            'league_id': 'Platform ID (e.g. RefTown ID)',
+            'registration_link': 'Registration URL',
+            'agency_name': 'Park Agency',
+            'field_status_link': 'Field Status URL',
             'field_hotline': 'Field Status Hotline',
-            'status_deadline': 'Daily status update time',
-            'rate_plate': 'Plate Umpire Pay Rate',
-            'rate_base': 'Base Umpire Pay Rate',
-            'rate_solo': 'Solo Game Pay Rate',
+            'status_deadline': 'Daily status time',
+            'rate_plate': 'Plate Pay Rate',
+            'rate_base': 'Base Pay Rate',
+            'rate_solo': 'Solo Pay Rate',
             'local_park_example': 'Main Complex Name',
-            'district_number': 'Little League District #',
-            'assoc_assignor_name': 'Association Assignor Name',
-            'assoc_portal_url': 'Association Web Portal URL'
+            'district_number': 'LL District #',
+            'district_uic_name': 'District UIC Name'
         };
 
         const globalVars = ['league_name', 'league_abbreviation', 'rate_plate', 'rate_base', 'rate_solo', 'agency_name', 'field_status_link', 'field_hotline', 'status_deadline', 'local_park_example', 'district_number', 'district_uic_name', 'district_uic_email'];
 
-        function renderForm() {
-            formEl.innerHTML = '';
-            
+        function init() {
+            markdownContent = document.getElementById('handbook-src').textContent.trim();
+            loadFromLocalStorage();
+            updateHandbook();
+            renderForm();
+            setupFileUpload();
+        }
+
+        function handleToolChange() {
+            saveToLocalStorage();
+            updateHandbook();
+            renderForm();
+        }
+
+        function toggleVolunteerMode() {
+            saveToLocalStorage();
+            updateHandbook();
+            renderForm();
+        }
+
+        function updateHandbook() {
             const selectedTool = document.getElementById('assignment-tool').value;
+            const isVolunteer = document.getElementById('volunteer-mode').checked;
+            
             let filteredMd = markdownContent;
 
-            const conditionalRegex = /\[\[\s*IF\s+([\w_]+)\s*==\s*'([^']+)'\s*\]\]([\s\S]*?)\[\[\s*ENDIF\s*\]\]/g;
-            filteredMd = filteredMd.replace(conditionalRegex, (match, key, value, content) => {
-                const currentVal = (key === 'assignment_tool') ? selectedTool : ''; 
-                return (currentVal === value) ? content : '';
+            // 1. Process Platform Logic
+            const toolRegex = /\[\[\s*IF\s+assignment_tool\s*==\s*'([^']+)'\s*\]\]([\s\S]*?)\[\[\s*ENDIF\s*\]\]/g;
+            filteredMd = filteredMd.replace(toolRegex, (match, tool, content) => {
+                return (tool === selectedTool) ? content : '';
             });
 
+            // 2. Process Volunteer Logic
+            const volRegex = /\[\[\s*IF\s+volunteer_mode\s*==\s*'([^']+)'\s*\]\]([\s\S]*?)\[\[\s*ENDIF\s*\]\]/g;
+            filteredMd = filteredMd.replace(volRegex, (match, mode, content) => {
+                const currentMode = isVolunteer ? 'ON' : 'OFF';
+                return (mode === currentMode) ? content : '';
+            });
+
+            // 3. Populate Variables
+            let finalHtml = marked.parse(filteredMd);
+            const varRegex = /\{\{\s*([\w_]+)\s*\}\}/g;
+            
+            finalHtml = finalHtml.replace(varRegex, (match, v) => {
+                const input = document.getElementById(v);
+                if (input && input.value) return `<span style="color:var(--primary-blue); font-weight:600;">${input.value}</span>`;
+                return `<span style="color:#cbd5e1; border-bottom:1px dashed #cbd5e1;">[${fieldLabels[v] || v}]</span>`;
+            });
+
+            handbookEl.innerHTML = finalHtml;
+        }
+
+        function renderForm() {
+            const selectedTool = document.getElementById('assignment-tool').value;
+            const isVolunteer = document.getElementById('volunteer-mode').checked;
+            
+            // Re-detect active variables
+            let filteredMd = markdownContent;
+            const volMode = isVolunteer ? 'ON' : 'OFF';
+
+            filteredMd = filteredMd.replace(/\[\[\s*IF\s+assignment_tool\s*==\s*'([^']+)'\s*\]\]([\s\S]*?)\[\[\s*ENDIF\s*\]\]/g, (m, t, c) => t === selectedTool ? c : '');
+            filteredMd = filteredMd.replace(/\[\[\s*IF\s+volunteer_mode\s*==\s*'([^']+)'\s*\]\]([\s\S]*?)\[\[\s*ENDIF\s*\]\]/g, (m, mo, c) => mo === volMode ? c : '');
+
             const varMatches = filteredMd.match(/\{\{\s*[\w_]+\s*\}\}/g) || [];
-            variables = [...new Set(varMatches.map(m => m.replace(/\{\{\s*|\s*\}\}/g, '')))];
+            const activeVars = [...new Set(varMatches.map(m => m.replace(/\{\{\s*|\s*\}\}/g, '')))];
 
-            const toolSpecificVars = variables.filter(v => v !== 'assignment_tool' && !globalVars.includes(v));
-            const activeGlobalVars = variables.filter(v => globalVars.includes(v));
+            // Always ensure Core League Name is present
+            if (!activeVars.includes('league_name')) activeVars.unshift('league_name');
 
-            if (activeGlobalVars.length > 0) {
-                const sectionHeader = document.createElement('h3');
-                sectionHeader.style = 'font-size: 0.7rem; color: var(--primary-blue); border-bottom: 1px solid #eee; margin-top: 20px; text-transform: uppercase;';
-                sectionHeader.innerText = 'Global League Identity';
-                formEl.appendChild(sectionHeader);
-                
-                activeGlobalVars.forEach(v => createFormField(v));
+            formEl.innerHTML = '';
+            
+            const toolVars = activeVars.filter(v => !globalVars.includes(v));
+            const globVars = activeVars.filter(v => globalVars.includes(v));
+
+            if (globVars.length > 0) {
+                const h = document.createElement('h3');
+                h.style = 'font-size:0.6rem; color:#64748b; margin:15px 0 5px; text-transform:uppercase;';
+                h.innerText = 'Global Identity';
+                formEl.appendChild(h);
+                globVars.forEach(v => createField(v));
             }
 
-            if (toolSpecificVars.length > 0) {
-                const sectionHeader = document.createElement('h3');
-                sectionHeader.style = 'font-size: 0.7rem; color: #d946ef; border-bottom: 1px solid #eee; margin-top: 20px; text-transform: uppercase;';
-                sectionHeader.innerText = `${selectedTool} Technical Settings`;
-                formEl.appendChild(sectionHeader);
-                
-                toolSpecificVars.forEach(v => createFormField(v));
+            if (toolVars.length > 0) {
+                const h = document.createElement('h3');
+                h.style = 'font-size:0.6rem; color:#64748b; margin:15px 0 5px; text-transform:uppercase;';
+                h.innerText = `${selectedTool} Settings`;
+                formEl.appendChild(h);
+                toolVars.forEach(v => createField(v));
             }
         }
 
-        function createFormField(v) {
+        function createField(v) {
             const div = document.createElement('div');
             div.className = 'form-group';
-            const labelStr = fieldLabels[v] || v.replace(/_/g, ' ');
+            div.style.marginBottom = '8px';
+            const label = fieldLabels[v] || v.replace(/_/g, ' ');
+            const val = localStorage.getItem(`uic_${v}`) || '';
             div.innerHTML = `
-                <label for="${v}">${labelStr}</label>
-                <input type="text" id="${v}" placeholder="Enter ${labelStr}..." oninput="updateHandbook()">
+                <label style="font-size:0.65rem;">${label}</label>
+                <input type="text" id="${v}" value="${val}" placeholder="..." oninput="updateHandbook(); saveToLocalStorage();">
             `;
             formEl.appendChild(div);
         }
 
-        function downloadTemplate() {
-            const config = {};
-            variables.forEach(v => {
-                if (v === 'assignment_tool') return;
-                const input = document.getElementById(v);
-                config[v] = (input && input.value) ? input.value : `REQUIRED: Enter ${v} here`;
+        function saveToLocalStorage() {
+            const inputs = document.querySelectorAll('#dynamic-form input, #assignment-tool, #volunteer-mode');
+            inputs.forEach(i => {
+                const val = i.type === 'checkbox' ? i.checked : i.value;
+                localStorage.setItem(`uic_${i.id}`, val);
             });
-            
-            const yamlContent = "# League Configuration Template\n" + 
-                                "# Use this file to save your settings for UIC Studio\n\n" + 
-                                jsyaml.dump(config);
-            
-            const blob = new Blob([yamlContent], { type: 'text/yaml' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `league_info_${new Date().toISOString().split('T')[0]}.yaml`;
-            a.click();
-            URL.revokeObjectURL(url);
         }
 
-        function updateHandbook() {
-            if (!markdownContent) return;
-
-            const selectedTool = document.getElementById('assignment-tool').value;
-            let renderedMd = markdownContent;
-
-            // 1. Process Conditionals: [[ IF var == 'val' ]] ... [[ ENDIF ]]
-            // Support simple equality for now
-            const conditionalRegex = /\[\[\s*IF\s+([\w_]+)\s*==\s*'([^']+)'\s*\]\]([\s\S]*?)\[\[\s*ENDIF\s*\]\]/g;
-            renderedMd = renderedMd.replace(conditionalRegex, (match, key, value, content) => {
-                const currentVal = (key === 'assignment_tool') ? selectedTool : ''; 
-                // In future, could check other form values
-                return (currentVal === value) ? content : '';
-            });
-
-            // 2. Process Variables: {{ variable }}
-            variables.forEach(v => {
-                const input = document.getElementById(v);
-                let val = (input && input.value) ? input.value : `[${v.replace(/_/g, ' ').toUpperCase()}]`;
-                
-                // Special case for assignment_tool variable if it appears in text
-                if (v === 'assignment_tool') val = selectedTool;
-
-                const regex = new RegExp(`\\{\\{\\s*${v}\\s*\\}\\}`, 'g');
-                renderedMd = renderedMd.replace(regex, val);
-            });
-
-            handbookEl.innerHTML = marked.parse(renderedMd);
-        }
-
-        // Event Listeners
-        document.getElementById('md-upload').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                markdownContent = e.target.result;
-                processMarkdown();
-            };
-            reader.readAsText(file);
-        });
-
-        document.getElementById('file-upload').addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const doc = jsyaml.load(e.target.result);
-                    for (const [key, value] of Object.entries(doc)) {
-                        const input = document.getElementById(key);
-                        if (input) input.value = value;
-                    }
-                    updateHandbook();
-                } catch (err) {
-                    alert('Error parsing YAML.');
+        function loadFromLocalStorage() {
+            const keys = ['assignment-tool', 'volunteer-mode'];
+            keys.forEach(k => {
+                const el = document.getElementById(k);
+                const val = localStorage.getItem(`uic_${k}`);
+                if (val !== null) {
+                    if (el.type === 'checkbox') el.checked = (val === 'true');
+                    else el.value = val;
                 }
-            };
-            reader.readAsText(file);
-        });
-
-        async function copyToClipboard() {
-            const content = handbookEl.innerHTML;
-            const blob = new Blob([content], { type: 'text/html' });
-            const data = [new ClipboardItem({ 'text/html': blob })];
-            try {
-                await navigator.clipboard.write(data);
-                alert('Copied to clipboard!');
-            } catch (err) { alert('Failed to copy.'); }
+            });
         }
 
-        fetchMarkdown();
+        function setupFileUpload() {
+            document.getElementById('file-upload').onchange = (e) => {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    const data = jsyaml.load(event.target.result);
+                    for (let k in data) {
+                        localStorage.setItem(`uic_${k}`, data[k]);
+                    }
+                    location.reload();
+                };
+                reader.readAsText(e.target.files[0]);
+            };
+        }
+
+        function downloadTemplate() {
+            const config = {
+                league_name: "Your League Name",
+                league_id: "Your Platform ID",
+                registration_link: "https://yourlink.com"
+            };
+            const yaml = "# UIC Studio Config\n" + jsyaml.dump(config);
+            const blob = new Blob([yaml], {type: 'text/yaml'});
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = "league_info.yaml";
+            a.click();
+        }
+
+        function copyToClipboard() {
+            const text = handbookEl.innerText;
+            navigator.clipboard.writeText(text).then(() => alert('Copied to clipboard!'));
+        }
+
+        window.onload = init;
     </script>
 </body>
 </html>
