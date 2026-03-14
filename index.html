@@ -234,6 +234,9 @@
             <button class="btn btn-ghost" onclick="copyToClipboard()">
                 Copy for Google Docs
             </button>
+            <button class="btn btn-ghost" onclick="downloadTemplate()" style="border-style: dashed; color: var(--primary-blue); font-size: 0.8rem;">
+                Download .yaml Template
+            </button>
         </div>
     </aside>
 
@@ -281,19 +284,32 @@
             renderForm();
         }
 
+        const fieldLabels = {
+            'league_name': 'Official League Name',
+            'league_abbreviation': 'League Abbreviation (e.g. CMLL)',
+            'league_id': 'RefTown Association ID (Internal)',
+            'registration_link': 'Umpire Registration URL',
+            'agency_name': 'Park Agency (e.g. THPRD)',
+            'field_status_link': 'Field Status Website',
+            'field_hotline': 'Field Status Hotline',
+            'status_deadline': 'Daily status update time',
+            'rate_plate': 'Plate Umpire Pay Rate',
+            'rate_base': 'Base Umpire Pay Rate',
+            'rate_solo': 'Solo Game Pay Rate',
+            'local_park_example': 'Main Complex Name',
+            'district_number': 'Little League District #',
+            'assoc_assignor_name': 'Association Assignor Name',
+            'assoc_portal_url': 'Association Web Portal URL'
+        };
+
+        const globalVars = ['league_name', 'league_abbreviation', 'rate_plate', 'rate_base', 'rate_solo', 'agency_name', 'field_status_link', 'field_hotline', 'status_deadline', 'local_park_example', 'district_number', 'district_uic_name', 'district_uic_email'];
+
         function renderForm() {
             formEl.innerHTML = '';
-            
-            // Re-detect variables from the RENDERED handbook to keep sidebar relevant
-            // This ensures we only show inputs for the active Platform Section
-            const renderedHtml = handbookEl.innerHTML;
-            const varRegex = /\[([\w_ ]+)\]/g; // Match the placeholders like [LEAGUE NAME]
-            // Actually, better to detect from the markdown AFTER conditional processing
             
             const selectedTool = document.getElementById('assignment-tool').value;
             let filteredMd = markdownContent;
 
-            // Simple conditional processing for variable detection
             const conditionalRegex = /\[\[\s*IF\s+([\w_]+)\s*==\s*'([^']+)'\s*\]\]([\s\S]*?)\[\[\s*ENDIF\s*\]\]/g;
             filteredMd = filteredMd.replace(conditionalRegex, (match, key, value, content) => {
                 const currentVal = (key === 'assignment_tool') ? selectedTool : ''; 
@@ -303,19 +319,58 @@
             const varMatches = filteredMd.match(/\{\{\s*[\w_]+\s*\}\}/g) || [];
             variables = [...new Set(varMatches.map(m => m.replace(/\{\{\s*|\s*\}\}/g, '')))];
 
+            const toolSpecificVars = variables.filter(v => v !== 'assignment_tool' && !globalVars.includes(v));
+            const activeGlobalVars = variables.filter(v => globalVars.includes(v));
+
+            if (activeGlobalVars.length > 0) {
+                const sectionHeader = document.createElement('h3');
+                sectionHeader.style = 'font-size: 0.7rem; color: var(--primary-blue); border-bottom: 1px solid #eee; margin-top: 20px; text-transform: uppercase;';
+                sectionHeader.innerText = 'Global League Identity';
+                formEl.appendChild(sectionHeader);
+                
+                activeGlobalVars.forEach(v => createFormField(v));
+            }
+
+            if (toolSpecificVars.length > 0) {
+                const sectionHeader = document.createElement('h3');
+                sectionHeader.style = 'font-size: 0.7rem; color: #d946ef; border-bottom: 1px solid #eee; margin-top: 20px; text-transform: uppercase;';
+                sectionHeader.innerText = `${selectedTool} Technical Settings`;
+                formEl.appendChild(sectionHeader);
+                
+                toolSpecificVars.forEach(v => createFormField(v));
+            }
+        }
+
+        function createFormField(v) {
+            const div = document.createElement('div');
+            div.className = 'form-group';
+            const labelStr = fieldLabels[v] || v.replace(/_/g, ' ');
+            div.innerHTML = `
+                <label for="${v}">${labelStr}</label>
+                <input type="text" id="${v}" placeholder="Enter ${labelStr}..." oninput="updateHandbook()">
+            `;
+            formEl.appendChild(div);
+        }
+
+        function downloadTemplate() {
+            const config = {};
             variables.forEach(v => {
-                if (v === 'assignment_tool') return; // Skip the tool selector var
-                
-                const div = document.createElement('div');
-                div.className = 'form-group';
-                
-                const labelStr = v.replace(/_/g, ' ');
-                div.innerHTML = `
-                    <label for="${v}">${labelStr}</label>
-                    <input type="text" id="${v}" placeholder="Enter ${labelStr}..." oninput="updateHandbook()">
-                `;
-                formEl.appendChild(div);
+                if (v === 'assignment_tool') return;
+                const input = document.getElementById(v);
+                config[v] = (input && input.value) ? input.value : `REQUIRED: Enter ${v} here`;
             });
+            
+            const yamlContent = "# League Configuration Template\n" + 
+                                "# Use this file to save your settings for UIC Studio\n\n" + 
+                                jsyaml.dump(config);
+            
+            const blob = new Blob([yamlContent], { type: 'text/yaml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `league_info_${new Date().toISOString().split('T')[0]}.yaml`;
+            a.click();
+            URL.revokeObjectURL(url);
         }
 
         function updateHandbook() {
