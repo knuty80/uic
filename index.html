@@ -58,7 +58,7 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 64px;
+            height: var(--header-height);
             background: #0f172a;
             border-bottom: 1px solid rgba(255,255,255,0.1);
             z-index: 100;
@@ -66,7 +66,29 @@
             align-items: center;
             justify-content: space-between;
         }
-        .hamburger { cursor: pointer; color: white; padding: 10px; }
+
+        .hamburger {
+            cursor: pointer;
+            width: 24px;
+            height: 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 110;
+        }
+        .hamburger span {
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: white;
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+
+        @media (max-width: 1024px) {
+            .mobile-header { display: flex; }
+            #content-viewport { padding-top: var(--header-height); }
+        }
 
         /* Sidebar Modern UI */
         #sidebar {
@@ -82,7 +104,12 @@
         }
 
         .sidebar-overlay {
-            display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.1); z-index: 40;
+            display: none; 
+            position: fixed; 
+            inset: 0; 
+            background: rgba(0,0,0,0.5); 
+            z-index: 40;
+            backdrop-filter: blur(2px);
         }
         @media (max-width: 1024px) {
             #sidebar { position: fixed; left: 0; top: 0; transform: translateX(-100%); height: 100vh; background: white; box-shadow: 20px 0 50px rgba(0,0,0,0.1); }
@@ -192,7 +219,7 @@
     <!-- Mobile Header -->
     <div class="mobile-header">
         <div class="brand-header" style="margin: 0;">
-            <h1 style="font-size: 1.2rem; background: none; -webkit-text-fill-color: initial; color: #fff;">THE BLUEPRINT</h1>
+            <h1 style="font-size: 1.125rem; background: none; -webkit-text-fill-color: initial; color: #fff;">THE BACKSTOP</h1>
         </div>
         <div class="hamburger" onclick="toggleMobileSidebar()">
             <span></span>
@@ -202,6 +229,7 @@
     </div>
 
     <div class="app-shell">
+        <div class="sidebar-overlay" onclick="closeMobileSidebar()"></div>
         <aside id="sidebar">
             <div class="sidebar-header">
                 <div class="brand-header" onclick="goHome()" style="cursor: pointer;">
