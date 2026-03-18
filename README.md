@@ -1,43 +1,31 @@
-# {{ league_name }}: Umpire Coordinator (UIC) Handbook
-*Modern. Interactive. Fact-Focused.*
+# LL Community Studio: The Accountability Hub
+*Modern. Interactive. Accountability-First.*
 
-This repository is the **Single Source of Truth** for the {{ league_name }} Umpire Coordinator. It has been modernized with a "Zero-Terminal" interactive dashboard to ensure data integrity and ease of use for both tech-savvy and non-technical board members.
+This repository is the **Single Source of Truth** for a healthy Little League community. It has been redesigned to strip away complexity and focus on the three core pillars that keep volunteer organizations running smoothly.
 
-## 📁 Project Structure
-- **[UIC_HANDBOOK.md](UIC_HANDBOOK.md)**: The master source file. All policy updates, links, and tactical guides are maintained here.
-- **[index.html](index.html)**: The **UIC Studio Dashboard**. A client-side application that renders the handbook, handles variable replacement, and exports PDFs/Google Docs content.
-- **[league_info.yaml](.gitignore)**: Your local, PII-sensitive configuration (ignored by Git to protect your privacy).
+## 🛡️ The Three Pillars
+1.  **Umpire Coordinator (UIC)**: Operational clarity, scheduling, and technical standards for the head of the program.
+2.  **Youth Coaches (Managers)**: Mechanics, philosophy, and practical management for on-field excellence.
+3.  **Parent Empowerment**: A dedicated section to arm parents with rule knowledge and behavioral standards, enabling them to hold the league and coaches accountable.
 
 ## 🚀 Quick Start (Browser-Based)
-The handbook now runs entirely in your web browser. No Python or command line required.
+The Studio runs entirely in your web browser. No Python or command line required.
 
 1.  **Open the Studio**: Open `index.html` in Chrome or Edge.
-2.  **Load Content**: 
-    - Click **"Load Handbook Content"** and select `UIC_HANDBOOK.md`.
-    - Click **"Import League YAML"** and select your `league_info.yaml` (or manually fill the sidebar).
-3.  **Customize**: All variables (like `{{ league_name }}` or `{{ rate_solo }}`) are automatically detected and mapped to sidebar inputs.
-4.  **Export**:
-    - **PDF**: Use the "Export to PDF" button for high-fidelity printing.
-    - **Google Docs**: Use "Copy for Google Docs" to paste perfectly formatted content into a cloud document for distribution.
-
-## 🌐 Hosting on GitHub Pages
-This repository is designed for zero-config hosting on GitHub Pages:
-
-1.  **Enable Pages**: Go to **Settings** -> **Pages** in this GitHub Repo.
-2.  **Select Branch**: Choose `main` (or your active branch) and the `/(root)` folder. Click **Save**.
-3.  **Access Everywhere**: Your customized Studio will be live at `https://your-username.github.io/uic/`.
-
-**Why this is better**: You can share the link with your successor or fellow board members. They can use the dashboard to generate documents instantly without downloading a single file.
+2.  **Navigate via Dashboard**: Use the main cards to jump into your role (UIC, Coach, or Parent).
+3.  **Search & Discover**: Use the sidebar to find specific rules or guides instantly.
+4.  **Export & Print**:
+    - **PDF**: Generate high-fidelity PDFs for your dugout or field binder.
+    - **Google Docs**: Copy content directly for distribution in cloud documents.
 
 ## 🔒 Privacy & PII Protection
-- **Client-Side Only**: Your league data (`league_info.yaml`) never touches a server. All rendering happens locally in your browser.
-- **Git Protection**: The `league_info.yaml` file is automatically ignored by Git to prevent accidental leaks of payment rates or contact information to the public web.
+- **Client-Side Only**: Your league data (pay rates, contact info) never touches a server. All rendering happens locally in your browser via `localStorage`.
+- **Git Protection**: Sensitive configuration files are automatically ignored to prevent accidental leaks of private information.
 
-## 🛠️ Maintenance & Updates
-To update the handbook content or tactical guides:
-1. Edit the master **[UIC_HANDBOOK.md](UIC_HANDBOOK.md)**.
-2. The changes will automatically reflect in the Studio the next time you load the file.
-3. No redundant folders or "templates" are required—the Markdown source *is* the template.
+## 🛠️ Maintenance & Content Updates
+To update the content, rules, or guides:
+1.  Edit **[coaching_data.js](coaching_data.js)**. This file contains the structured JSON object that fuels the dashboard.
+2.  Updates are instant—just refresh `index.html` to see your changes.
 
 ---
-*Dedicated to Volunteer Excellence. Branded for {{ league_name }}.*
+*Dedicated to Volunteer Excellence. Because the kids deserve the best of us.*
