@@ -481,8 +481,15 @@
             activeResource = localStorage.getItem('uic_v9_active') || '';
             const savedConfig = localStorage.getItem('uic_config');
             if (savedConfig) config = JSON.parse(savedConfig);
+            
             const savedCollapsed = localStorage.getItem('uic_collapsed');
-            if (savedCollapsed) collapsedGroups = new Set(JSON.parse(savedCollapsed));
+            if (savedCollapsed) {
+                collapsedGroups = new Set(JSON.parse(savedCollapsed));
+            } else {
+                // Default: Collapse all groups for a cleaner look
+                const allGroups = [...new Set(Object.values(coachingData).map(d => d.group || 'General'))];
+                collapsedGroups = new Set(allGroups);
+            }
         }
 
         window.onload = init;
