@@ -1,577 +1,171 @@
+/**
+ * REVISION: 2026-03-18_V1.5
+ * SOURCE: Cedar Mill Coaching Compendium (CMCC)
+ * STATUS: FULL RE-AUDIT & MERGED RESTORATION
+ * ACTION: Restoring all missing sections from Book I, II, and III.
+ */
+
 const coachingData = {
-  // --- PILLAR 1: UMPIRE COORDINATOR (UIC) ---
-  "UIC-JD": {
-    group: "UIC Operations",
-    subGroup: "Job Description",
-    title: "1. The UIC Job Description & Authority",
-    content: `### Mission Statement
-The UIC is the Supreme Court of the league. You are the primary authority on the "Rules of the Game" and the guardian of the volunteer culture. Your mission is to ensure that games are managed fairly, safely, and with professional dignity.
-
-### Key Responsibilities:
-- **Rule Interpretation**: Providing "Master Interpretation" to coaches and resolving disputes.
-- **Recruitment**: Scouting for and training volunteer and youth umpires.
-- **Scheduling**: Managing assignments via the league's designated official platform to ensure no game goes un-officiated.
-- **Mentorship**: On-field evaluation of new umpires to build confidence.
-- **Accountability**: You have the authority—and the duty—to suspend or remove coaches who violate the behavioral standard.
-
-### The UIC Code:
-1. **Be the Adult**: When managers or parents reach high emotional states, you are the calm, rule-based anchor.
-2. **Zero-Assumption**: Always refer to the official **LLI Rulebook**, never to "how we used to do it" or "unwritten rules."
-3. **Guard the Gate**: Protect your umpires from harassment. Every formal incident must be documented and shared with the **Accountability Circle** to ensure a transparent record.
-4. **Charter Protection**: Identify and report any organizational overlap (shared boards/resources) that may jeopardize the league's standing with LLI.`
+  // --- BOOK I: THE SEASON PLAYBOOK (MANAGEMENT) ---
+  "B1-S1": { 
+    book: "Book I", section: "1. Modern Philosophy", title: "1.1 Collaborative Practices", 
+    content: "### 1.1 The \"Joint Practice\" Standard\n\n**The Goal**: To maximize repetitions and foster a professional league culture between opposing teams.\n\n**Execution**: \n- **Partner Up**: Schedule 60 minutes of joint drill-stations with your opponent before the game starts.\n- **The Scrimmage**: Conclude with a 45-minute developmental, coach-pitched scrimmage. \n- **Mentor Flow**: Shared field time allows veteran coaches to mentor newer coaches on-the-fly.\n\n**The Coaching Why**: We are one league, not two enemies. Joint practices eliminate \"standing around\" and double the total reps each player gets during the time block." 
   },
-  "UIC-SCHEDULING": {
-    group: "UIC Operations",
-    subGroup: "Operations",
-    title: "2. The Scheduling Hub",
-    content: `### The Regional Standard
-Modern leagues use centralized scheduling platforms to manage umpire assignments. These systems serve as the primary record for game coverage and official availability.
-
-### UIC Workflow:
-- **Registration**: Direct all prospective umpires to your league's official registration portal.
-- **Association Mapping**: Ensure every umpire is correctly mapped to your local charter or district association within the system.
-- **Assignment Logic**:
-  - **Youth Umpires**: Assign to Base positions first (Pos A/B/C) with a veteran Plate umpire for mentorship.
-  - **Senior Umpires**: Solo games require dual-competency in Plate and Base mechanics.
-- **The Ground Rule Audit**: Ensure your local ground rules are synchronized within the platform's settings to maintain consistency across the entire officiating crew.`
+  "B1-S2": { 
+    book: "Book I", section: "2. Staffing", title: "2.1 Building Your Staff", 
+    content: "### 2.1 The \"CEO\" Staffing Model\n\n**The Goal**: To eliminate single-point-of-failure coaching and ensure every player gets active eyes on them at all times.\n\n**The Roles**:\n- **The CEO (Head Coach)**: Your primary job is the **Practice Plan**. You own the rhythm of the field and delegating station-leads.\n- **The Strategist (Bench Coach)**: Leads the dugout. Manages the \"Next Up\" flow and in-game defensive adjustments.\n- **The Instructors (Assistant Coaches)**: These are your Station Leads. They focus 100% on the mechanics of their specific drill (e.g., The Battery or Hitting).\n- **The Logistics Lead (Team Parent)**: Owns GameChanger, snack schedules, and parent CCs. This protector of the coach's time allows you to focus purely on the kids.\n\n**The Coaching Why**: When a head coach tries to do everything, they notice nothing. Delegation allows the Head Coach to \"roam\" and provide high-level feedback to individual players." 
   },
-  "UIC-CALENDAR": {
-    group: "UIC Operations",
-    subGroup: "Operations",
-    title: "3. The UIC Operational Calendar",
-    content: `### Pre-Season (30-60 Days Out)
-- **Clinic Launch**: Schedule the mandatory "Umpire Fundamentals Clinic."
-- **Gear Audit**: Check the inventory for masks, chest protectors, and shin guards.
-- **Budget**: Review pay rates with the Treasurer.
-
-### In-Season
-- **Weekly Check-ins**: Review "No-Show" reports and adjust scheduling logic.
-- **Conflict Resolution**: Manage the 24-hour cooling-off period for parent/coach complaints.
-- **Clinics**: Run mid-season "Rundown" or "Timing Play" drills for continuing education.
-
-### Post-Season/All-Stars
-- **Evaluation**: Rank umpires for All-Star assignment selection.
-- **Handover**: Update the local ground rules based on the season's friction points.`
+  "B1-S4": { 
+    book: "Book I", section: "4. Communication", title: "4.1 The First 24 Hours", 
+    content: "### 4.1 The \"First 24-Hours\" Call Strategy\n\n**The Goal**: To create an immediate personal bond with the player and reduce \"First Day\" anxiety.\n\n**The Execution**:\n- **Method**: A voice phone call directly to the player. No texts, no mass emails.\n- **The Player Script**: \"Hi, is [Player's Name] available? This is your new baseball coach! I am so excited to have you on the [Team Name] this year. I've heard great things about your [hustle/energy/swing] and I can't wait to see you at our first practice on [Field] at [Time].\"\n- **The Parent Wrap-up**: Once the player is finished, briefly confirm the time/location with the parent and ask: \"Is there anything specifically I should know about [Player's Name] to help them have the best season possible?\"\n\n**The Coaching Why**: This is your first \"win\" of the season. When a child hears a coach is specifically excited about *them*, their effort levels double before they even step on the field." 
   },
-  "UMP-CLINIC": {
-    group: "Umpire Field Guide",
-    subGroup: "Training",
-    title: "1. The Umpire Clinic: Core Principles",
-    content: `### Understanding the Fundamentals
-Officiating is not about "calling balls and strikes"; it's about **managing the game**. Confidence comes from mastery of the three T's: **Timing, Tracking, and Tonal Authority.**
-
-### The Tonal Standard:
-- **Be Brief**: "Out!" not "You are out at the plate!"
-- **Be Loud**: Your voice must carry to both dugouts.
-- **Be Assertive**: Eliminate questions by being physically decisive.
-
-### Calls Hierarchy:
-1. **Play/Time Out**: You control the clock.
-2. **Strike/Ball**: The primary engine of the game.
-3. **Fair/Foul**: First/Third base lines.
-4. **Catch/No Catch**: Outfield priority.
-5. **Safe/Out**: The moment of truth at the bag.`
+  "B1-S5": { 
+    book: "Book I", section: "5. Meetings", title: "5.1 The Parent Meeting", 
+    content: "### 5.1 The 15-Minute Parent Power-Meeting\n\n**The Goal**: To align parents with the team's culture and prevent sidebar drama before it starts.\n\n**The Execution**:\n- **Context**: Hold this on the grass 15 minutes *before* the end of your first practice while the kids are still drilling.\n- **The 5-Point Agenda**:\n  1. **Intro**: Your baseball background and your \"Why\" for coaching.\n  2. **The Goal**: \"We are here to make them love the game so much they want to play again next year.\"\n  3. **The 24-Hour Rule**: Explain the mandatory cooling-off period for game-related concerns. No exceptions.\n  4. **The Communication Standard**: Define your **Single Source of Truth** (e.g., GameChanger, TeamSnap, or SportsEngine). Emphasize: *\"If it's not in the app, it doesn't exist.\"*\n  5. **The Call**: Hand out specific volunteer assignments (Scorekeeper, Snack Coordinator) on the spot.\n\n**The Coaching Why**: An un-managed parent group is a distraction. A managed parent group is a support system." 
   },
-  "UMP-SIGNALS": {
-    group: "Umpire Field Guide",
-    subGroup: "Training",
-    title: "2. Universal Signals & Mechanics",
-    content: `### Verbal and Physical Standards
-Don't innovate on signals—standardization prevents chaos.
-
-| Situation | Verbal Call | Physical Action |
-| :--- | :--- | :--- |
-| **Strike** | "Strike!" | Right hand forward (Pound the wall). |
-| **Ball** | "Ball!" | None. (Use LH fingers to track). |
-| **Strike Count** | None | Show fingers on Right Hand. |
-| **Ball Count** | None | Show fingers on Left Hand. |
-| **Full Count** | "Full Count" | 3 fingers LH / 2 fingers RH (NO fist bumps). |
-| **Safe** | "Safe!" | Arms spread wide (Sweeping motion). |
-| **Out** | "Out!" | Fist pump or assertve point. |
-| **No Tag** | "No Tag!" | Safe motion; keep eyes on the tag spot. |
-
-### The "Assertive" Rule:
-If it's close, be **LOUDER**. If it's obvious, be **QUIETER**. This subtly communicates to players and coaches that you saw the play clearly.`
+  "B1-S8": { 
+    book: "Book I", section: "8. Parents", title: "8.2 The 24-Hour Rule", 
+    content: "### 8.2 The \"24-Hour Rule\" Enforcement\n\n**The Goal**: To protect both the coach and the parent from making emotional, heat-of-the-moment decisions that could damage the team culture.\n\n**The Policy**: \nCoaches will not engage in any discussion regarding game-related frustrations (playing time, positions, specific plays) until **24 hours after the final out** of that game has been recorded.\n\n**Execution Guidelines**:\n- **On the Field**: If a parent approaches you immediately after a game with a concern, use this phrase: *\"I value your feedback, but out of respect for the 24-hour rule, I'd like to schedule a time to talk about this tomorrow afternoon. Let's touch base then.\"*\n- **The Exception**: Logistics (e.g., \"Johnny left his glove\") are always okay to discuss immediately.\n- **The Meeting**: Once 24 hours have passed, the meeting should be brief, private, and focused on the solution, not the blame.\n\n**The Coaching Why**: Baseball is an emotional game. By mandating a \"cooling-off\" period, we ensure that conversations are grounded in logic and the best interest of the child, rather than the score of a single game." 
   },
-  "UMP-PLATE": {
-    group: "Umpire Field Guide",
-    subGroup: "Mechanics",
-    title: "3. Plate Mechanics: The Slot & The Lock",
-    content: `### Working the Plate
-The plate umpire is the anchor of the crew. Your positioning dictates your accuracy.
-
-### 1. The Slot Position
-- **Where**: Stand in the "slot" between the catcher and the batter.
-- **Why**: This provides a clear, unobstructed view of the strike zone and the ball's path into the catcher's mitt.
-
-### 2. The Locked Position
-- **How**: Get into your stance as the pitcher prepares.
-- **Protection**: Keep your hands tucked (often behind your back or behind the catcher) to protect your fingers.
-- **Still Head**: Your eyes must be level and at the top of the strike zone. If your head moves, the ball moves.
-
-### 3. Clearing the Catcher
-- **"Opening the Gate"**: Once the ball is hit, step back and out to create a lane for the catcher.
-- **Following the Play**: On a base hit, "clear the bat" and follow the play toward 1B if a potential play is eminent.`
+  "B1-S9-P": { 
+    book: "Book I", section: "9. Pathways", title: "9.2 Pitching Pathway", 
+    content: "### 9.2 The \"Arm Care\" Pitcher Progression\n\n**The Goal**: To develop as many confident arms as possible by removing the fear of walks and focusing on mechanics over outcomes.\n\n**The Division Pathway**:\n- **AA (Foundations)**: Introduce the mound. **\"Coach Rescue\"** is the standard. If a player throws 4 balls, the coach enters to finish the at-bat. This prevents \"Walk Marathons\" and keeps the defense engaged.\n- **AAA (Accountability)**: Transition to **Full Kid Pitch**. No rescue. Pitchers learn to navigate a full at-bat. Focus: 100% on the Balance Point.\n- **Minors (Defense)**: Advanced mechanics and **Pitcher Fielding Practice (PFP)**. The pitcher becomes the \"5th Infielder\" on bunts and comebackers.\n- **Majors (Strategy)**: Full LLI tournament rules and advanced pitch-calling. Introduction of situational placement.\n\n**The Coaching Why**: Pitching is a skill, not a position. Every child should be given the foundation to learn it without the shame of throwing a walk." 
   },
-  "UMP-POSITIONS": {
-    group: "Umpire Field Guide",
-    subGroup: "Mechanics",
-    title: "4. Base Mechanics: A, B, & C Positions",
-    content: `### The "Outside Theory"
-On a 60ft Little League diamond (with no leading off), base umpires start **outside** the infield dirt on the grass.
-
-### Position A (No Runners)
-- **Location**: Foul territory, 10-15 feet behind the First Baseman.
-- **Responsibility**: Fair/Foul on the 1B line, Safe/Out at First Base.
-
-### Position B (Runner on 1st)
-- **Location**: Outfield grass, behind the 2nd Baseman.
-- **Focus**: Double play feeds at 2nd, the force/tag at 1st.
-
-### Position C (Runners on 2nd, 3rd, or Bases Loaded)
-- **Location**: Outfield grass, behind the Shortstop.
-- **Focus**: Plays at 2nd and 3rd.
-
-### The "Library"
-The "Library" is the working area **inside** the diamond. You only move here **after** the ball is in play to get the best angle on a tag or force.
-> [!IMPORTANT]
-> **Pause, Read, React**: Do not sprint as soon as the ball is hit. See where it goes first.`
+  "B1-S11": { 
+    book: "Book I", section: "11. End-of-Season", title: "11.1 The Speech Template", 
+    content: "### 11.1 The \"Growth-First\" Closing Speech\n\n**The Goal**: To leave players with a permanent sense of accomplishment and pride, regardless of the season's win/loss record.\n\n**The Execution**:\n- **Setting**: Hold this in center field immediately following your final game. No parents should be in the huddle yet; this is for the players only.\n- **The 4-Part Script**:\n  1. **The Transformation**: *\"I want you to look at your teammate next to you. Think about how much better they are today than on the first day in the cold rain. You did that for each other.\"*\n  2. **The Effort**: *\"I am proud of your grit. We didn't just play baseball; we learned how to compete.\"*\n  3. **The Personal Moment**: Share one specific, tiny mechanical improvement you saw in each player (e.g., \"Johnny, you hit the cutoff man every time today.\").\n  4. **The Farewell**: *\"You will always be a [Team Name]. See you next season.\"*\n\n**The Coaching Why**: The final 3-minutes of your season will determine if a child signs up again next year. Make it about their growth, not the score." 
   },
-  "UMP-SCENARIOS": {
-    group: "Umpire Field Guide",
-    subGroup: "Mechanics",
-    title: "5. Critical Drills & Scenarios",
-    content: `### 1. Assuming R1 Only (1st to 3rd Coverage)
-- **The Protocol**: Plate umpire covers 3rd on a base hit to the outfield when a play is eminent at 3rd.
-- **Communication**: Plate initiates a signal; Base umpire **must** echo to confirm coverage.
-
-### 2. The Timing Play
-- **The Scenario**: Scoring a run while a third out is being made (not a force out).
-- **Protocol**: Plate umpire initiates the signal; Base echoes.
-
-### 3. Rundowns (The Trap)
-- **The Split**: Split the field in half. UMPIREs take tag plays in their respective halves.
-- **Visuals**: Maintain 10-15 feet of distance. Don't get too close to the runners.
-- **Authority**: If you see the tag, take it! "Partner, I've got this—OUT!"`
-  },
-  "UIC-PLATE-MEETING": {
-    group: "UIC Operations",
-    subGroup: "Admin",
-    title: "9. The Plate Meeting Checklist",
-    content: `### The 5-Minute Professional Setup
-The meeting with the managers sets the tone for the entire game.
-
-- [ ] **Equipment Inspection**: "Managers, have you inspected your players' equipment and found it to be legal and safe according to Little League standards?"
-  - *Must-Check*: All non-wood bats must carry the **USA Baseball (USABat)** logo.
-  - *Safety Warning*: Helmets with after-market attachments (guards, C-Flaps) are illegal unless they carry the manufacturer's embossed certification for that specific model.
-- [ ] **Line-ups**: Exchange official lineup cards between managers. Note any players arriving late or leaving early.
-- [ ] **Pitch Count Accountability**: Confirm the official scorekeeper's location and remind managers of their duty to track their own counts for player safety.
-- [ ] **Ground Rules**: Address local field hazards (e.g., dead ball areas, light pole boundaries).
-- [ ] **Dugout Control**: "All equipment inside. Clarifications only from the manager—judgment calls are final. Let's keep the focus on the players."`
-  },
-  "UIC-CRISIS": {
-    group: "UIC Operations",
-    subGroup: "Admin",
-    title: "10. Crisis Management: Ejections & Safety",
-    content: `### The "Red Card" Protocol
-Ejection is a tool of last resort, but it is necessary to protect the game.
-
-### When to Eject:
-- **Arguing Judgment**: One warning. Second offense is an ejection.
-- **Hostility**: Any verbal abuse or physical intimidation.
-- **Safety Violation**: Intentional throwing of bats or helmets.
-
-### Post-Incident Workflow:
-1. **The Walk**: The person ejected must leave the park entirely (not stay in the bleachers or parking lot). A game cannot resume until the field is clear.
-2. **The Transparency Report**: Within 24 hours, the UIC must file a written report and email it to the **Accountability Circle** (President, Player Agent, and Safety Officer) simultaneously. This ensure that disciplinary actions are handled via official charter policy rather than personal back-channels.
-3. **Safety First**: If a parent or coach becomes aggressive or fails to leave, **SUSPEND THE GAME** immediately. The safety of the community supersedes the final score of the game.`
-  },
-  "UIC-ADVOCACY": {
-    group: "UIC Operations",
-    subGroup: "Advocacy",
-    title: "11. Guardian of the Gate: Protecting Youth Umpires",
-    content: `### The Standard of Protection
-Youth umpires are children. They are learners, not targets. As the UIC, you are the primary shield for these officials against "tactical bullying" and "aggressive management" from the dugouts.
-
-### Identifying "Aggressive Management":
-- **The "Teaching" Trap**: Coaches who "educate" a youth umpire on the strike zone from the dugout or behind the plate are not teaching—they are intimidating.
-- **Bucket Yelling**: Warning signs include head coaches who sit on a bucket and incessantly chirp about judgment calls.
-- **The "Missing" Veteran**: If you notice that experienced umpires seem to avoid certain coaches, it is a clear indicator of a toxic coaching environment.
-
-### UIC Intervention Protocol:
-1. **The Field Check**: If you observe a coach "managing" a youth umpire, walk to the fence and remind the coach: "The youth umpire is the official on this field. Coaching judgment from the dugout is a violation of the behavioral standard. Please refrain."
-2. **The "Shadow" Mentor**: For high-friction games, assign a veteran "Shadow" (not a working official) to stand near the dugout to neutralize coach aggression simply through presence.
-3. **The Permanent Record**: Document any coach who has repeated friction with youth officials. Share these patterns with the **Accountability Circle**—recurring issues with youth officials are often the first sign of a compromised community culture.`
+  "B1-S12": { 
+    book: "Book I", section: "12-15. All-Stars", title: "The All-Star Addendum", 
+    content: "### The All-Star \"Excellence\" Addendum\n\n**The Goal**: To transition from a \"Development First\" mindset to a \"Performance First\" tournament culture while maintaining athlete integrity.\n\n**The Three Pillars**:\n1. **The SACRIFICE Pact**: *\"For the next 4 weeks, this team is your primary commitment. Vacations, other sports, and social events must be scheduled around our games.\"* Any breach of this pact is grounds for removal from the tournament roster.\n2. **The CBO Offensive Power**: Since LLI mandates a **Continuous Batting Order**, your 10th, 11th, and 12th hitters are just as crucial as your leadoff. Your job is to build a lineup that \"never dies.\" Even if a player is not in the starting defensive nine, they must be 100% engaged as an offensive threat.\n3. **The Defensive Nine**: While everyone bats, only nine play defense. Identify your most reliable defensive core for big moments and prepare your bench players for specific \"closer\" roles or situational defensive replacements.\n4. **The Zero-Tolerance Culture**: Any ejection of a player, coach, or parent for sportsmanship-related issues is an immediate disqualification for the remainder of the tournament.\n\n**The Coaching Why**: All-Stars is a reward for elite effort. You owe it to the players to provide an environment of high-standards and maximum competitive focus." 
   },
 
-  // --- PILLAR 2: COACHES (MANAGERS) ---
-  "COACH-PHIL": {
-    group: "Youth Coaches (Managers)",
-    subGroup: "Philosophy",
-    title: "1. The Community-First Mission",
-    content: `### My Mission: Development Over Trophies
-As a Little League coach, my mission is to provide a positive, developmental experience for every child. We are not a club team; we are neighbors coaching neighbors.
-
-### The Contrast in Standards:
-- **Developmental Scrimmage**: Every child gets reps. We use coach-pitched scrimmages to ensure the ball is in play, not at the catcher's mitt.
-- **Volunteer Respect**: We demand zero-tolerance for hostility from parents who expect professional-level services from volunteers.
-- **The "No-Cut" Culture**: Our job is to improve the players we have, not to "tier" them for competitive ego.
-
-> [!IMPORTANT]
-> If a parent is pressuring you for high-intensity competition or complaining about "the level of play," remind them: **"This is Little League. We build ball players, not just champions."**`
+  // --- BOOK II/III: THE SKILLS & DRILLS (MERGED & AUDITED) ---
+  "B2-S2-1": {
+    book: "Book II/III", section: "2. Practice Planning", title: "2.1 The \"Split-Squad\" Plan (Full Field)",
+    content: "### 2.1 The \"Split-Squad\" Plan (Full Field - 120 Minutes)\n\n**The Goal**: To maximize touches and eliminate \"standing around\" by splitting the staff and the field into two distinct Work Zones.\n\n**The Schedule**:\n- **0:00-0:15 (Warm-up)**: Dynamic stretching and \"Structured Throwing\" (Show them your number!).\n- **0:15-0:55 (The Circuit)**: Split Group A (Infield/Battery) and Group B (Outfield/Hitting). Swap after 20 mins.\n- **0:55-1:10 (Team Defense)**: Focus on Cutoffs & Relays (7.2) or Rundowns (3.4).\n- **1:10-1:45 (Situational Scrimmage)**: Live BP with a specific mission (Runner on 2nd, 1 out).\n- **1:45-2:00 (The Finisher)**: Competitive Cauldron (10.2).\n\n**The Golden Rule**: **Divide and Conquer.** One coach at home plate, one coach in the outfield gap.\n\n**The Coaching Why**: Large rosters lead to \"player drift.\" Splitting the squad halves the wait time and doubles the active development."
   },
-  "COACH-STAFF": {
-    group: "Youth Coaches (Managers)",
-    subGroup: "Logistics",
-    title: "2. Staff Management: Managing the 'Volunteer Dad'",
-    content: `### Delegation is a Skill
-Success as a manager isn't about how many drills you run, but how you manage your volunteer ecosystem. Use your staff to create "Micro-Stations" to keep kids moving.
-
-### Handling Volunteer Helpers:
-- **The "Vest" Rule**: Any parent on the field must be a registered volunteer with a cleared background check. No "friends of the family" in the dugout or on the grass.
-- **The Behavioral Sync**: Before the first practice, hold a "Staff Only" meeting. Remind them: "When you have the jersey on, you are a league official. No yelling at umpires, no aggressive 'intensity' with the kids."
-- **Clear Lanes of Authority**:
-  - **Dugout Manager**: Responsible for the batting order and ensuring players are ready with helmets/bats.
-  - **Drill Sergeants**: Assign one dad to "The Catching Station" and another to "The Hitting Station." Give them a single "Standard" to enforce (e.g., "Two hands every time").
-  - **The "No-Huddle" Rule**: Don't let your coaches huddle up to talk strategy while the kids stand still. If the coaches are talking, the kids are failing to get reps.
-
-> [!TIP]
-> **Managing the Ego**: If a volunteer helper is overstepping or being too intense, pull them aside privately. "I appreciate your energy, but on this field, we follow the **Accountability Hub** standard of developmental calm. Let's redirect that energy into positive mechanical cues."`
+  "B2-S2-2": {
+    book: "Book II/III", section: "2. Practice Planning", title: "2.2 The \"Grass-Only\" Plan (Wet Field)",
+    content: "### 2.2 The \"Grass-Only\" Plan (No Infield Access - 120 Minutes)\n\n**The Goal**: To maintain highly productive training even when the dirt is occupied or wet.\n\n**The Schedule**:\n- **0:00-0:15 (Warm-up)**: Dynamic stretching and \"Crossover Lead\" (4.3) practice.\n- **0:15-1:00 (Outfield Specialization)**: Outfield Star (4.1), Gap Communication (4.2), and Sliding (4.4).\n- **1:00-1:45 (Battery & Hitting)**: Pitchers and catchers work \"Balance Point\" (5.1) and \"Towel Drill\" (5.2) on the grass. Hitters work \"The Net Station\" (6.2).\n- **1:45-2:00 (Relay Races)**: High-speed conditioning/baserunning to finish.\n\n**The Golden Rule**: **The Field is Still Open.** Don't cancel because the dirt is wet; the grass is where games are often won or lost.\n\n**The Coaching Why**: Mastery of tracking, sliding, and mechanical power are \"non-dirt\" skills that separate elite teams from average ones."
   },
-  "COACH-RULES": {
-    group: "Youth Coaches (Managers)",
-    subGroup: "Operations",
-    title: "3. Common Rules Misconceptions",
-    content: `### Accountability to the Rulebook:
-- **Infield Fly**: Runners on 1/2 or Bases Loaded, < 2 outs. 
-- **Dropped Third Strike**: Majors only. Must be unoccupied 1B (or 2 outs).
-- **Obstruction vs. Interference**: Learn the difference. 
-  - *Obstruction* is the defense's fault.
-  - *Interference* is the offense's fault.`
+  "B2-S2-3": {
+    book: "Book II/III", section: "2. Practice Planning", title: "2.3 The \"Cage Session\" (Indoor Facility)",
+    content: "### 2.3 The \"Cage Session\" (90-Minute Indoor Facility)\n\n**The Goal**: To maximize mechanical ROI in a high-cost/limited-space facility (e.g., DBat).\n\n**The Management Tip**: Indoor time is expensive and often paid out of pocket. For heavy rain-out seasons, a **$10 per event contribution** from families is a common standard to help offset the facility cost.\n\n**The Schedule (90-Minute Clock)**:\n- **0:00-0:15 (Logistics)**: Dynamic stretch and \"Shadow Pitching\" (5.1) **before the paid time starts** (in the lobby or outside).\n- **0:15-0:55 (The \"Divider Up\" Circuit)**: Pull the divider to create one large field-space.\n  - **Zone 1 (Handles)**: Half-team works \"Short Fungo\" (3.3) for picking-work/soft-hands.\n  - **Zone 2 (The Net)**: Other half-team hit \"Tee & Soft Toss\" (6.2).\n- **0:55-1:25 (The Battery Split)**: Cages 1/2 for Live BP/Tracking (6.1). Bullpen for \"Balance Point\" (5.1) and \"Blocking\" (5.4).\n- **1:25-1:30 (Chalk Talk)**: Mental Game \"10-Second Rule\" (10.1) while cleaning up.\n\n**The Golden Rule**: **Never \"Just Stand There.\"** In a cage, if you aren't hitting, you are tracking the pitcher's release.\n\n**The Coaching Why**: Indoor time allows for a 1:1 ball-to-player ratio that is impossible on a massive grass field."
   },
-  "COACH-SHIELD": {
-    group: "Youth Coaches (Managers)",
-    subGroup: "Operations",
-    title: "4. The Parent Shield: Deflecting Tier 3 Pressure",
-    content: `### Protecting the Dugout
-The "Parent Shield" is your ability to protect yourself, your staff, and your players from the high-intensity pressure of "Tier 3" (Club/Select) expectations.
-
-### The Standard of Communication:
-- **The "Pre-Season" Filter**: Set the expectation early. "We are here to develop 12 players, not to win a trophy at the expense of player health."
-- **The 24-Hour Rule**: Never discuss playing time or strategy immediately after a game. "I hear your concern. Let's talk tomorrow after we've both had time to reflect."
-- **The "Volunteer" Reminder**: If a parent becomes hostile, use a firm but professional reminder: "I am a volunteer neighbor providing a service for your child. Hostility is a violation of the league's code of conduct."
-
-> [!IMPORTANT]
-> **Accountability Wins**: If a parent bypasses you and goes to the board with "tactical" complaints, refer them back to the **Accountability Circle**. A healthy board supports their managers against Tier 3 pressure.`
+  "B2-S3-1": { 
+    book: "Book II/III", section: "3. Infield Drills", title: "3.1 Momentum Fielding", 
+    content: "### FIELD GUIDE (Quick Execution)\n- **Objective**: Teach players to attack the ball and create momentum.\n- **Execution**: Three-cone triangle. Charge the rolled ball, field it out front, and walk through.\n- **Cue**: **\"Alligator Hands, Butt Down!\"**\n\n---\n### THE MANUAL (Deep Why)\n**Coaching Why**: Prevents \"flat-footed\" fielding. It teaches the player to 'read' the hop rather than let the hop read them." 
   },
-  "DRILL-L1": {
-    group: "Youth Coaches (Managers)",
-    subGroup: "Drills: Level 1 (Intro)",
-    title: "Level 1: The Foundation (Tee-Ball/Intro)",
-    content: `### Focus: Fun, movement, and "Where do I go?"
-At this level, "drills" are organized play. We are building basic spatial awareness and the muscle memory of baseball movement.
-
-#### 1.1 Infield: "The Ready Rock"
-- **The Drill**: Kids stand in a circle. On "Ready Rock!", they jump into a wide stance (wider than shoulders), hands out front like a Gorilla.
-- **The Standard**: Hands must be visible to the coach. If their hands are on their knees, they aren't ready.
-- **The Goal**: Athletic positioning.
-
-#### 1.2 Infield: "The Crocodile"
-- **The Drill**: Roll soft "Squish" balls. Kids must "chomp" the ball using their glove (bottom jaw) and bare hand (top jaw).
-- **The Standard**: Hands must be out in front of their feet. "Don't let the ball get under your belly!"
-- **The Goal**: Two-hand fielding.
-
-#### 1.3 Outfield: "Look at the Sky"
-- **The Drill**: Use tennis balls or softies. Tossing the ball High (not far).
-- **The Standard**: "Glove up, eyes up." Teach them to keep the glove near their chin, not in front of their face.
-- **The Goal**: Tracking objects above their head without fear.
-
-#### 1.4 Baserunning: "Home to First"
-- **The Drill**: Sprint from home to 1B.
-- **The Standard**: At 1B, they MUST run *through* the bag and touch the orange safety base (if present). No stopping on the base.
-- **LLI Rule Check**: Teach them that once they cross 1B, they must turn toward the fence (away from the field) to avoid being "in play."
-- **The Goal**: Effort and bag-touching muscle memory.
-
-#### 1.5 Throwing: "The T-Pose"
-- **The Drill**: Kids stand sideways to the target. Arms out like a "T."
-- **The Standard**: Front shoulder points to the target. "Step and Fire."
-- **The Goal**: Directional accuracy.
-
-> [!TIP]
-> **New Coach Alert**: At this age, keep your "talk time" under 60 seconds per drill. If they are standing still, they are getting bored.`
+  "B2-S3-2": { 
+    book: "Book II/III", section: "3. Infield Drills", title: "3.2 4-Corner Flip", 
+    content: "### FIELD GUIDE (Quick Execution)\n- **Progression**: 1) Soft/High Flip (Short Sq). 2) Firm/Fast Flip (Large Sq).\n- **Cue**: **\"Flip and Follow!\"** (Glove hand stays back to clear the lane).\n\n---\n### THE MANUAL (Deep Why)\n**Execution**: Round 1 (10ft) focuses on touch. Round 2 (20ft) focuses on Double Play speed." 
   },
-  "DRILL-L2": {
-    group: "Youth Coaches (Managers)",
-    subGroup: "Drills: Level 2 (Building)",
-    title: "Level 2: The Building Blocks (Machine/Coach Pitch)",
-    content: `### Focus: Consistent mechanics and "The Next Play."
-Players are now seeing moving balls and need to understand the relationship between catching and the throw that follows.
-
-#### 2.1 Infield: "The Triangle Drill"
-- **The Drill**: Use cones to create a triangle. Feet at the base, glove at the tip. 
-- **The Standard**: "Foot-Foot-Field" rhythm. The glove must be ON the dirt at the tip of the triangle.
-- **The Goal**: Optimal fielding angle and footwork.
-
-#### 2.2 Outfield: "The Drop Step"
-- **The Drill**: Player stands 10ft away. Coach yells "Back!" and points left or right. The player must step back with that foot first.
-- **The Standard**: Never run backward on your heels. Turn the body and run toward the spot.
-- **The Goal**: Basic range movement.
-
-#### 2.3 Baserunning: "Rounding the Bag"
-- **The Drill**: Runner starts at home. Coach calls "Two!" as they approach 1B.
-- **The Standard**: The runner must take a "banana route" (small curve) out toward the grass to round 1B and look toward 2B. 
-- **The Goal**: Learning to maintain momentum for extra bases.
-
-#### 2.4 Throwing: "The Power Position"
-- **The Drill**: Players start on one knee, facing the target. Throwing arm is back in a "90-degree" angle.
-- **The Standard**: Pull the "front bow" (glove arm) in as they throw.
-- **The Goal**: Using the core and shoulders, not just the elbow.
-
-#### 2.5 Hitting: "The Load & Poke"
-- **The Drill**: Off a tee or soft toss.
-- **The Standard**: Step with the front foot as the bat goes back slightly (the load). "Drive the back knee."
-- **The Goal**: Sequential movement in the swing.
-
-> [!CAUTION]
-> **Safety Check**: At the coach-pitch level, ensure the person on the "bucket" or pitching is protected. No kids behind the pitcher during these drills.`
+  "B2-S3-3": {
+    book: "Book II/III", section: "3. Infield Drills", title: "3.3 Short Fungo Drill",
+    content: "### 3.3 The \"Rapid-Fire\" Short Fungo (Ball Management Method)\n\n**The Goal**: To achieve **maximum infield repetition** focusing purely on hand-eye coordination without the strain of throwing.\n\n**The Execution**:\n- **Context**: Ideal for a coach with a small ball bag (25-30 balls).\n- **Setup**: One coach/parent kneels 15 feet in front of a line of 3 players. A second group of 3 players stands 15 feet *behind* the first group.\n- **The Drill (Phase A)**: Coach hits/rolls 25 rapid-fire grounders to the first player in line. The player fields and drops the ball at their feet.\n- **The Shag (Phase B)**: Once the bag is empty (25 balls), the fielder rotates to the back. The 3 players behind immediately \"pounce\" on the balls and reload the coach's bag.\n\n**The Rotation Rule**: No player is allowed to stand still. You are either the **Fielder** (working hands) or the **Shagger** (reloading the \"inventory\").\n\n**The Coaching Why**: By removing the throw, we isolate the fundamental of \"See the ball into the glove.\" This drill turns a \"wait for the ball\" practice into a 2-minute \"High-Intensity Circuit\" that only requires 25-30 balls and zero down-time."
   },
-  "DRILL-L3": {
-    group: "Youth Coaches (Managers)",
-    subGroup: "Drills: Level 3 (Transition)",
-    title: "Level 3: The Transition (Kid Pitch/Minors)",
-    content: `### Focus: Specialization and the "Secondary Read."
-This is where the game speeds up. We move from generic athletics to specific position-based skills.
-
-#### 3.1 Infield: "The Crossover Step"
-- **The Drill**: Lateral ground balls 10ft to the left/right. 
-- **The Standard**: The first movement must be a "crossover" (back foot over front foot) to gain distance.
-- **The Goal**: Infield range expansion.
-
-#### 3.2 Outfield: "Calling the Ball" (The Communication Drill)
-- **The Drill**: Two outfielders in the gaps. Toss a fly ball between them.
-- **The Standard**: The player who wants it MUST yell "Mine! Mine! Mine!" (Three times). The other player immediately drops their glove and says "Yours!"
-- **The Goal**: Eliminating collisions and "Who's got it?" drops.
-
-#### 3.3 Baserunning: "The Secondary Read"
-- **The Drill**: Runner at 1B. Pitcher on the mound.
-- **The Standard**: NO PRIMARY LEADS. The runner stays on the bag until the ball reaches the batter.
-- **The Skill**: As the ball reaches the batter, the runner takes 2-3 aggressive shuffle steps toward 2B. 
-- **The Decision**: If the ball is hit, they go. If the ball is in the dirt, they sprint to 2nd ("Dirt Ball Read"). If the catcher secures it, they retreat.
-- **The Goal**: Creating pressure without breaking LLI leadoff rules.
-
-#### 3.4 Pitching: "The Balance Beam"
-- **The Drill**: Pitchers stand on a line (or a 2x4). Complete the delivery without stepping off the line.
-- **The Standard**: "Lift, Drive, Finish." The chest must end up over the front knee.
-- **The Goal**: Mechanical stability and aim.
-
-#### 3.5 Catcher: "Building the Wall"
-- **The Drill**: Gear on. Coach throws balls into the dirt.
-- **The Standard**: "Chin to Chest." Block it with the chest protector, not the glove. 
-- **The Goal**: Reducing fear and passed balls.
-
-> [!IMPORTANT]
-> **Pitch Count Reminder**: Even in practice, track the number of full-speed pitches thrown by your staff. Practice throws count toward arm fatigue.`
+  "B2-S3-4": { 
+    book: "Book II/III", section: "3. Infield Drills", title: "3.4 Continuous Rundown", 
+    content: "### 3.4 The \"Pickle\" (Continuous Rundown)\n\n**The Goal**: To achieve the out in **two throws or less** while preventing the runner from advancing to the lead base.\n\n**The Execution (Dart & Lane Method)**:\n- **Running Path**: Pick a lane (left or right) of the runner. Never run directly behind them, as the runner's body blocks the throwing path.\n- **The \"Go\"**: The fielder with the ball sprints 100% full speed at the runner to force them to commit to the lead base.\n- **The Dart Throw**: Arm up with the elbow at 90 degrees. No wind-up. Throw the ball like a dart once the next fielder calls \"NOW!\".\n- **The Follow**: After the throw, the fielder follows their ball to the next bag to replace the fielder who just received it.\n\n**The \"Standard\" Defensive Call**:\n- **\"BALL! BALL! BALL!\"**: The fielder without the ball must call for it loud and early when they want the throw.\n\n**The Coaching Why**: Most rundowns fail because of \"lazy runs\" or multiple throws. One hard sprint and one dart throw are all you need." 
   },
-  "DRILL-L4": {
-    group: "Youth Coaches (Managers)",
-    subGroup: "Drills: Level 4 (Advanced)",
-    title: "Level 4: High-Performance (Majors)",
-    content: `### Focus: Precision, Communication, and "The Mental Game."
-At this level, we are refining the small details that win tournament games.
+  "B2-S3-5": { 
+    book: "Book II/III", section: "3. Infield Drills", title: "3.5 First-and-Third Defense", 
+    content: "### 3.5 \"First-and-Third\" Defensive Situations\n\n**The Goal**: To present a disciplined defense that forces the runner at 1st to stay put, or caught in a pickle, without conceding 3rd base.\n\n**The Primary Options**:\n1. **The Pump Fake**: Catcher catches the strike, looks at 3B to freeze the runner, then hard-fakes a throw to 2B. If the runner at 3B breaks, throw to the 3rd Baseman.\n2. **The \"Cut-Off\" play**: Catcher throws to 2B, but the Shortstop or 2nd Baseman \"crashes\" inside the infield to cut the ball and immediately check the runner at 3rd base.\n3. **The Snap-to-Third**: Catcher immediately throws to 3B to catch a \"lazy\" runner off their lead. Requires a pre-determined sign.\n\n**Division Adjustments**:\n- **AA/AAA**: Focus only on the \"Long Throw\" to 2nd base. Don't worry about the double-steal; get the experience of the big throw.\n- **Minors/Majors**: Master the \"Pump Fake\" as the default play.\n\n**The Coaching Why**: First-and-Third is where most youth runs are conceded. A defense that knows their \"Cut\" spots is a defense they cannot run on." 
+  },
+  "B2-S3-6": {
+    book: "Book II/III", section: "3. Infield Drills", title: "3.6 The Everyday Infield Fungo",
+    content: "### 3.6 The \"Everyday\" Infield Fungo\n\n**The Goal**: To achieve **maximum infield repetition** in minimum time. This drill builds muscle memory for reading the ball off the wooden bat.\n\n**The Execution (The Round of 5)**:\n- **Setup**: One coach at home plate. Players at their standard defensive depth. Extra balls at the mound.\n- **The Drill Sequence**:\n  1. **To 3rd Base**: Charge, field, throw to 1B.\n  2. **To Shortstop**: Charge, field, throw to 1B.\n  3. **To 2nd Base**: Charge, field, throw to 1B.\n  4. **The Turn**: To 1st Base/2B/SS to practice turning a Double Play feed.\n  5. **Bunt Defense**: Coach rolls a bunt. Catcher pounces and throws to 1B.\n\n**The \"Standard\" Pace**:\n- **The Bucket Rule**: If a ball is missed, do not chase it! The coach immediately hits the next ball. A staff member or parent cleans the path only after the full round of 5 is finished.\n\n**The Coaching Why**: We don't practice until we get it right; we practice until we can't get it wrong. Structure prevents players from standing around." 
+  },
+  "B2-S4-1": {
+    book: "Book II/III", section: "4. Outfield & Baserunning", title: "4.1 Outfield Star Drill",
+    content: "### 4.1 The \"Outfield Star\" Full-Field Cycle\n\n**The Goal**: To train an outfielder to track and catch a fly ball in every game-possible scenario (overhead, glove side, backhand, and charge) without ever breaking their stride.\n\n**The Execution (Coach-Lob Method)**:\n- **Setup**: Visualize a large 5-point star on the field. Line of players starts at the coach.\n- **The Drill**: On \"GO!\", the player sprints toward the first star-tip. The coach **underhand lobs** the ball high into the air to **lead** the player into the catch.\n- **The 5-Point Cycle**:\n  1. **Tip 1 (Overhead)**: Run back, catch over the shoulder.\n  2. **Tip 2 (Glove Side Low)**: Angle for a lower-trajectory catch.\n  3. **Tip 3 (Backhand)**: Cross over and reach for a backhand catch.\n  4. **Tip 4 (Glove Hand Mid)**: Move horizontally (gap coverage).\n  5. **Tip 5 (The Crash)**: Charge full speed toward the infield to catch a shallow pop-up.\n\n**The Golden Rule**: **Never Backpedal.** We track with our eyes and move with our feet. Trust the lob and run into the ball.\n\n**The Coaching Why**: Underhand lobs allow for 100% accuracy from the coach. This removes the variable of \"bad hits\" and focuses the player entirely on their footwork and catch-paths."
+  },
+  "B2-S4-2": {
+    book: "Book II/III", section: "4. Outfield & Baserunning", title: "4.2 Gap Communication",
+    content: "## 4.2 Gap Communication (Turn, Locate, & Support)\n\n**The Goal**: To train an outfielder to turn, run to a spot, and locate a fly ball in the air while maintaining high-speed communication to avoid collisions.\n\n**The Execution**:\n- **Setup**: Place two markers (buckets or gloves) 10 feet apart. Two players start **between** the markers, facing the coach.\n- **The Turn**: On \"GO!\", both players turn and run **around the outside** of their respective markers, heading deep into the gap.\n- **The \"Blind\" Locate**: As they turn, the coach lobs a high pop-fly. **Crucial**: Players must not watch the coach; they must make their turn first and only \"find\" the ball once they are in their running path.\n- **The Communication**: One player calls **\"BALL! BALL! BALL!\"** loud and early.\n- **The Support**: The second player immediately peels off to back up the catcher and directs the play (e.g., \"Hit the cutoff!\").\n\n**The Coaching Why**: This simulates a ball hit over a player\'s head. It teaches them to run to a spot first, find the ball second, and trust their teammate\'s voice."
+  },
+  "B2-S4-3": {
+    book: "Book II/III", section: "4. Outfield & Baserunning", title: "4.3 The Cross-Plate Break",
+    content: "## 4.3 The \"Cross-Plate Break\" (First Step Explosiveness)\n\n**The Goal**: To maximize a baserunner\'s explosive first step on a steal or a secondary lead return by using a hard crossove mechanic.\n\n**The Execution**:\n- **Setup**: A runner at 1st base. Pitcher is in the stretch (coach or player).\n- **The Secondary Lead**: On the pitch, the runner takes two aggressive **shuffle-shuffles** (keeping their chest square to the plate).\n- **The Break (Steal or Advance)**: If the ball is hit or the steal is called, the runner plants their **left foot hard** and drives their **right knee** across their body in one explosive motion toward the target base.\n- **The Return**: If the ball is not put in play, the runner must sprint **immediately and vertically** back to the bag. **Crucial**: NO \"LAZY RETURSS\". You are either going to the next base or sprinting back to safety.\n\n**The Coaching Why**: Most pick-offs happen because of a lazy return. By teaching the \"Crossover Drive,\" we give players a 1-step advantage over the throw."
 
-#### 4.1 Infield: "Double Play Feeds"
-- **The Drill**: SS/2B working on the turn at second.
-- **The Standard**: "Make it an easy catch." The feed from SS must be chest-high and firm. All 2B feeds should be an underhand flip if within 10 feet.
-- **The Goal**: Turning the two-out "forfeit" into a rally-killer.
-
-#### 4.2 Outfield: "The Long Hop" (The Outfield Throw)
-- **The Drill**: Outfielder at the fence throwing to a cutoff or 2nd base.
-- **The Standard**: Don't throw the "Rainbow." Aim for a one-hop distance to the target. 
-- **The Goal**: Faster, more accurate transitions from the fence.
-
-#### 4.3 Baserunning: "The 3rd Base Freeze" (Scoring)
-- **The Drill**: Runner at 3B. Pitcher in the windup.
-- **The Standard**: Again, NO LEADS. Take the secondary lead as the ball crosses.
-- **The Decision**: If the catcher drops the ball, the runner "Reads the Bounce." If it gets away, they score. If it's close, they stay.
-- **The Goal**: Aggressive but smart scoring.
-
-#### 4.4 Strategy: "The Wheel Play" (Bunt Defense)
-- **The Drill**: Runners on 1/2. Defense rotates to cover the bunt.
-- **The Standard**: SS covers 2B, 2B covers 1B, 3B and 1B charge. 
-- **The Goal**: Collective movement as one defensive unit.
-
-#### 4.5 Mental Game: "What's the Play?"
-- **The Drill**: Before every pitch, the coach calls out a situation: "Bases loaded, 1 out, line drive to center!" Players must point to where they would throw.
-- **The Standard**: Instant reaction. No thinking once the ball is hit.
-- **The Goal**: Elimination of mental errors.`
+  },
+  "B2-S4-4": {
+    book: "Book II/III", section: "4. Outfield & Baserunning", title: "4.4 Sliding (Figure 4)",
+    content: "## 4.4 The \"Figure 4\" Sliding Progression (Safety & Confidence)\n\n**The Goal**: To build a player\'s confidence and muscle memory for a safe, bent-leg slide while strictly enforcing the **No Head-First** safety rule.\n\n**The Execution (The 4-Stage Progression)**:\n- **Stage 1 (Grass Sit)**: Players sit on the grass and form a \"Figure 4\" with their legs (one leg-tucked under the other). Hands are up like they are \"holding groceries\" to protect the wrists.\n- **Stage 2 (The Glute Glide)**: From a walking start, players lower themselves into the Figure 4 and glide on the grass to feel the contact.\n- **Stage 3 (The Cardboard Slide)**: Lay down a long sheet of cardboard on the grass. This removes friction and \"road rash\" fear, allowing players to practice at full speed.\n- **Stage 4 (Dirt Finish)**: Finally, transition to the sliding pit or basepath for the real dirt slide.\n\n**The Golden Rules**:\n 1. **NEVER HEAD FIRST**: Strictly illegal in youth ball. Hands stay up.\n 2. **Tuck the Chin**: Keep the head up and chin tucked to avoid whipping the head back.\n\n**The Coaching Why**: Sliding is 90% confidence. Using the cardboard-on-grass method removes the fear of pain, allowing the player to focus purely on the \"Figure 4\" muscle memory."
+  },
+  "B2-S5-1": {
+    book: "Book II/III", section: "5. The Battery Circuit", title: "5.1 The Balance Point",
+    content: "### 5.1 The Balance Point (Pitching Stability)\n\n**The Goal**: To achieve **perfect internal balance** at the peak of the delivery, preventing the pitcher from \"falling\" toward the plate.\n\n**The Execution**:\n- **The Peak**: Lift the lead knee to a minimum of 90 degrees. The lift must be straight up, not swinging outward.\n- **The 3-Second Freeze**: Once the knee is lifted, the pitcher must **HOLD for 3 full seconds** without wobbling. Their head must remain dead-center over their back leg.\n- **The Cue**: **\"Stay Tall, Stay Strong.\"** Imagine a string pulling you up from the top of your hat.\n\n**The Coaching Why**: Most mechanical breakdowns happen because a pitcher rushes their delivery. By freezing at the balance point, we force the athlete to find their \"center\" before the explosive downward move."
+  },
+  "B2-S5-2": {
+    book: "Book II/III", section: "5. The Battery Circuit", title: "5.2 The Towel Drill",
+    content: "### 5.2 The \"Towel Drill\" (Mechanical Extension)\n\n**The Goal**: To achieve **maximum extension** and a consistent release point without the wear and tear of throwing a real baseball.\n\n**The Execution**:\n- **Setup**: The pitcher grips a small hand towel between their index and middle fingers (simulating a ball). Place a target (a chair or teammate) roughly 2 feet *beyond* the pitcher\'s normal stride length.\n- **The Delivery**: Go through the full pitching motion with intent.\n- **The Strike**: The goal is to \"flick\" the towel so it thumps the target at the peak of the extension.\n- **The Follow-Through**: Ensure the front leg stays firm and the chest finishes over the front knee.\n\n**The Coaching Why**: This is the ultimate \"arm care\" drill. It allows for high-speed mechanical repetitions without the stress of holding and releasing a ball, while forcing the pitcher to \"reach\" for their strike zone."
+  },
+  "B2-S5-3": {
+    book: "Book II/III", section: "5. The Battery Circuit", title: "5.3 Pitcher Fielding Practice (PFP)",
+    content: "### 5.3 Pitcher Fielding Practice (PFP)\n\n**The Goal**: To ensure pitchers remain active defenders and transition seamlessly from their \"Follow-Through\" to a \"Fielding Stance.\"\n\n**The Execution**:\n- **Scenario A (The Come-Backer)**: Pitcher goes through a dry motion. Coach hits a grounder directly at the mound. The pitcher must square up and field cleanly.\n- **Scenario B (Covering 1B)**: Coach hits a grounder to the 1st Baseman. The pitcher must immediately sprint toward 1B, \"arc\" their path, and receive the flip while stepping on the bag.\n- **Scenario C (The Bunt)**: Coach rolls a bunt. The pitcher pounces, clears the ball with their glove hand, and makes a strong \"Athletic Pose\" throw to 1B.\n\n**The Coaching Why**: Often, a pitcher stops being a defender after they release the ball. This drill reinforces that they are the **5th Infielder**. Mastering PFP prevents the most common \"free bases\" in youth baseball."
+  },
+  "B2-S5-4": {
+    book: "Book II/III", section: "5. The Battery Circuit", title: "5.4 Blocking Progression",
+    content: "### 5.4 The \"Blocking\" Progression (The Total Seal)\n\n**The Goal**: To train catchers to physically and mentally \"seal\" the 5-hole and absorb the energy of a wild pitch, keeping the ball directly in front of them.\n\n**The Execution (The 3-Stage Progression)**:\n- **Stage 1 (No Glove / Chest Absorption)**: Catcher is in a secondary stance (no glove). Coach lobs a soft ball. The catcher moves to block, tucking their chin and letting the ball hit their chest protector and drop straight down.\n- **Stage 2 (Glove Down / The 5-Hole Seal)**: Now add the glove. The catcher practice **jamming** the glove into the dirt between their knees. The glove must physically touch the ground to seal the gap.\n- **Stage 3 (Full Gear / Live Block)**: Full equipment. Coach throws live, controlled balls in the dirt. The catcher must react, block, and then \"pounce\" to prevent runners from advancing.\n\n**The Golden Rule**: **Glove First, Dirt Second.** The glove must hit the ground before the ball arrives. Tucking the chin protects the neck and ensures the catcher \"looks\" the ball into their body.\n\n**The Coaching Why**: Blocking is about being a \"Wall.\" This progression removes the fear of the ball and builds the mechanical habit of sealing the plate before the ball ever makes contact."
+  },
+  "B2-S5-5": {
+    book: "Book II/III", section: "5. The Battery Circuit", title: "5.5 Pop-Time Footwork",
+    content: "### 5.5 \"Pop-Time\" Footwork (The Replacement & Drive)\n\n**The Goal**: To achieve the fastest possible transfer from catch to throw on a steal attempt using efficient lower-body mechanics.\n\n**The Execution**:\n- **The \"Replacement\" Step**: As the ball enters the glove, the catcher quickly **replaces** their front foot\'s position with their back foot. This automatically aligns the shoulders with 2nd base.\n- **The Transfer**: Bring the ball to the \"Ear\" immediately. Do not \"wind up\" or drop the hand below the shoulder.\n- **The Throw**: Drive off the back leg and fire a low, \"frozen rope\" toward the target. Aim for the pitcher\'s head-height to keep the trajectory flat.\n- **The Long Hop**: Intentionally aim to bounce the ball 10-15 feet in front of the bag. A \"Long Hop\" is much easier to field than a ball that arrives at eye-level or sails high.\n\n**The Coaching Why**: Pop-time is won with the feet, not just the arm. Efficiency in the \"Replacement\" step eliminates the need for extra strides, saving crucial tenths of a second."
+  },
+  "B2-S6-1": {
+    book: "Book II/III", section: "6. Hitting Fundamentals", title: "6.1 Five Core Components",
+    content: "### 6.1 The \"Core 5\" Hitting Mechanics\n\n**The Goal**: To build a repeatable, powerful, and balanced swing by mastering the five sequential phases of the movement.\n\n**The Mechanical Flow**:\n1. **The Stance (Balance)**: Feet slightly wider than shoulders, knees athletic. Weight is on the \"inner half\" of the feet.\n2. **The Stride (The Load)**: A soft, controlled step toward the pitcher. The head stays still while the hands move back slightly to create \"separation.\"\n3. **The Rotation (The Drive)**: The back knee drives down and in (the \"Engine\"). Power is generated from the hips, not just the arms.\n4. **The Connection (The Rail)**: The knob of the bat leads directly to the ball. Hands stay \"inside\" the ball to create a short, compact path.\n5. **The Extension & Finish**: Arms reach full extension at contact. The swing finishes high and balanced on a firm front leg.\n\n**The Golden Rule**: **Still Head, Quiet Eyes.** If the head moves, the ball moves. The head must remain the \"center of the universe\" throughout the entire swing.\n\n**The Coaching Why**: Most hitting slumps are caused by \"lunging\" or \"arm-swinging.\" By isolating these 5 components, we can identify exactly where a player is losing their power or balance."
+  },
+  "B2-S6-2": {
+    book: "Book II/III", section: "6. Hitting Fundamentals", title: "6.2 The Net Station (Tee & Soft Toss)",
+    content: "### 6.2 The Net Station (Tee & Soft Toss)\n\n**The Goal**: To achieve **perfect muscle memory** by removing the complexity of a live pitcher and focusing purely on the contact point.\n\n**The Execution**:\n- **Part A (The Tee)**: Position the tee so the ball is over the center of the plate at belt height. Drive 10 balls straight into the center of the net, focusing purely on the **Core 5** mechanics.\n- **Part B (Soft Toss)**: A partner kneels safely at a 45-degree angle. They toss the ball into the hitting zone. The hitter must react, keep their head still, and maintain a compact path.\n\n**The Golden Rule**: **Contact Point Discipline.** On the tee, the ball should be just in front of the front foot. For soft toss, wait for the ball to enter the \"Window\"—don\'t lunge for it.\n\n**The Coaching Why**: Every elite hitter uses the tee. It is the only way to isolate mechanical leaks without the distraction of a moving pitch. If you can\'t hit it off the tee correctly, you won\'t hit it in the game."
+  },
+  "B2-S6-3": {
+    book: "Book II/III", section: "6. Hitting Fundamentals", title: "6.3 Competitive Situational Scrimmage",
+    content: "### 6.3 Competitive Situational Scrimmage\n\n**The Goal**: To bridge the gap between \"Practice Hitting\" and \"Game Hitting\" by introducing live situational pressure and decision-making.\n\n**The Execution**:\n- **Setup**: Full defense in the field. A live pitcher (coach or player). Hitter enters the box with a pre-set scenario (e.g., \"Runner on 2nd, 1 out, down by 1\").\n- **The \"Job\"**: The hitter\'s success is measured by the **result**, not the quality of the contact. Driving a runner home from 3rd with a groundout is a \"Win.\"\n- **The Competitive Scoring**: Award points for execution: 1 point for moving a runner, 2 points for a successful bunt, 3 points for a base hit that scores a run.\n\n**The Golden Rule**: **Know the Job.** Before stepping into the box, the hitter must vocally state the mission (e.g., \"I\'m hitting to the right side\"). If they can\'t state the mission, they aren\'t ready to hit.\n\n**The Coaching Why**: Hitting in a vacuum is easy. Hitting with the game on the line is a mental skill. This drill builds the \"Situational IQ\" needed to stay cool when the lights are on."
+  },
+  "B2-S7-1": {
+    book: "Book II/III", section: "7. Team Defense", title: "7.1 Split-Squad Fungo",
+    content: "### 7.1 The \"Split-Squad\" Fungo Routine (High Efficiency)\n\n**The Goal**: To maximize defensive repetitions for both infielders and outfielders simultaneously, eliminating the \"standing around\" time typical of full-team defense drills.\n\n**The Execution**:\n- **Station A (Infield Mastery)**: One coach at home plate hitting to the infield. Focus on \"Round of 5\" repetitions. All throws go to 1B.\n- **Station B (Outfield Tracking)**: A second coach (or parent) in the shallow outfield lobbing or hitting to the outfielders in the gaps. Focus on \"Tracking and Communication.\"\n- **The Bucket Rule**: Use the bucket system for both stations. No balls are thrown back to the coaches until the bucket is empty. This maintains a rapid-fire pace.\n\n**The Golden Rule**: **Divide and Conquer.** By splitting the staff and the field, you halve the wait time and double the \"touches\" for every player.\n\n**The Coaching Why**: Large rosters are the enemy of development. Breaking the team into two active squads keeps everyone engaged and ensures that \"Practice\" feels like \"Work.\""
+  },
+  "B2-S7-2": {
+    book: "Book II/III", section: "7. Team Defense", title: "7.2 The String Drill",
+    content: "### 7.2 The \"String Drill\" (Cutoffs & Relays)\n\n**The Goal**: To achieve **perfect defensive alignment** on balls hit to the outfield, ensuring the cutoff man, the ball, and the target base are in a perfectly straight line.\n\n**The Execution**:\n- **The Setup**: Position a full defense. Anchor a long rope or \"string\" at the target base (2B, 3B, or Home).\n- **The Rep**: Coach hits a ball into the gap. Outfielders retrieve it while the cutoff man (SS or 2B) sprints into position.\n- **The \"Freeze\"**: Once the cutoff man is set, the coach yells **\"FREEZE!\"** and pulls the string taut from the outfielder\'s hand to the target base.\n- **The Adjustment**: If the cutoff man is not directly under the string, they are out of alignment. Physically move them until the line is a \"Laser.\"\n\n**The Golden Rule**: **Hands Up, Turn Glove-Side.** The cutoff man must be a big target. They catch and turn toward their glove side to maintain momentum toward the next base.\n\n**The Coaching Why**: Most relay errors are alignment errors, not throwing errors. By using a literal \"String,\" we train the players to visualize the direct line of the play. Seconds are saved when the throw doesn\'t have to curve around a misplaced fielder."
+  },
+  "B2-S7-3": {
+    book: "Book II/III", section: "7. Team Defense", title: "7.3 Bunt Defense",
+    content: "### 7.3 Bunt Defense & Pop-Fly Priority\n\n**The Goal**: To establish a rigid communication hierarchy for both bunt coverage and pop-fly protection, ensuring every ball is claimed without hesitation or collision.\n\n**The Execution**:\n- **Bunt Coverage (The Boss)**: The Catcher is the \"Chief of Defense\" for bunts. They must yell the direction of the play (e.g., \"ONE! ONE! ONE!\") because they are the only ones facing the entire field.\n- **Pop-Fly Priority**: When a ball is in the air, players must adhere to the **Priority Chain**:\n  1. **Outfield > Infield**: Outfielders own any ball they can reach while moving forward.\n  2. **SS/2B > 3B/1B**: Middle infielders have priority over the corners.\n  3. **Infield > Pitcher**: Pitchers should almost never catch a pop-up unless it\'s a dead-stop to avoid interference with the mound.\n\n**The Golden Rule**: **Louder is Better.** Don\'t just call it; scream it. Use three-word bursts (e.g., \"ME! ME! ME!\") to ensure the message is received.\n\n**The Coaching Why**: \"Who\'s got it?\" is the most dangerous question in baseball. By establishing a clear \"Chain of Command\" in practice, you remove the split-second hesitation that leads to dropped balls and collisions."
+  },
+  "B2-S10-1": {
+    book: "Book II/III", section: "10. Mental Game", title: "10.1 The 10-Second Rule",
+    content: "### 10.1 The \"10-Second\" Recovery Protocol\n\n**The Goal**: To provide players with a repeatable mental \"circuit breaker\" that prevents one mistake (like a strikeout or an error) from snowballing into a second or third mistake.\n\n**The Execution (The Reset Routine)**:\n1. **The Window**: After a failure, the player has exactly **10 seconds** to be frustrated. They can kick the dirt or squeeze their glove, but they must maintain their composure.\n2. **The \"Flash-Flush\"**: At the 10-second mark, the player performs a physical \"reset\" action—like adjusting their hat or wiping their hand across their jersey—to symbolize \"flushing\" the error.\n3. **The Pivot**: The player takes one deep breath and identifies the **Next Job** (e.g., \"Ready for the next grounder\").\n\n**The Golden Rule**: **EYES ON THE NEXT PLAY.** You are allowed to be human for 10 seconds, but you aren\'t allowed to let the past play beat you on the next pitch.\n\n**The Coaching Why**: Baseball is a game of failure. The best players aren\'t the ones who never fail; they are the ones who recover the fastest. This protocol normalizes the emotional response while providing a structured path back to focus."
+  },
+  "B2-S10-2": {
+    book: "Book II/III", section: "10. Mental Game", title: "10.2 Competitive Cauldron",
+    content: "### 10.2 The \"Competitive Cauldron\" (Pressure Inoculation)\n\n**The Goal**: To simulate the physical and mental effects of high-stakes game situations, training players to maintain their technique even when their heart rate increases.\n\n**The Execution**:\n- **The Setup**: During a standard scrimmage or drill, the coach yells **\"CAULDRON!\"** to instantly pause and reset the field.\n- **The Scenario**: The coach dictates a \"Win-or-Loss\" moment: *\"Bases loaded, 2 outs, bottom of the 6th, full count. If the ball stays in the infield, the defense wins. Hit it out, the offense wins.\"*\n- **The Intensity**: The play is run with 100% intensity. There is a clear winner and a clear loser for every rep.\n\n**The Golden Rule**: **Embrace the Beat.** We tell players that a racing heart isn\'t \"fear\"—it\'s \"fuel.\" Don\'t try to calm down; try to focus your energy on the **Next Job**.\n\n**The Coaching Why**: You can\'t teach \"clutch\" in a vacuum. You only learn to perform under pressure by experiencing it repeatedly in practice. This drill \"inoculates\" players against the shock of the big moment by making it a regular part of their training."
   },
 
-  // --- PILLAR 3: PARENTS (ACCOUNTABILITY HUB) ---
-  "PARENT-ENFORCE": {
-    group: "Parent Empowerment",
-    subGroup: "Accountability",
-    title: "1. Mission Alignment: The Three-Tier Model",
-    content: `### A Resource for Building a "Community of Culture"
-The goal of this guide is to empower parents and volunteers to bridge the gap between expectations and reality. True accountability wins when every stakeholder understands the youth baseball ecosystem.
-
-### The Three Tiers:
-1. **The Little League Charter**: A community-first mission, neighbors coaching neighbors, inclusivity mandate.
-2. **The Community "Select" Program**: A separate bridge model for kids seeking advanced development. **Little League priority is absolute.**
-3. **The Professional Club Model**: Meritocracy, paid services, and year-round high-intensity competition.
-
-### Why Mission Alignment Matters:
-Conflict occurs when families try to "upgrade" the intensity of a **Little League Charter** (Tier 1) by forcing Tier 3 expectations (more tournaments, higher pressure) onto a community service.`
+  // --- UMPIRE OFFICE ---
+  "U-C1": {
+    book: "Umpire Office", section: "1. Core Clinic", title: "1.1 Timing & Authority",
+    content: "### 1.1 Timing, Tone, & Verbal Presence\n\n**The Goal**: To establish absolute authority and clarity through assertive verbal and physical signals.\n\n**The Standard**:\n- **Verbal Precision**: A loud, crisp **\"STRIKE!\"** combined with a sharp \"hammer\" or \"wall-pound\" with the right hand.\n- **The Count**: Always show the count manually. **Left Hand = Balls**, **Right Hand = Strikes**. Never \"bump fists\" for a full count; raise 3 fingers on the left and 2 on the right.\n- **Brief & Loud**: Decisiveness eliminates arguments. Use short, high-volume bursts to command the field.\n\n**The Why**: Authority is about being **sure**. A decisive umpire who communicates clearly keeps the temperature of the game low and the pace high."
   },
-  "PARENT-HYBRID": {
-    group: "Parent Empowerment",
-    subGroup: "Accountability",
-    title: "2. The 'Community Select' Model: Age-Segment Parity",
-    content: `### Independent Development Programs
-Many players participate in "Community Select" teams—unaffiliated programs that bridge the gap for local kids seeking additional development. These programs offer valuable experience, but families should understand the nuances of the "Performance Gap" when comparing different competitive environments.
-
-### Understanding Age-Segment Parity:
-A natural friction point in youth sports arises from differing age-eligibility cut-offs between various organizations. 
-
-- **The Performance Gap**: Performance metrics are most informative when measured against a player's true chronological cohort. While success in any bracket is a positive developmental step, "dominating" stats earned in an age-mismatched environment (due to cut-off overlaps) may not fully reflect a player’s readiness for the next level of peer-parity play.
-- **The Calibration**: True growth is best measured through steady progress against peers of the same chronological age. 
-
-### The Evaluator's Perspective:
-When building a cohesive tournament unit, evaluators seek "Peer Parity." They prioritize data from environments where players compete against their own age-group counterparts. This ensures a more consistent "apples-to-apples" comparison and helps identify players who can maintain their performance against the speed and intensity of their actual chronological peers.
-
-> [!IMPORTANT]
-> **The Goal of Fair Evaluation**: Professionalism in our community culture means prioritizing a fair and accurate assessment path for every child, based on established chronological age standards.`
+  "U-C2": {
+    book: "Umpire Office", section: "1. Core Clinic", title: "1.2 The Plate Meeting (Youth Umpire Standard)",
+    content: "### 1.2 The Plate Meeting (Youth Umpire Standard)\n\n**The Goal**: To provide a youth umpire with a \"Command Script\" that ensures they remain the clinical authority of the game, regardless of the age of the managers.\n\n**The Command Script (The Protocol)**:\n1. **The Summons**: At 5 minutes before game time, the umpire stands at the plate and calls: *\"Managers to the plate with your lineups, please.\"*\n2. **The Introduction**: Shake hands with each manager. State your name and your partner\'s name clearly.\n3. **The Safety Vetting**: Ask: *\"Coaches, are all of your players in full uniform and is all equipment meeting the current safety standards?\"*\n4. **The Ground Rules**: Keep it brief. *\"Everything over the fence is a home run. Any ball that goes into the dugout is a dead-ball; we\'ll award a base from there.\"*\n5. **The Closing**: *\"Good luck to both teams. Let\'s have a fast, safe game. Play ball!\"*\n\n**The Golden Rule**: **Be Clinically Brief.** You aren\'t there to be friends with the managers; you are there to enforce the rulebook fairly. If a manager begins complaining or talking over you, use the phrase: *\"Thank you, coach. I have my ground rules set. Let’s get the game started.\"*\n\n**The Why**: The Plate Meeting is the \"Theater of Authority.\" A youth umpire who follows a rigid script projects confidence. If you start with a strong meeting, the managers are significantly less likely to argue with your calls during the game."
   },
-  "PARENT-CHARTER": {
-    group: "Parent Empowerment",
-    subGroup: "Accountability",
-    title: "3. Charter Integrity: The Visibility Check",
-    content: `### The Standard of a Chartered Organization
-A local Little League is a chartered member of **Little League International (LLI)**. This is a legal agreement that grants the community the right to participate in the official World Series tournament path.
-
-### The Independence Requirement:
-Per the **LLI Operating Manual (Charter Obligations)**, a Little League charter must remain **independent** of any outside, private, or for-profit club organization.
-
-- **LLI Dual-Participation Policy (Regulation I(b))**: According to Little League International policy, no officer or board member of a chartered Little League is permitted to simultaneously hold office, be a member of the board, or function as an official or representative of any other youth baseball or softball organization.
-- **The "Everyone's Doing It" Traps**: While common in many communities, these dual-role arrangements are direct violations of LLI standards designed to prevent divided loyalties and competing interests. **Accountability wins when parents advocate for these established standards of independence.**
-
-### Visibility Check: Identifying Potential Overlap
-Because it is difficult to identify violations from the outside, parents can look for indicators of organizational overlap:
-1. **Public Board Lists**: Many states require non-profit board lists to be public record. Parents can verify if individuals holding core roles (President, Player Agent, etc.) are also listed as officers for outside "Select" or club organizations.
-2. **Resource Independence**: A key standard of independence is ensures that chartered assets—such as equipment, tournament slots, or prime field time—are not being leveraged by unaffiliated programs without a public, audited usage agreement.
-3. **Financial Transparency**: Unaffiliated "Select" programs should maintain their own separate bank accounts and non-profit status. Co-mingling of funds is a major indicator of a compromised charter.
-
-> [!IMPORTANT]
-> **Protecting the All-Star Path**: These independence rules exist to ensure that the community's access to the LLI World Series tournament path is never jeopardized by competing interests. Using the **Accountability Circle** to ask for a statement on organizational independence is a standard right of any community member.`
+  "U-G1": {
+    book: "Umpire Office", section: "2. Mechanics", title: "2.1 The Slot & \"Opening the Gate\"",
+    content: "### 2.1 The Slot & \"Opening the Gate\"\n\n**The Goal**: To maximize the view of the strike zone while staying safe and remaining \"invisible\" to the flow of play.\n\n**The Mechanics**:\n- **The Slot**: Position your chin with the catcher\'s **inside ear**. This provides a clear \"window\" to see the inside corner and the pitcher\'s release.\n- **The Lock**: Once the pitcher is set, \"Lock\" into your stance. Your head must remain a \"fixed point\" from release to catch.\n- **The Gate**: On a base hit, \"Open the Gate\" by stepping back and clearing the path for the catcher and the bat. Don\'t be an obstacle.\n\n**The Why**: If your head moves, the strike zone moves. Stability in the slot ensures a consistent \"box\" for the pitchers and hitters."
   },
-  "PARENT-BEHAVIOR": {
-    group: "Parent Empowerment",
-    subGroup: "Accountability",
-    title: "4. Behavioral Standards for Coaches",
-    content: `### The Standard of Respect
-Every person on the field—whether a manager, assistant coach, or volunteer parent—represents the community culture. Rudeness or dismissiveness is never acceptable.
-
-### Indicators of a "Bad Actor":
-- **The "Canary" Complaint**: If a coach is constantly complaining that veteran/older umpires are "too strict," "rude," or "unfair," it is a major red flag. In reality, those umpires are the only ones holding them to the standard.
-- **Official Intimidation**: Watch for coaches who "manage" youth umpires by standing too close, yelling "from the bucket," or constantly questioning the strike zone.
-- **Dismissiveness**: Telling a concerned parent to "mind their own business" when they are advocating for chartered league rules or field safety.
-- **Umpire Avoidance**: If you notice that experienced umpires seem to avoid a specific coach's games, it's often because that coach has a history of dissent that the UIC is already tracking.
-
-### What to do:
-- **The "First Impression" Correction**: If a volunteer is rude, offer a firm correction: "I am pointing out a league-mandated field status/rule to protect our kids and our fields. Please respect that."
-- **Escalation (The Accountability Circle)**: If the behavior persists, do not rely on a single person to field your complaint. To prevent cover-ups or "cronyism," all formal complaints must be sent to the **Accountability Circle** simultaneously.
-
-### The Accountability Circle:
-Every formal report regarding behavioral failure or rule violations should be emailed to these four stakeholders together:
-1. **Player Agent** (The advocate for your child)
-2. **Safety Officer** (The guardian of physical and mental safety)
-3. **League President** (The executive authority)
-4. **League UIC** (The authority on the Rules of the Game)
-
-> [!CAUTION]
-> **Avoid the "Single Point of Failure"**: In many leagues, "bad actors" are protected by friendships on the board. By emailing all four roles at once, you create a transparent record that cannot be buried.`
+  "U-G2": {
+    book: "Umpire Office", section: "2. Mechanics", title: "2.2 Base Mechanics: Angle over Distance",
+    content: "### 2.2 Base Mechanics: Angle over Distance\n\n**The Goal**: To position the base umpire for the highest-probability view of a play while remaining out of the path of ball and runner.\n\n**The Positions**:\n- **Position A**: Behind 1B (Bases empty). Used for the \"Force Out\" focus.\n- **Positions B/C**: Inside the diamond (Runners on). Used to get closer to tag plays and double-play turns.\n- **The Golden Rule**: **Angle Over Distance.** Being 25 feet away at a 90-degree angle is infinitely better than being 5 feet away looking at a runner\'s back. Always seek the \"Window\" where you can see the **ball**, the **base**, and the **runner** at once.\n\n**The Why**: Amateur umpires often chase the ball. Elite umpires \"let the play come to them\" by moving to the angle of the throw first."
   },
-  "PARENT-INTEGRITY": {
-    group: "Parent Empowerment",
-    subGroup: "Accountability",
-    title: "5. Defending League Integrity",
-    content: `### Friendship is Not a Rule
-Little League is often managed by groups of long-time friends. While this provides stability, it can also create a "cult of friends" where bad behavior is ignored because of personal history.
-
-### Your Right to Transparency:
-- **The Rulebook is Supreme**: No relationship between a coach and a board member supersedes the LLI Rulebook or the League's Behavioral Code.
-- **Document Everything**: Keep a log of dates, times, and specific behaviors. "Vague" complaints are easier to dismiss than documented patterns.
-- **Demand a Response**: If you report an issue to the Accountability Circle, you have a right to a formal response regarding the board's decision or action.
-
-### The Standard:
-We hold the league accountable for who they allow to coach our community's kids. Little League is a place for children, not an ego-trip for bad actors.`
-  },
-  "PARENT-CANARY": {
-    group: "Parent Empowerment",
-    subGroup: "Accountability",
-    title: "6. Spotting the 'Canary in the Coal Mine'",
-    content: `### The Signs of a Failing Culture
-A "bad actor" coach rarely starts with an ejection. They show their true colors through how they interact with the most vulnerable and the most authoritative members of the league.
-
-### What Parents Should Watch For:
-1. **The Vet Umpire Conflict**: When a coach complains about a veteran umpire, they are often angry that their "tactics" are being neutralized. A veteran umpire knows the rules; a bad coach hates being corrected.
-2. **Youth Umpire "Management"**: If you see a coach constantly "teaching" the youth umpire how to call the game from the dugout, they aren't teaching—they are bullying. Youth umpires are children; they should NEVER be managed by the opposing coach.
-3. **The "Silent Field"**: One of the biggest indicators of a bad coach is a field where the umpires don't want to be. Pay attention to which coaches' games always seem to have "missing" or "no-show" umpires. It's often because the veteran crew has had enough.
-
-### Why this is your business:
-If the umpires are avoiding a coach, that coach is creating a toxic environment for everyone, including the players. You are part of the community—if you see these signs, report them to the **Accountability Circle** before the culture fails entirely.`
-  },
-  "PARENT-FIELD": {
-    group: "Parent Empowerment",
-    subGroup: "Rules of Engagement",
-    title: "3. Field Status: The Maintenance Call",
-    content: `### Understanding "Yellow" Status
-Our fields are community resources. We follow a strict color-coded status to protect the integrity of the soil:
-
-- **🟢 GREEN**: Full field access.
-- **🟡 YELLOW**: Playable with Caution. 
-  - **The Standard**: If there is no standing water and it won't create a "maintenance mess" for our crews, the field is open for practice.
-  - **Usage**: Generally, this means **Stay on the Grass**. 
-  - **Coach's Call**: The manager may decide to use the dirt *only* if it has dried enough to prevent ruts and damage.
-- **🔴 RED**: Field closed.
-
-### Why this matters:
-Running on soft, wet dirt creates deep ruts that dry into concrete-hard "valleys," creating significant safety hazards for players. If field usage boundaries (e.g., "Stay on the grass") are established, adhering to them protects the common resources that registration fees and volunteer hours maintain. Advocate for the integrity of the playing surface to ensure a safe environment for all teams.`
-  },
-  "PARENT-SAFETY": {
-    group: "Parent Empowerment",
-    subGroup: "Rules of Engagement",
-    title: "4. Official LLI Pitching & Catching Constraints",
-    content: `### Protecting the Kids: LLI Regulation VI (Pitchers)
-The most critical health rule in Little League International (LLI) is the Pitch Count. These are not "strategy" suggestions; they are non-negotiable safety requirements to prevent arm injuries. 
-
-### Daily Maximums (By League Age):
-- **11-12 Years**: 85 Pitches per day.
-- **9-10 Years**: 75 Pitches per day.
-- **7-8 Years**: 50 Pitches per day.
-  *(Note: A pitcher may finish the current batter if they hit the limit during an at-bat).*
-
-### Required Rest Days (Thresholds):
-- **66+ Pitches**: 4 Days Rest.
-- **51-65 Pitches**: 3 Days Rest.
-- **36-50 Pitches**: 2 Days Rest.
-- **21-35 Pitches**: 1 Day Rest.
-- **1-20 Pitches**: 0 Days Rest.
-
-### Critical Overlap: Pitching & Catching (Regulation VI)
-This is where many "bad actors" bend the rules to keep elite players in the game. **Hold the league accountable for these specific constraints:**
-
-1. **Pitcher to Catcher (The 41-Pitch Rule)**:
-   - **Reference: Regulation VI(a) Note 3**. Any player who has thrown **41 or more pitches** in a game **cannot play the position of catcher** for the remainder of that day.
-   - *Nuance*: If they reach the 40-pitch limit while facing a batter, they can finish that batter and still catch, provided they are replaced as a pitcher immediately after that batter.
-
-2. **Catcher to Pitcher (The 4-Inning Rule)**:
-   - **Reference: Regulation VI(a) Note 4**. Any player who has played the position of catcher in **four (4) or more innings** in a game is **not eligible to pitch** on that calendar day.
-   - *Important*: This count is triggered even if the player catches just **one pitch** in that fourth inning.
-
-3. **Catching/Pitching Overlap**:
-   - If a player catches even one pitch in their 4th inning and then moves to pitch, they are an **illegal pitcher**. This is a safety violation and a forfeit offense.
-
-> [!IMPORTANT]
-> **Safety Violation Protocol**: If you notice a coach exceeding these counts or ignoring required rest/overlap days, do not rely on a single field official or scorekeeper to correct it. To ensure transparency and prevent cover-ups, email the **Accountability Circle** (Player Agent, Safety Officer, President, and League UIC) immediately. This creates a multi-stakeholder record that protects the health of the player and the integrity of the chartered league.`
+  "U-P1": {
+    book: "Umpire Office", section: "3. Partner Synergy", title: "3.1 Partner Signals & Coverage",
+    content: "### 3.1 Partner Signals & Coverage\n\n**The Goal**: To ensure 100% field coverage through non-verbal synchronization and explosive rotation between two umpires.\n\n**The Coverage**:\n- **The 1st-to-3rd Signal**: With a runner on 1st, the plate umpire leads the rotation to 3B on a base hit. This must be signaled to and \"echoed\" by the base umpire.\n- **The Timing Play**: Both umpires signal when a \"Time Play\" is imminent (third out vs. runner crossing home).\n- **The Takeover**: In a rundown, use the **Pat-on-Chest** signal and yell: *\"PARTNER, I\'VE GOT IT!\"* Eye contact is the only way to confirm a handover.\n\n**The Why**: A two-man crew is only as good as its communication. Without signals, you end up with two umpires watching the same bag while a runner cruises into another."
   }
 };
