@@ -99,7 +99,7 @@
         .action-btn { 
             background: #fff; border: 1px solid var(--border); padding: 8px 12px; border-radius: 6px; 
             font-size: 0.75rem; font-weight: 700; color: var(--text-muted); cursor: pointer; transition: all 0.2s;
-            display: flex; align-items: center; gap: 6px;
+            display: flex; align-items: center; gap: 6px; text-decoration: none;
         }
         .action-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 
@@ -109,16 +109,28 @@
         .dash-header span { text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.75rem; font-weight: 800; color: var(--accent); display: block; margin-bottom: 16px; }
         .dash-header h1 { font-size: 3rem; font-weight: 900; letter-spacing: -0.05em; color: var(--text-main); }
         
-        .dash-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .dash-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 48px; }
         .dash-card { 
             background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 48px 32px; 
             cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); text-align: center; position: relative; overflow: hidden;
+            text-decoration: none; display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
         .dash-card:hover { transform: translateY(-8px); border-color: var(--accent); box-shadow: 0 20px 25px -5px rgba(30, 64, 175, 0.1); }
         .dash-card .icon { font-size: 2.5rem; margin-bottom: 20px; display: block; filter: grayscale(1); transition: filter 0.3s; }
         .dash-card:hover .icon { filter: grayscale(0); }
         .dash-card h3 { font-size: 1.125rem; font-weight: 800; margin-bottom: 12px; color: var(--text-main); }
         .dash-card p { font-size: 0.875rem; color: var(--text-muted); line-height: 1.5; }
+
+        /* Secondary Grid (Cheat Sheets) */
+        .quick-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .quick-card { 
+            background: var(--accent-soft); border: 2px solid transparent; border-radius: 12px; padding: 24px; 
+            text-decoration: none; transition: all 0.2s; text-align: left; display: flex; gap: 20px; align-items: center;
+        }
+        .quick-card:hover { border-color: var(--accent); background: #fff; transform: scale(1.02); }
+        .quick-card .icon { font-size: 1.75rem; }
+        .quick-card h4 { font-size: 1rem; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+        .quick-card p { font-size: 0.825rem; color: var(--text-muted); margin: 0; }
         
         /* Modal */
         #modal-overlay { 
@@ -134,7 +146,7 @@
 
         /* Print Overrides */
         @media print {
-            #sidebar, .actions-bar, .dashboard-grid { display: none !important; }
+            #sidebar, .actions-bar, .dashboard, #modal-overlay { display: none !important; }
             main { overflow: visible; background: #fff; }
             #content-viewport { padding: 0; max-width: none; width: 100%; }
             .content-card { box-shadow: none; border: none; padding: 0; }
@@ -281,7 +293,7 @@
                         <h1>Diamond Command Center</h1>
                     </div>
                     <div class="dash-grid">
-                        <div class="dash-card" onclick="toggleSection('10. Parent Empowerment')">
+                        <div class="dash-card" onclick="selectItem('B1-S10', '10. Parent Empowerment')">
                             <span class="icon">🏘️</span>
                             <h3>The Parent Shield</h3>
                             <p>Safety, accountability, and behavioral standards for the entire league culture.</p>
@@ -295,6 +307,25 @@
                             <span class="icon">🛡️</span>
                             <h3>The Umpire Office</h3>
                             <p>Elite clinic modules for training youth and adult volunteer officials.</p>
+                        </div>
+                    </div>
+                    <div style="margin-top:40px; text-align:left;">
+                        <h3 style="font-size:0.8rem; letter-spacing:0.2em; color:var(--text-muted); margin-bottom:16px;">INVALUABLE QUICK-REFERENCE GUIDES</h3>
+                        <div class="quick-grid">
+                            <a href="guides/html/umpire-cheat-sheet.html" class="quick-card" target="_blank">
+                                <span class="icon">🛡️</span>
+                                <div>
+                                    <h4>Umpire Cheat Sheet</h4>
+                                    <p>Standardized calls, timing, and positional mechanics.</p>
+                                </div>
+                            </a>
+                            <a href="guides/html/scorekeeper-cheat-sheet.html" class="quick-card" target="_blank">
+                                <span class="icon">📝</span>
+                                <div>
+                                    <h4>Scorekeeper's Guide</h4>
+                                    <p>GameChanger best practices and manual scorebook legend.</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
